@@ -1,0 +1,26 @@
+<script>
+    const hammy = document.querySelector(".ham");
+    const lines = document.querySelectorAll(".ham span");
+    const links = document.querySelectorAll(".mainmenu li");
+    const arr = document.querySelector(".arrow");
+    const arrI = document.querySelector(".arrowicon");
+    const m2 = document.querySelector(".m2");
+    const secondD = document.querySelector(".seconddrop");
+
+    const arrowDrop = () => {
+        arrI.classList.toggle("activeN");
+        m2.classList.toggle("activeN");
+        secondD.classList.toggle("activeN");
+    };
+
+    hammy.addEventListener("click",(e)=>{
+        lines.forEach((line) => line.classList.toggle("active"));
+        links.forEach((link) => link.classList.toggle("active"));
+        if(arrI.classList.contains("activeN")){
+            arrowDrop();
+        }
+    });
+    arr.addEventListener("click",(e)=>{
+        arrowDrop();
+    });
+</script>

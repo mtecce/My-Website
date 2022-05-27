@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+}
+
+.drop{
+  position: fixed;
+  width: 100%;
+  padding-inline-start: 0;
+}
+
+.mainmenu{
+  background-color: white;
+  position: fixed;
+  list-style: none;
+  clear: both;
+  width: 100%;
+  top: -151px;
+  margin: 0;
+  padding-inline-start: 0;
+  z-index: 1;
+}
+
+.mainmenu li{
+  background-color: white;
+  position: relative;
+  color: black;
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  padding: 15px 15px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.mainmenu li a{
+  position: relative;
+  color: black;
+  text-align: right;
+  text-decoration: none;
+  margin: 0;
+  z-index: 1;
+}
+
+.mainmenu .m1{
+  margin: 0;
+  font-size: 20px;
+  text-align: right;
+  z-index: 1;
+  padding: 0;
+}
+
+.proj{
+  position: relative;
+  background-color: white;
+  display: block;
+  height: 53px;
+  z-index: 1;
+}
+
+.arrow{
+  position: fixed;
+  width: 24px;
+  right: 80px;
+  height: 24px;
+  margin: 15px;
+  z-index: 2;
+}
+
+.proj p{
+  position: fixed;
+  background-color: white;
+  font-size: 20px;
+  width: 100%;
+  right: 0;
+  margin: 0;
+  padding: 15px;
+  z-index: 1;
+}
+
+.arrowicon{
+  width: 24px;
+  transform: rotate(-90deg);
+}
+
+.seconddrop{
+  position: relative;
+  padding-inline-start: 0;
+  height: 0;
+  z-index: 0;
+  top: -56px;
+}
+
+.seconddrop li{
+  background-color: white;
+  padding: 15px 0;
+  border-top: 1px solid black;
+  top: -109px;
+}
+
+.seconddrop li a{
+  padding: 15px 15px;
+}
+
+header{
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* div.vl{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  border-right: 1px solid black;
+  z-index: 2;
+}
+
+div.t{
+  width: 12.5%;
+}
+
+div.tt{
+  width: 37.5%;
+}
+
+div.ttt{
+  width: 62.5%;
+}
+
+div.tttt{
+  width: 87.5%;
+} */
+
+@media screen and (max-width: 450px){
+
+  .i3,
+  .i4{
+    visibility: hidden;
+  }
+
+  header{
+    height: 60px;
+  }
+
+  .icons{
+    position: inherit;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    z-index: 6;
+  }
+
+  .icons .i5,
+  .icons a{
+    position: fixed;
+    top: 12px;
+    width: 20%;
+    margin: 0 2.5%;
+    height: 40px;
+  }
+
+  .i0{
+    left: 0;
+  }
+
+  .ii0{
+    width: 38px;
+  }
+
+  .i1{
+    left: 25%;
+  }
+
+  .ii1{
+    width: 35px;
+  }
+
+  .i2{
+    left: 50%;
+  }
+
+  .ii2{
+    width: 32px;
+  }
+
+  .i5{
+    left: 75%;
+  }
+
+  .buff{
+    position: relative;
+    left: 50%;
+  }
+
+  .homeicon{
+    position: relative;
+    left: -50%;
+    width: 38px;
+    top: -1px;
+  }
+
+  .githubicon{
+    position: relative;
+    left: -50%;
+    width: 35px;
+    top: 1px;
+  }
+
+  .linkedinicon{
+    position: relative;
+    left: -50%;
+    width: 32px;
+  }
+
+  .ham{
+    position: relative;
+    top: 5px;
+    width: 34px;
+    left: 50%;
+  }
+
+  .ham span{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: black;
+    transition: all 0.2s;
+    border-radius: 20px;
+  }
+
+  .mid-line{
+    margin: 10px 0;
+  }
+  
+  .top-line.active{
+    transform: translateY(13px) rotate(-45deg);
+  }
+  
+  .mid-line.active{
+    opacity: 0;
+  }
+  
+  .bottom-line.active{
+    transform: translateY(-13px) rotate(45deg);
+  }
+  
+  .text{
+    display: none;
+  }
+  
+  .m0,.m1,.m2{
+    border-top: 1px solid black;
+    transition: 0.5s;
+  }
+
+  .arrowicon, .seconddrop{
+    transition: 0.5s;
+  }
+  
+  .m0.active,
+  .m1.active,
+  .m2.active{
+    transform: translateY(211px);
+  }
+
+  .arrowicon.activeN{
+    transform: rotate(90deg);
+  }
+
+  .m2.activeN{
+    transform: translateY(321px);
+  }
+
+  .seconddrop.activeN{
+    transform: translateY(166px);
+  }
+
+}
+
+@media screen and (min-width:450px) and (max-width: 896px){
+  
+  .text,
+  .menu{
+    visibility: hidden;
+  }
+
+  header{
+    width: 25%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .i0,.i1,.i2{
+    visibility: hidden;
+  }
+
+  .icons{
+    position: inherit;
+    display: block;  
+  }
+
+}
+
+@media screen and (min-width:896px){
+
+  .ham{
+    display: none;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  header{
+    width: 100%;
+    background-color: white;
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+  }
+
+  /* icons */
+
+  header div.icons{
+    display: block;
+    width: 30%;
+  }
+
+  header div.icons a{
+    padding-left: 10%;
+    padding-right: 10%;
+    border-right: 1px solid black;
+    vertical-align: middle;
+  }
+
+  header div.icons a.i0{
+    padding-top: 15px;
+  }
+
+  header div.icons a.i1{
+    padding-top: 16px;
+  }
+
+  header div.icons a.i2{
+    
+    padding-top: 16px;
+  }
+
+  header div.icons a img.homeicon{
+    width: 33px;
+  }
+
+  header div.icons a img.githubicon{
+    width: 30px;
+  }
+
+  header div.icons a img.linkedinicon{
+    width: 30px;
+  }
+
+/* text */
+
+  header div.text{
+    position: fixed;
+    top: 5px;
+    display: block;
+    width: 70%;
+    font-size: 30px;
+    margin-right: 0;
+    margin-left: 35%;
+  }
+
+  header div.text a{
+    text-decoration: none;
+    color: black;
+  }
+  
+}
+
