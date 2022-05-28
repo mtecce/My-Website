@@ -7,7 +7,7 @@ body{
     height: 100%;
 }
 
-header{
+.mobile{
   background-color: white;
   color: black;
   position: fixed;

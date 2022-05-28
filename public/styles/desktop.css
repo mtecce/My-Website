@@ -1,0 +1,68 @@
+@media screen and (min-width:916px){
+
+  body{
+    background-color: black;
+  }
+
+
+  .drop,
+  .hbp,
+  .mobile,
+  .guides{
+    visibility: hidden;
+  }
+
+  .desktop{
+    background-color: white;
+  }
+
+  .nav-list{
+    cursor: default;
+    height: 50px;
+    margin: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    box-sizing: content-box;
+    padding: 0;
+  }
+
+  .list-item-formatting{
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    vertical-align: top;
+    padding: 0;
+  }
+
+  .nav-home{
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/icons/homeicon.png");
+    padding-top: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+  }
+
+  .text-formatting{
+    position: absolute;
+    font-size: 20px;
+    width: 2.5em;
+  }
+
+  .home-text{
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    top: 50%;
+  }
+
+  .csproj-text{
+
+  }
+  
+
+}
