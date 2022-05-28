@@ -1,67 +1,70 @@
 @media screen and (min-width:916px){
 
-  body{
-    background-color: black;
-  }
-
-
   .drop,
   .hbp,
   .mobile,
   .guides{
     visibility: hidden;
+    height: 0px;
+    width: 0px;
   }
 
   .desktop{
     background-color: white;
   }
 
+  .nav-home{
+    position: fixed;
+    line-height: 65px;
+    border-right: 1px solid black;
+  }
+
+  .home-text{
+    text-align: left;
+    font-size: 27.5px;
+    padding: 16px 20px;
+  }
+
   .nav-list{
     cursor: default;
-    height: 50px;
-    margin: 0 30px;
+    height: 65px;
+    margin: 0;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     list-style: none;
     box-sizing: content-box;
-    padding: 0;
+    width: 76%;
+    padding-left: 21%;
   }
 
   .list-item-formatting{
     box-sizing: border-box;
     display: inline-block;
     position: relative;
-    height: 50px;
+    height: 65px;
+    line-height: 65px;
+    
     vertical-align: top;
     padding: 0;
   }
 
-  .nav-home{
-    background-size: 30px 30px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("../images/icons/homeicon.png");
-    padding-top: 0px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 32px;
+  .desktop nav a,
+  .desktop nav ul li a{
+    text-decoration: none;
+    color: black;
   }
 
   .text-formatting{
-    position: absolute;
+    
+    text-align: left;
     font-size: 20px;
-    width: 2.5em;
+    padding: 20px 15px;
   }
 
-  .home-text{
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    top: 50%;
-  }
+  
 
-  .csproj-text{
-
+  .resume-text{
   }
   
 
