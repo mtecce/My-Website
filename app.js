@@ -12,3 +12,7 @@ app.get('/',(req,res) => {
     console.log(req.ip);
     res.render('index');
 });
+
+app.get('/contact', (req,res) =>{
+    res.render('contact');
+});
