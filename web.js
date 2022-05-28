@@ -6,7 +6,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
-app.listen(8080);
+app.listen(process.env.PORT || 3000);
 
 app.get('/',(req,res) => {
     console.log(req.ip);
