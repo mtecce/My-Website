@@ -1,0 +1,71 @@
+/* @media screen and (min-width:896px){
+
+  .ham{
+    display: none;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  header{
+    width: 100%;
+    background-color: white;
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+  }
+
+  header div.icons{
+    display: block;
+    width: 30%;
+  }
+
+  header div.icons a{
+    padding-left: 10%;
+    padding-right: 10%;
+    border-right: 1px solid black;
+    vertical-align: middle;
+  }
+
+  header div.icons a.i0{
+    padding-top: 15px;
+  }
+
+  header div.icons a.i1{
+    padding-top: 16px;
+  }
+
+  header div.icons a.i2{
+    
+    padding-top: 16px;
+  }
+
+  header div.icons a img.homeicon{
+    width: 33px;
+  }
+
+  header div.icons a img.githubicon{
+    width: 30px;
+  }
+
+  header div.icons a img.linkedinicon{
+    width: 30px;
+  }
+
+  header div.text{
+    position: fixed;
+    top: 5px;
+    display: block;
+    width: 70%;
+    font-size: 30px;
+    margin-right: 0;
+    margin-left: 35%;
+  }
+
+  header div.text a{
+    text-decoration: none;
+    color: black;
+  }
+}
+*/

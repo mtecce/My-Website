@@ -1,0 +1,36 @@
+div.vl{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  z-index: 8;
+  border-left: 1px solid black;
+}
+
+div.ft{left: 53px;}
+div.ozs{left: 107px;}
+div.oso{left: 161px;}
+
+div.hl{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+}
+
+.x{border-bottom: 1px solid black;}
+.y{border-bottom: 1px solid green;}
+
+div.t{height: 8.3%;}
+div.tt{height: 25%;}
+div.ttt{height: 41.7%;}
+div.tttt{height: 58.3%;}
+div.ttttt{height: 75%;}
+div.tttttt{height: 91.7%;}
+
+div.aa{height: 16.6%;}
+div.aaa{height: 33.3%;}
+div.aaaa{height: 50%;}
+div.aaaaa{height: 66.6%;}
+div.aaaaaa{height: 83.3%;}

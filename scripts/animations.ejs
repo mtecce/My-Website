@@ -1,0 +1,47 @@
+<script>
+    const hammy = document.querySelector(".ham");
+    const lines = document.querySelectorAll(".ham span");
+    const links = document.querySelectorAll(".mainmenu li");
+    const arr = document.querySelector(".arrow");
+    const arrI = document.querySelector(".arrowicon");
+    const m2 = document.querySelector(".m2");
+    const d = document.querySelector(".drop");
+    const secondD = document.querySelector(".seconddrop");
+    const head = document.querySelector("header");
+    const iconm = document.querySelectorAll(".sidemove");
+
+    const projects = document.querySelector(".i3");
+    const secondM = document.querySelector(".projectslide");
+
+    const arrowDrop = () => {
+        arrI.classList.toggle("activeN");
+        m2.classList.toggle("activeN");
+        secondD.classList.toggle("activeN");
+    };
+
+    projects.addEventListener("click", (e)=>{
+        secondM.classList.toggle("active");
+    });
+
+    hammy.addEventListener("click",(e)=>{
+        //for mobile landscape transform
+        head.classList.toggle("active");
+        iconm.forEach((icon) => icon.classList.toggle("active"));
+
+        //for mobile portrait transform
+        lines.forEach((line) => line.classList.toggle("active"));
+        links.forEach((link) => link.classList.toggle("active"));
+        //for mobile portrait transform: when exiting menu, closes the sub menu
+        if(arrI.classList.contains("activeN")){
+            arrowDrop();
+        }
+        if(secondM.classList.contains("active")){
+            console.log("boom");
+            secondM.classList.toggle("active");
+        }
+    });
+
+    arr.addEventListener("click",(e)=>{
+        arrowDrop();
+    });
+</script>
