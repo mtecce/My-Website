@@ -100,11 +100,11 @@
 
 @media screen and (max-width: 450px){
 
-  .i3,
-  .i4,
+  .icon4,
+  .projectslide,
+  .icon7,
+  .moreslide,
   .hpb,
-  .i6,
-  .i7,
   .desktop{
     visibility: hidden;
     z-index: -50;
@@ -123,7 +123,7 @@
     z-index: 6;
   }
 
-  .icons .i5,
+  .icons .icon0,
   .icons a{
     position: fixed;
     top: 12px;
@@ -132,31 +132,31 @@
     height: 40px;
   }
 
-  .i0{
+  .icon1{
     left: 0;
   }
 
-  .ii0{
+  .iconi1{
     width: 38px;
   }
 
-  .i1{
+  .icon2{
     left: 25%;
   }
 
-  .ii1{
+  .iconi2{
     width: 35px;
   }
 
-  .i2{
+  .icon3{
     left: 50%;
   }
 
-  .ii2{
+  .iconi3{
     width: 32px;
   }
 
-  .i5{
+  .icon0{
     left: 75%;
   }
 

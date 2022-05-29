@@ -1,47 +1,72 @@
 <script>
-    const hammy = document.querySelector(".ham");
-    const lines = document.querySelectorAll(".ham span");
-    const links = document.querySelectorAll(".mainmenu li");
-    const arr = document.querySelector(".arrow");
-    const arrI = document.querySelector(".arrowicon");
-    const m2 = document.querySelector(".m2");
-    const d = document.querySelector(".drop");
-    const secondD = document.querySelector(".seconddrop");
-    const head = document.querySelector("header");
-    const iconm = document.querySelectorAll(".sidemove");
+    //ham animations
+    const hamicon = document.querySelector(".icon0");
+    const hamlines = document.querySelectorAll(".ham span");
 
-    const projects = document.querySelector(".i3");
-    const secondM = document.querySelector(".projectslide");
+    //mainmenu dropdown animations
+    const dropdownlinks = document.querySelectorAll(".mainmenu li");
+    const contactdropdown = document.querySelector(".m2");
+    const mainmenuprojectsdrop = document.querySelector(".seconddrop");
 
+    //mainmenu arrow animations
+    const arrowicon = document.querySelector(".arrow");
+    const arrowimage = document.querySelector(".arrowicon");
+
+    //header animation
+    const header = document.querySelector("header");
+    const headericons = document.querySelectorAll(".sidemove");
+
+    //folder slide animations
+    const foldericon = document.querySelector(".icon4");
+    const headerprojectsmenu = document.querySelector(".projectslide");
+
+    //dots slide animations
+    const dotsicon = document.querySelector(".icon7");
+    const movementdots = document.querySelectorAll(".dot-move");
+    const headermoremenu = document.querySelector(".moreslide");
+    
     const arrowDrop = () => {
-        arrI.classList.toggle("activeN");
-        m2.classList.toggle("activeN");
-        secondD.classList.toggle("activeN");
+        arrowimage.classList.toggle("activeN");
+        contactdropdown.classList.toggle("activeN");
+        mainmenuprojectsdrop.classList.toggle("activeN");
     };
 
-    projects.addEventListener("click", (e)=>{
-        secondM.classList.toggle("active");
+    const collapseSlideMenu = () => {
+        if(headerprojectsmenu.classList.contains("active")){
+            headerprojectsmenu.classList.toggle("active");
+        }
+        if(headermoremenu.classList.contains("active")){
+            headermoremenu.classList.toggle("active");
+            movementdots.forEach((dot) => dot.classList.toggle("active"));
+        }
+    }
+
+    foldericon.addEventListener("click", (e)=>{
+        headerprojectsmenu.classList.toggle("active"); 
     });
 
-    hammy.addEventListener("click",(e)=>{
+    dotsicon.addEventListener("click", (e)=>{
+        movementdots.forEach((dot) => dot.classList.toggle("active"));
+        headermoremenu.classList.toggle("active");
+    })
+
+    hamicon.addEventListener("click",(e)=>{
         //for mobile landscape transform
-        head.classList.toggle("active");
-        iconm.forEach((icon) => icon.classList.toggle("active"));
+        header.classList.toggle("active");
+        headericons.forEach((icon) => icon.classList.toggle("active"));
 
         //for mobile portrait transform
-        lines.forEach((line) => line.classList.toggle("active"));
-        links.forEach((link) => link.classList.toggle("active"));
+        hamlines.forEach((line) => line.classList.toggle("active"));
+        dropdownlinks.forEach((link) => link.classList.toggle("active"));
+        
         //for mobile portrait transform: when exiting menu, closes the sub menu
-        if(arrI.classList.contains("activeN")){
+        if(arrowimage.classList.contains("activeN")){
             arrowDrop();
         }
-        if(secondM.classList.contains("active")){
-            console.log("boom");
-            secondM.classList.toggle("active");
-        }
+        collapseSlideMenu();
     });
 
-    arr.addEventListener("click",(e)=>{
+    arrowicon.addEventListener("click",(e)=>{
         arrowDrop();
     });
 </script>

@@ -37,9 +37,6 @@
     /* background-color: white;  */
   }
 
-
-  /* global icon block sizing */
-
   .a,
   .d{
     position: fixed;
@@ -49,12 +46,8 @@
     transition: margin 0.25s;
   }
 
-  .i5{
-    left: 2px;
-    height: 13%;
-  }
-
-  .projectslide{
+  .projectslide,
+  .moreslide{
     background-color: white;
     border-radius: 10px;
     width: 161px;
@@ -73,43 +66,41 @@
     margin-bottom: 4%;
   }
 
-  /* unique icon block horizontal placement */
+  .icon0{
+    left: 2px;
+    height: 13%;
+  }
 
-  .i0{
+  .icon1{
     top: 16.6%;
   }
 
-  .i1{
+  .icon2{
     top: 33.3%;
   }
 
-  .i2{
+  .icon3{
     top: 50%;
   }
   
-  .i3,
+  .icon4,
   .projectslide{
     top: 66.6%;
   }
 
-  .i4{
+  .icon7,
+  .moreslide{
     top: 83.3%;
   }
 
-  .i6{
+  .icon5,
+  .icon8{
     left: 54px;
   }
 
-  .i7{
+  .icon6,
+  .icon9{
     left: 108px;
-  }
-
-  /* global icon div */
-  .buff{
-    position: relative;
-    top: 50%;
-    padding: 0;
-    margin: 0;
   }
 
   .ham{
@@ -146,8 +137,16 @@
   .bottom-line.active{
     transform: translateY(-13px) rotate(45deg);
   }
-  
-  .pBuff{
+
+  /* global icon div */
+  .buff{
+    position: relative;
+    top: 50%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sBuff{
     position: relative;
     top: 50%;
     padding: 0;
@@ -155,108 +154,148 @@
   }
 
   /* home icon container sizing */
-  .ii0{
+  .iconi1{
     width: 31px;
     height: 31px;
   }
 
   /* github icon container sizing */
-  .ii1{
+  .iconi2{
     width: 32px;
     height: 32px;
   }
 
   /* linkedin icon container sizing */
-  .ii2{
+  .iconi3{
     width: 29px;
     height: 29px;
   }
 
   /* projects icon container sizing */
-  .ii3{
+  .iconi4{
     width: 31px;
     height: 31px;
   }
 
-  /* resume icon container sizing */
-  .ii4{
-    width: 22px;
-    height: 22px;
-  }
-
   /* script icon container sizing */
-  .ii6{
+  .iconi5{
     width: 30px;
     height: 30px;
   }
 
   /* music icon container sizing */
-  .ii7{
+  .iconi6{
     width: 31px;
     height: 31px;
   }
 
+  /* resume icon container sizing */
+  .iconi8{
+    width: 22px;
+    height: 22px;
+  }
+
+  .iconi9{
+    width: 27px;
+    height: 27px;
+  }
+
+  .dots{
+    position: relative;
+    top: 22%;
+    left: 10px;
+  }
+
+  .encap{
+    padding: 0 2px;
+  }
+
+  .is{
+    position: relative;
+    /* top: -50%; */
+    width: 6px;
+    height: 6px;
+    display: block;
+    background: black;
+    border-radius: 6px;
+    margin: 0;
+    transition: all 0.25s;
+  }
+
+  
+
+  .mid-dot{
+    margin: 6px 0;
+  }
+
   /* bottom level */
-  .homeicon{
+
+  .icon-size{
     position: relative;
     margin: 0;
+  }
+
+  .homeicon{
     top: -50%;
     width: 31px;
   }
 
   .githubicon{
-    position: relative;
-    margin: 0;
     top: -50%;
     width: 32px;
   }
 
   .linkedinicon{
-    position: relative;
-    margin: 0;
     top: -50%;
     width: 29px;
   }
 
   .projecticon{
-    position: relative;
-    margin: 0;
     top: -50%;
     width: 31px;
   }
 
-  .resumeicon{
-    position: relative;
-    margin: 0;
-    left: 5px;
-    top: -60%;
-    width: 22px;
-  }
-
   .scripticon{
-    position: relative;
-    margin: 0;
     left: 0.5px;
     top: -50%;
     width: 30px;
   }
 
   .musicicon{
-    position: relative;
-    margin: 0;
     top: -50%;
     width: 31px;
+  }
+
+  .resumeicon{
+    left: 5px;
+    top: -60%;
+    width: 22px;
+  }
+
+  .contacticon{
+    left: 3px;
+    top: -53%;
+    width: 27px;
   }
 
   header.active{
     transform: translateX(53px);
   }
 
+  .moreslide.active,
   .projectslide.active{
     transform: translateX(162px);
   }
 
   .sidemove.active{
     margin: 12% 10px;
+  }
+
+  .top-dot.active{
+    transform: translateX(13px) translateY(11.75px);
+  }
+
+  .bottom-dot.active{
+    transform: translateX(-13px) translateY(-11.75px);
   }
 }
