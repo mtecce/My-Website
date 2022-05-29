@@ -3,6 +3,9 @@
   .desktop,
   .drop{
     visibility: hidden;
+    z-index: -50;
+    width: 0;
+    height: 0;
   }
 
   .hbp{
