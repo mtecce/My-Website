@@ -3,6 +3,7 @@
   position: fixed;
   width: 100%;
   padding-inline-start: 0;
+  z-index: 1;
 }
   
 .mainmenu{
@@ -114,6 +115,7 @@
 
   .mobile{
     height: 60px;
+    z-index: 2;
   }
 
   .icons{

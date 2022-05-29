@@ -2,6 +2,10 @@
 /*    Phone Portrait Orientation    */
 /* //////////////////////////////// */
 @media screen and (max-width:450px){
+
+    .main{
+        z-index: 0;
+    }
     
     .contact-strip-list{
         list-style: none;
