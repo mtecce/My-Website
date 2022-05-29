@@ -25,7 +25,12 @@
     }
 
     .strip-text{
-
+        position: absolute;
+        font-size: 18px;
+        padding: 22px 0;
+        padding-left: 2%;
+        text-decoration: none;
+        color: black;
     }
 
     .email-text{
@@ -33,8 +38,10 @@
     }
 
     .emailicon{
-        width: 45px;
-        padding: 10px;
+        width: 37px;
+        padding: 15px;
+        padding-bottom: 14px;
+        padding-left: 10%;
     }
 
     
