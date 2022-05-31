@@ -1,0 +1,9 @@
+<script>
+    //contact arrow drop down
+    const contactarrow = document.querySelector(".contact-arrow");
+    const contactmedropdown = document.querySelectorAll(".contact-drop-group");
+
+    contactarrow.addEventListener("click", (e) => {
+        contactmedropdown.forEach((dropdown) => dropdown.classList.toggle("active"));
+    });
+</script>
