@@ -7,45 +7,6 @@
         z-index: 0;
     }
 
-    .submission-form{
-        position: relative;
-        top: 60px;
-        border-radius: 5px;
-        padding: 0;
-        margin: 0;
-        width: 50%;
-        min-width: 237px;
-    }
-
-    .submission-header{
-        font-size: 34px;
-        width: 166px;
-        margin: 15px 0;
-    }
-
-    .submission-labels{
-
-    }
-
-    .submission-input{
-        margin-top: 5px;
-        background-color: white;
-        
-        width: 235px;
-    }
-
-    .small-box{
-        height: 35px;
-    }
-
-    .big-box{
-        height: 50px;
-    }
-
-
-
-
-    
     .contact-strip-list{
         list-style: none;
         position: relative;
@@ -59,30 +20,127 @@
         display: inline-block;
         width: 100%;
         height: 65px;
-        border-radius: 45px;
+        border-radius: 35px;
         background-color: white;
         margin: 10px 0;
+        transition: all 0.5s;
     }
 
     .strip-shape-format{
+        position: absolute;
         width: 100%;
     }
 
-    .strip-text{
-        position: absolute;
-        font-size: 18px;
-        padding: 22px 0;
-        padding-left: 2%;
-        text-decoration: none;
-        color: black;
-    }
-
     .emailicon{
+        position: absolute;
         width: 37px;
         padding: 15px;
         padding-bottom: 14px;
         padding-left: 10%;
     }
+
+    .strip-text{
+        position: absolute;
+        font-size: 25px;
+        margin: 0;
+        width: 100%;
+        padding: 18px 0;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+
+    .contact-arrow{
+        position: fixed;
+        width: 30px;
+        right: 20px;
+        height: 30px;
+        margin: 18px;
+        z-index: 2;
+    }
+
+    .contact-arrow-icon{
+        transition: 0.5s;
+        width: 30px;
+        transform: rotate(-90deg);
+    }
+
+    .contact-arrow-icon.active{
+        transform: rotate(90deg);
+    }
+
+    .form-element{
+        position: relative;
+        z-index: -1;
+        background-color: #eaeaea;
+        height: 440px;
+        padding: 0 30px;
+        border-radius: 35px;
+    }
+
+    .form-divs{
+        margin: 5px 0;
+    }
+
+    .name-div{
+        position: relative;
+        top: 70px;
+    }
+
+    .email-div{
+        position: relative;
+        top: 51px;
+    }
+
+    .message-div{
+        position: relative;
+        top: 33px;
+    }
+
+    .submission-labels{
+        padding-left: 14px;
+    }
+
+    .submission-input{
+        margin-top: 5px;
+        background-color: white;
+    }
+
+    .small-box{
+        height: 35px;
+        border-radius: 20px;
+        border: 2px solid rgb(119,216,156);
+        width: 100%;
+    }
+
+    .big-box{
+        position: relative;
+        height: 140px;
+        width: 100%;
+        border: 2px solid rgb(119, 216, 156);
+        border-radius: 15px;
+    }
+
+    .submission-form{
+        position: relative;
+        background-color: white;
+        top: 70px;
+        height: 478px;
+        width: 95%;
+        border-radius: 27px;
+        margin-left: 2.5%;
+    }
+
+    .submit-button{
+        position: relative;
+        font-size: 14px;
+        background-color: rgb(119, 216, 156);
+        color: white;
+        border-radius: 25px;
+        padding: 10px 35px;
+        top: 40px;
+    }
+    
 
     .phoneicon{
         width: 35px;
