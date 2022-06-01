@@ -1,22 +1,128 @@
 <script>
 
+    //Maze Items
+    const tabWrapper = document.querySelector(".Table-Wrapper");
+    const size_input = document.querySelector("#maze_size");
+    const new_button = document.querySelector(".New-Maze-Button");
+    const solve_button = document.querySelector(".Solve-Maze-Button");
     const tab1 = document.getElementById('Table-1');
 
+    let nm = new MazeBuilder();
+    let size = 5;
+    let make_new_maze = false;
+    let has_maze = false;
+    let currently_solving = false;
+    let solved_maze = false;
+
+    const sizeTableWrap = () => {
+        let h = 3;
+        let whi = document.querySelectorAll(".wrap-height-item");
+        whi.forEach((item) => {
+            h += item.clientHeight + item.clientTop;
+        });
+        tabWrapper.style.height = h+15;
+    };
+
+    new_button.addEventListener("click", () => {
+
+        if(currently_solving){
+            setTimeout(() => {
+                new_button.click();
+            },50);
+        }else{
+            if(make_new_maze){
+                const allCells = document.querySelector("tbody");
+                allCells.parentElement.removeChild(allCells);
+                nm = new MazeBuilder();
+                solved_maze = false;
+            }
+            let i_s = size_input.value;
+            if(i_s.length == 0){
+                newMaze();
+            }else{
+                size = parseInt(i_s);
+                newMaze();
+            }
+            if(window.innerWidth <= 450){
+                sizeTableWrap();
+            }else{
+                tabWrapper.style.height = 250;
+            }
+            has_maze = true;
+            make_new_maze = true;
+        }
+    });
+
+    solve_button.addEventListener("click", () => {
+        if(has_maze){
+            if(solved_maze){
+                alert("You already solved the maze");
+            }else{
+                solve();
+            }
+        }else{
+            alert("You need to create a maze first");
+        }
+    });
+
     //maze functions
-    const newMaze = (size) => {
-        let nm = new MazeBuilder(size);
+    const newMaze = () => {
+
+        nm.instantiateMaze(size);
+        let num_cells = size*2 + 1;
+        let p_size = tab1.clientWidth/num_cells;
+        
         //add to the table
-        for(let i = 0; i < (size*2 + 1); i++){
+        for(let i = 0; i < num_cells; i++){
             let newRow = tab1.insertRow();
-            for(let j = 0; j < (size*2 + 1); j++){
+            for(let j = 0; j < num_cells; j++){
                 let newCell = newRow.insertCell();
-                let cond1 = i == 0 || i == size*2;
-                let cond2 = j == 0 || j == size*2; 
-                if(cond1||cond2){
-                    newCell.classList.toggle("outer-wall");
+                    newCell.style.width = p_size + "px";
+                    newCell.style.height = p_size + "px";
+                
+                if(nm.maze_matrix[i][j] == "#"){
+                    newCell.classList.toggle("wall");
                 }
             }
         }
+
+        
+    };
+
+    const solve = () => {
+        let time = 0;
+        nm.solveMaze();
+        let steps = nm.directions;
+        steps.splice(steps.indexOf(''));
+        let x = nm.startxcoordwall;
+        let y = 0;
+        currently_solving = true;
+        for(let i = 0; i < steps.length; i++){
+            setTimeout(() => {
+                let temp_row = tab1.rows[x];
+                let temp_cell = temp_row.cells[y];
+                temp_cell.classList.toggle("dissapear");
+                switch(steps[i]){
+                    case 'Right':
+                        y += 1;
+                        break;
+                    case 'Up':
+                        x -= 1;
+                        break;
+                    case 'Down':
+                        x += 1;
+                        break;
+                    case 'Left':
+                        y -= 1;
+                        break;
+                }
+                if(i == steps.length-1){
+                    currently_solving = false;
+                }
+            },time);
+            time += 50;
+        }
+        solved_maze = true;
     };
 
 </script>

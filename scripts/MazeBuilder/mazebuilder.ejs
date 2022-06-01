@@ -1,24 +1,28 @@
 <script>
     class MazeBuilder{
 
-        constructor(size){
-            this.numOfCells = size;
-            this.sizeOfMaze = (size*2)+1;
+        constructor(){
             this.startxcoordwall = null;
             this.endxcoordwall = null;
             this.maze_matrix = []; //char
             this.coordinate_matrix = []; //bool
-            this.constructMatricies();
-            this.makeMaze(this.startxcoordwall,1);
-            this.updateMazeDOMElements();
-            this.printMaze();
             this.directions = []; //string
-            for(let i = 0; i < this.sizeOfMaze**2; i++){this.directions.push("");}
             this.row_size = null;
             this.col_size = null;
             this.lastk = null;
             this.deadend = false;
             this.atend = false;
+        }
+
+        instantiateMaze(size){
+            this.numOfCells = size;
+            this.sizeOfMaze = (size*2)+1;
+            this.constructMatricies();
+            this.makeMaze(this.startxcoordwall,1);
+        }
+
+        solveMaze(){
+            for(let i = 0; i < this.sizeOfMaze**2; i++){this.directions.push("");}
             this.solver(this.startxcoordwall,0,[true,false,false,false],0);
         }
         
@@ -175,10 +179,9 @@
             let d = k+1;
             if(this.endChecker(x,y)){
                 this.maze_matrix[x][y] = '~';
-                this.directions[k] = "Right.";
+                this.directions[k] = "Right";
                 this.atend = true;
                 this.lastk = k;
-                this.printMaze();
             }else if(fromBools[0]){
                 this.solver_helper(x,y,fromBools,wallBools,d,k);
             }else if(fromBools[1]){

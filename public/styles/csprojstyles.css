@@ -1,18 +1,150 @@
-.table-1{
+
+main{
+    z-index: 0;
     position: relative;
-    top: 100px;
 }
 
-td{
-    width: 15px;
-    height: 15px;
-    background-color: black;
-}
-
-.outer-wall{
+.Table-Wrapper{
+    width: 100%;
     background-color: white;
 }
 
-.inner-cell{
+.Maze-Title{
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+}
+
+.Maze-Funcs{
+    position: absolute;
+}
+
+.M-F{
+    text-align: center;
+    border-style: none;
+    background-color: black;
+    color: white;
+    font: inherit;
+    font-size: 25px;
+}
+
+.maze-size{
+    border: 1px solid black;
+    background-color: #3f3f3f;
+}
+
+.table-1{
+    position: absolute;
+    border-spacing: 0;
+}
+
+td{
+    opacity: 1;
+    border: none;
+    transition: opacity 0.5s;
+    background-color: #62eef0;
+}
+
+td.dissapear{
+    opacity: 0;
+}
+
+.wall{
+    background-color: black;
+}
+
+/* //////////////////////////////// */
+/*    Phone Portrait Orientation    */
+/* //////////////////////////////// */
+@media screen and (max-width:450px){
+
+    main{
+        top: 80px;
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .Table-Wrapper{
+        height: 135px;
+        border-radius: 20px;
+    }
+
+    .Maze-Title{
+        width: inherit;
+        padding: 13px 0;
+    }
+
+    .Maze-Funcs{
+        margin: 0 2.5%;
+        padding: 10px 0;
+        border-top: 3px solid black;
+        top: 60px;
+    }
+
+    .M-F{
+        width: 30%;
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    .New-Maze-Button{
+        margin: 0 3%;
+    }
+
+    .table-1{
+        width: 90%;
+        margin: 0 5%;
+        top: 133px;
+    }
+}
+
+/* //////////////////////////////// */
+/*   Phone Landscape Orientation    */
+/* //////////////////////////////// */
+@media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
+    
+    main{
+        top: 20px;
+        left: 80px;
+        width: 80%;
+    }
+
+    .Table-Wrapper{
+        height: 250px;
+        border-radius: 50px;
+    }
+
+    .Maze-Title{
+        width: 37%;
+        padding: 10px 4%;
+        margin: 0 2.5%;
+        border-bottom: 2px solid black;
+    }
+
+    .Maze-Funcs{
+        top: 100px;
+        width: 50%;
+    }
+
+    .M-F{
+        width: 80%;
+        margin: 5px 10%;
+        height: 35px;
+        border-radius: 17.5px;
+    }
+
+    .table-1{
+        right: 0;
+        width: 200px;
+        margin: 25px 5%;
+    }
+
+
+}
+
+/* //////////////////////////////// */
+/*  Desktop Landscape Orientation   */
+/* //////////////////////////////// */
+@media screen and (min-width: 916px){
 
 }
