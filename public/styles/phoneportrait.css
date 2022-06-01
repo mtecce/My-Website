@@ -106,7 +106,9 @@
   .icon7,
   .moreslide,
   .hpb,
-  .desktop{
+  .desktop,
+  .icon2,
+  .icon3{
     visibility: hidden;
     z-index: -50;
     width: 0;
@@ -125,8 +127,21 @@
     z-index: 6;
   }
 
-  .icons .icon0,
-  .icons a{
+  .name-banner{
+    position: fixed;
+    width: 40%;
+    top: 0px;
+    margin: 15px 5%;
+  }
+
+  .name-text{
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .icon0,
+  .icon1{
     position: fixed;
     top: 12px;
     width: 20%;
@@ -134,32 +149,16 @@
     height: 40px;
   }
 
+  .icon0{
+    left: 75%;
+  }
+
   .icon1{
-    left: 0;
+    left: 50%;
   }
 
   .iconi1{
     width: 38px;
-  }
-
-  .icon2{
-    left: 25%;
-  }
-
-  .iconi2{
-    width: 35px;
-  }
-
-  .icon3{
-    left: 50%;
-  }
-
-  .iconi3{
-    width: 32px;
-  }
-
-  .icon0{
-    left: 75%;
   }
 
   .buff{
@@ -172,19 +171,6 @@
     left: -50%;
     width: 38px;
     top: -1px;
-  }
-
-  .githubicon{
-    position: relative;
-    left: -50%;
-    width: 35px;
-    top: 1px;
-  }
-
-  .linkedinicon{
-    position: relative;
-    left: -50%;
-    width: 32px;
   }
 
   .ham{
