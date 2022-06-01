@@ -1,0 +1,18 @@
+.table-1{
+    position: relative;
+    top: 100px;
+}
+
+td{
+    width: 15px;
+    height: 15px;
+    background-color: black;
+}
+
+.outer-wall{
+    background-color: white;
+}
+
+.inner-cell{
+
+}

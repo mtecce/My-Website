@@ -1,7 +1,22 @@
 <script>
 
+    const tab1 = document.getElementById('Table-1');
+
+    //maze functions
     const newMaze = (size) => {
         let nm = new MazeBuilder(size);
+        //add to the table
+        for(let i = 0; i < (size*2 + 1); i++){
+            let newRow = tab1.insertRow();
+            for(let j = 0; j < (size*2 + 1); j++){
+                let newCell = newRow.insertCell();
+                let cond1 = i == 0 || i == size*2;
+                let cond2 = j == 0 || j == size*2; 
+                if(cond1||cond2){
+                    newCell.classList.toggle("outer-wall");
+                }
+            }
+        }
     };
 
 </script>
