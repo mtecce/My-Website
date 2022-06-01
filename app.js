@@ -1,4 +1,6 @@
 const express = require('express');
+const createApplication = require('express/lib/express');
+const { append } = require('express/lib/response');
 const morgan = require('morgan');
 
 const app = express();
@@ -11,6 +13,10 @@ app.listen(process.env.PORT || 3000);
 app.get('/',(req,res) => {
     console.log(req.ip);
     res.render('index');
+});
+
+app.get('/csprojects', (req,res) =>{
+    res.render('csprojects');
 });
 
 app.get('/contact', (req,res) =>{
