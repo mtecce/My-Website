@@ -157,16 +157,84 @@
 
 }
 
+.big-b{
+    font-size: 35px;
+}
+
 /* //////////////////////////////// */
 /*  Desktop Landscape Orientation   */
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
+
+    /*1360*/
+    .Table-Wrapper,
+    .Calculator-Wrapper{
+        
+    }
+
+    .Calculator-Wrapper{
+        position: absolute;
+        left: 376px;
+        width: 336px;
+        height: 395px;
+        border-radius: 20px;
+        margin: 20px;
+    }
+
+    
+
+    .Calculator-Title{
+        width: 100%;
+        padding: 13px 0;
+        font-size: 20px;
+    }
+
+    .Calculator{
+        top: 34px;
+        width: 300px;
+        height: 327px;
+        margin: 0 18px;
+        margin-bottom: 18px;
+        border-radius: 20px;
+    }
+
+    .calc-result-wrapper{
+
+    }
+
+    .calc-result{
+
+    }
+
+    .buttons-table{
+        position: relative;
+        top: 47px;
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+
+    .calc-button{
+        width: 60px;
+        height: 37px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 19px;
+        background-color: rgb(47,47,47);
+        color: rgb(231, 193, 255);
+        transition: background-color 0.05s;
+    }
+
+    .buttons-table-l{
+        visibility: hidden;
+        position: absolute;
+        top: 1000px;
+        left: 20px;
+        z-index: -5;
+    }
+
 }
 
-.big-b{
-    font-size: 35px;
-}
 
 .clear-b{
     color: red;

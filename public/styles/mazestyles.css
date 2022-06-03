@@ -129,4 +129,39 @@ td.dissapear{
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
+    .Table-Wrapper{
+        position: absolute;
+        height: 395px;
+        margin: 20px;
+        width: 336px;
+        border-radius: 20px;
+    }
+
+    .Maze-Title{
+        width: 100%;
+        padding: 13px 0;
+        font-size: 20px;
+    }
+
+    .Maze-Funcs{
+        margin: 0 15%;
+        padding: 10px 0;
+        border-top: 2px solid black;
+        top: 49px;
+    }
+
+    .M-F{
+        font-size: 20px;
+        border-radius: 15px;
+        width: 30%;
+        height: 30px;
+        transform: translateX(10%);
+
+    }
+
+    .table-1{
+        width: 80%;
+        margin: 0 10%;
+        top: 100px;
+    }
 }
