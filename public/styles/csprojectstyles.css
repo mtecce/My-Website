@@ -3,6 +3,11 @@ main{
     position: relative;
 }
 
+.Table-Wrapper,
+.Calculator-Wrapper{
+    margin-bottom: 20px;
+}
+
 /* //////////////////////////////// */
 /*    Phone Portrait Orientation    */
 /* //////////////////////////////// */
@@ -14,10 +19,7 @@ main{
         margin: 0 5%;
     }
 
-    .Table-Wrapper,
-    .Calculator-Wrapper{
-        margin-bottom: 20px;
-    }
+    
     
 }
 

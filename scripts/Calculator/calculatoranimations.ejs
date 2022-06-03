@@ -32,11 +32,10 @@
 
 
     const fadeButtonColor = (button) => {
-        button.classList.add("fade-in");
-        let listener = button.addEventListener("fade-out",()=>{
-            button.classList.remove("fade-in");
-            button.removeEventListener("fade-out", listener);
-        });
+        button.classList.toggle("fade-in");
+        setTimeout(() => {
+            button.classList.toggle("fade-in");
+        }, 100);
     };
 
     const updateResultWindow = (value) => {

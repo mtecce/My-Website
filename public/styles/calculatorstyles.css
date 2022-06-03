@@ -68,25 +68,16 @@
         border-radius: 50%;
         background-color: rgb(47,47,47);
         color: rgb(231, 193, 255);
+        transition: background-color 0.05s;
     }
 
-    .big-b{
-        font-size: 35px;
+    .buttons-table-l{
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        z-index: -5;
     }
-
-    .clear-b{
-        color: red;
-    }
-
-    .fun-b{
-        color: rgb(250, 162, 152);
-    }
-
-    .eq-b{
-        background-color: rgb(250, 162, 152);
-        color: black;
-    }
-
 
 }
 
@@ -95,6 +86,75 @@
 /* //////////////////////////////// */
 @media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
     
+    
+
+    .Calculator-Wrapper{
+        width: 575px;
+        height: 330px;
+        border-radius: 20px;
+    }
+
+    .Calculator-Title{
+        width: 267px;
+        padding: 13px 0;
+        margin: 20px 10px;
+        background-color: white;
+        z-index: 1;
+        border-radius: 20px;
+    }
+
+    .Calculator{
+        height: 330px;
+        margin: 0;
+        border-radius: 20px;
+        border-color: gray;
+    }
+
+    .calc-result-wrapper{
+        position: relative;
+        width: 50%;
+        left: 50%;
+        top: 50px;
+        border-radius: 20px;
+        background-color: black;
+        padding: 25px 0;
+        z-index: 1;
+        color: rgb(231, 193, 255);
+        text-align: right;
+        vertical-align: middle;
+    }
+    
+    .calc-result{
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .buttons-table-l{
+        position: relative;
+        top: 25px;
+        border-collapse: separate;
+        border-spacing: 11px;
+    }
+
+    .calc-button{
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: rgb(47,47,47);
+        color: rgb(231, 193, 255);
+        transition: background-color 0.05s;
+    }
+
+    .buttons-table{
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        z-index: -5;
+    }
+
 }
 
 /* //////////////////////////////// */
@@ -104,38 +164,35 @@
 
 }
 
+.big-b{
+    font-size: 35px;
+}
+
+.clear-b{
+    color: red;
+}
+
+.fun-b{
+    color: rgb(250, 162, 152);
+}
+
+.eq-b{
+    background-color: rgb(250, 162, 152);
+    color: black;
+}
+
 .calc-button.fade-in{
-    animation: purple-fade 0.75s;
+    background-color: rgb(231, 193, 255);
 }
 
 .clear-b.fade-in{
-    animation: red-fade 0.75s;
+    background-color: red;
 }
 
 .eq-b.fade-in{
-    animation: eq-fade 0.75s;
+    background-color: rgb(47, 47, 47);;
 }
 
 .fun-b.fade-in{
-    animation: orange-fade 0.75s;
-}
-
-@keyframes red-fade {
-    0% {background-color: red;}
-    100% {background-color: rgb(47, 47, 47);}
-}
-
-@keyframes orange-fade {
-    0% {background-color: rgb(250, 162, 152);}
-    100% {background-color: rgb(47, 47, 47);}
-}
-
-@keyframes purple-fade {
-    0% {background-color: rgb(231, 193, 255);}
-    100% {background-color: rgb(47, 47, 47);}
-}
-
-@keyframes eq-fade {
-    0% {background-color: rgb(47, 47, 47);}
-    100% {background-color: rgb(250, 162, 152);}
+    background-color: rgb(250, 162, 152);
 }
