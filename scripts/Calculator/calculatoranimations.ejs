@@ -1,0 +1,318 @@
+<script>
+
+    /* CURSOR BLINKING SCRIPT*/
+
+    let curs = true;
+    const speed = 500;
+
+    const cursorBlink = () => {
+        if(curs){
+            document.getElementById('calc-result-cursor').style.opacity = 0;
+            curs = false;
+        }else{
+            document.getElementById('calc-result-cursor').style.opacity = 1;
+            curs = true;
+        }
+    };
+
+    setInterval(() => {
+        cursorBlink();
+    }, speed);
+
+    /* CALCULATOR FUNCTIONS SCRIPT */
+
+    const resultText = document.getElementById('calc-result-text');
+
+    let currentResultText = "";
+    let needsRightParenthesis = false;
+    let endIndex = -1;
+    let leftoverResult = 0;
+    let specialCharacters = ["+","-","x","/","%","(","."];
+    let equalsNeededCharacters = ["+","-","x","/","%"];
+
+
+    const fadeButtonColor = (button) => {
+        button.classList.add("fade-in");
+        let listener = button.addEventListener("fade-out",()=>{
+            button.classList.remove("fade-in");
+            button.removeEventListener("fade-out", listener);
+        });
+    };
+
+    const updateResultWindow = (value) => {
+        if(value == "="){
+            resultText.innerHTML = determineOutputValue();
+        }else if(value == "C"){
+            resultText.innerHTML = "0";
+        }else if(value == "n"){
+
+        }else if(resultText.innerHTML.length == 1 && resultText.innerHTML == "0"){
+            if(value == "."){
+                resultText.innerHTML += value;
+            }else{
+                resultText.innerHTML = value;
+            }
+        }else{
+            resultText.innerHTML += value;
+        }
+        endIndex = currentResultText.length - 1;
+    };
+
+    const determineOutputValue = () => {
+        let res = calculateResult(currentResultText);
+        console.log(res);
+    };
+
+    const calculateResult = (value) => {
+        let og = value;
+        while(value.includes("(")){
+            let ind1 = value.indexOf("(");
+            let ind2 = value.indexOf(")");
+            let recRes = calculateResult(value.substring(ind1+1,ind2));
+            value = value.substring(0,ind1) + recRes + value.substring(ind2+1);
+        }
+        console.log("calculateResult", og, value);
+        value = doCalc(value);
+        return value;
+    };
+
+    const doCalc = (value) => {
+        let returnValue = 0;
+        if(value.includes("x")){
+            let calcIndex = value.indexOf("x");
+            let left = value.substring(0,calcIndex);
+            let right = value.substring(calcIndex+1);
+            let leftTempInd = determineOpIndexLeft(left);
+            let rightTempInd = determineOpIndexRight(right);
+
+            console.log(left,right);
+            console.log(leftTempInd,calcIndex+rightTempInd);
+            //console.log(value,value.substring(leftTempInd,calcIndex),value.substring(calcIndex+rightTempInd));
+            //console.log(value.substring(leftTempInd,calcIndex+rightTempInd));
+            //let leftVal = value.substring(0,leftTempInd) + doCalc()
+
+
+
+            returnValue = parseFloat(left) * parseFloat(right);
+            // returnValue = value.substring(0,leftTempInd) + doCalc(value.substring(calcIndex+1,))
+
+
+
+        }else if(value.includes("/")){
+            let calcIndex = value.indexOf("/");
+            let left = doCalc(value.substring(0,calcIndex));
+            let right = doCalc(value.substring(calcIndex+1));
+            returnValue = parseFloat(left) / parseFloat(right);
+        }else if(value.includes("%")){
+            let calcIndex = value.indexOf("%");
+            let left = doCalc(value.substring(0,calcIndex));
+            let right = doCalc(value.substring(calcIndex+1));
+            returnValue = parseFloat(left) % parseFloat(right);
+        }else if(value.includes("+")){
+            let calcIndex = value.indexOf("+");
+            let left = doCalc(value.substring(0,calcIndex));
+            let right = doCalc(value.substring(calcIndex+1));
+            returnValue = parseFloat(left) + parseFloat(right);
+        }else if(value.includes("-")){
+            let calcIndex = value.indexOf("-");
+            let left = doCalc(value.substring(0,calcIndex));
+            let right = doCalc(value.substring(calcIndex+1));
+            returnValue = parseFloat(left) - parseFloat(right);
+        }else{
+            returnValue = parseFloat(value);
+        }
+        return returnValue;
+    };
+
+    const determineOpIndexLeft = (value) => {
+        let opInd = 0;
+        equalsNeededCharacters.forEach(op => {
+            let tInd = value.indexOf(op);
+            if(tInd > opInd){
+                opInd = tInd;
+            }
+        });
+        if(opInd > 0){
+            opInd += 1;
+        }
+        return opInd;
+    };
+
+    const determineOpIndexRight = (value) => {
+        let opInd = value.length-1;
+        equalsNeededCharacters.forEach(op => {
+
+            if(value.includes(op)){
+                let tInd = value.indexOf(op);
+                if(tInd < opInd){
+                    opInd = tInd;
+                }
+            }
+        });
+        if(opInd != value.length-1){
+            opInd += 1;
+        }
+        return opInd;
+    };
+
+    /* CALCULATOR BUTTON EVENT LISTENERS */
+
+    clearClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');
+        currentResultText = "";
+        needsRightParenthesis = false;
+        updateResultWindow(bVal);
+    };
+
+    negateClick = (button) => {
+        fadeButtonColor(button);
+        updateResultWindow("n");
+    };
+
+    parenthesisClick = (button) => {
+        
+        fadeButtonColor(button);   
+        if(needsRightParenthesis){
+            currentResultText += ")";
+            updateResultWindow(")");
+            needsRightParenthesis = false;
+        }else{
+            if(currentResultText[endIndex] != ")"){
+                currentResultText += "(";
+                updateResultWindow("(");
+                needsRightParenthesis = true;
+            }
+        }
+    };
+
+    /* OPERATOR BUTTONS */
+
+    equalsClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');
+        let canCalc = false;
+        equalsNeededCharacters.forEach(char => {
+            if(currentResultText.includes(char)){
+                canCalc = true;
+            }
+        });
+        if(canCalc){
+            updateResultWindow(bVal);
+        }
+    };
+
+    functionClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');
+        if(endIndex > -1){
+            if(!specialCharacters.includes(currentResultText[endIndex])){
+                currentResultText += bVal;
+                updateResultWindow(bVal);
+            }
+        }
+    };
+
+
+    /* VALUE SET BUTTONS */
+
+    decimalClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    zeroClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    oneClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    twoClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    threeClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    fourClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    fiveClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    sixClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    sevenClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    eightClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+    nineClick = (button) => {
+        fadeButtonColor(button);
+        let bVal = button.innerHTML.replace(/\s/g, '');    
+        if(currentResultText[endIndex] != ")"){
+            currentResultText += bVal;
+            updateResultWindow(bVal);
+        }
+    };
+
+</script>
