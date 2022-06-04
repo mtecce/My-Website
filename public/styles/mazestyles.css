@@ -116,7 +116,6 @@ td.dissapear{
         position: absolute;
         height: 395px;
         width: 336px;
-        transform: translateX(-115%);
     }
 
     .Maze-Title{

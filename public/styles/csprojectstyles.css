@@ -48,12 +48,12 @@ main{
 /* //////////////////////////////// */
 /*  Desktop Landscape Orientation   */
 /* //////////////////////////////// */
-@media screen and (min-width: 916px) and (max-width: 1360px){
+@media screen and (min-width: 916px){
 
     .Table-Wrapper,
     .Calculator-Wrapper{
-        margin: 20px 0;
-        left: 50%;
+        top: 0;
+        margin: 20px;
     }
 
 }
