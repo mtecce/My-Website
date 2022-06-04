@@ -1,16 +1,6 @@
-.Table-Wrapper{
-    width: 100%;
-    background-color: white;
-}
-
-.Maze-Title{
-    position: absolute;
-    text-align: center;
-    font-size: 30px;
-}
-
 .Maze-Funcs{
     position: absolute;
+    padding: 10px 0;
 }
 
 .M-F{
@@ -20,6 +10,7 @@
     color: white;
     font: inherit;
     font-size: 25px;
+    width: 30%;
 }
 
 .maze-size{
@@ -54,23 +45,15 @@ td.dissapear{
 
     .Table-Wrapper{
         height: 135px;
-        border-radius: 20px;
-    }
-
-    .Maze-Title{
-        width: inherit;
-        padding: 13px 0;
     }
 
     .Maze-Funcs{
         margin: 0 2.5%;
-        padding: 10px 0;
         border-top: 3px solid black;
         top: 60px;
     }
 
     .M-F{
-        width: 30%;
         height: 50px;
         border-radius: 25px;
     }
@@ -100,10 +83,12 @@ td.dissapear{
         width: 37%;
         padding: 10px 4%;
         margin: 0 2.5%;
+        border-radius: 0;
         border-bottom: 2px solid black;
     }
 
     .Maze-Funcs{
+        padding: 0;
         top: 100px;
         width: 50%;
     }
@@ -120,8 +105,6 @@ td.dissapear{
         width: 200px;
         margin: 25px 5%;
     }
-
-
 }
 
 /* //////////////////////////////// */
@@ -132,20 +115,16 @@ td.dissapear{
     .Table-Wrapper{
         position: absolute;
         height: 395px;
-        margin: 20px;
         width: 336px;
-        border-radius: 20px;
+        transform: translateX(-115%);
     }
 
     .Maze-Title{
-        width: 100%;
-        padding: 13px 0;
         font-size: 20px;
     }
 
     .Maze-Funcs{
         margin: 0 15%;
-        padding: 10px 0;
         border-top: 2px solid black;
         top: 49px;
     }
@@ -153,10 +132,8 @@ td.dissapear{
     .M-F{
         font-size: 20px;
         border-radius: 15px;
-        width: 30%;
         height: 30px;
         transform: translateX(10%);
-
     }
 
     .table-1{

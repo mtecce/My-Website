@@ -5,7 +5,20 @@ main{
 
 .Table-Wrapper,
 .Calculator-Wrapper{
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
     margin-bottom: 20px;
+}
+
+.Maze-Title,
+.Calculator-Title{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    padding: 13px 0;
+    border-radius: 20px;
 }
 
 /* //////////////////////////////// */
@@ -18,9 +31,6 @@ main{
         width: 90%;
         margin: 0 5%;
     }
-
-    
-    
 }
 
 /* //////////////////////////////// */
@@ -33,12 +43,17 @@ main{
         left: 80px;
         width: 80%;
     }
-
 }
 
 /* //////////////////////////////// */
 /*  Desktop Landscape Orientation   */
 /* //////////////////////////////// */
-@media screen and (min-width: 916px){
+@media screen and (min-width: 916px) and (max-width: 1360px){
+
+    .Table-Wrapper,
+    .Calculator-Wrapper{
+        margin: 20px 0;
+        left: 50%;
+    }
 
 }
