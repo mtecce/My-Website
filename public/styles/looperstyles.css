@@ -17,17 +17,17 @@
     visibility: visible;
     position: fixed;
     top: 0;
-    width: 80vw;
-    height: 80vh;
-    margin: 10vh 10vw;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
+    z-index: 2;
 }
 
 .looper-images-background.active{
     visibility: visible;
     position: fixed;
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     background-color: black;
     opacity: .75;
     border-radius: 40px;
@@ -122,7 +122,7 @@
 }
 
 .looper-schematic-wrapper.active.cycle{
-    /* left: -50%; */
+    left: -50%;
     /* transform: translateX(-100%); */
 }
 
