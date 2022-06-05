@@ -84,7 +84,18 @@
         right: 0;
     }
 
+    .INO-Image{
+        position: absolute;
+        width: 40px;
+        margin: 26px 10px;
+    }
 
+    .Loop-Images-PopUp-Icon{
+        position: absolute;
+        left: 50%;
+        width: 43px;
+        margin: 24px 0;
+    }
     
     .Looper-Description{
         top: 133px;
