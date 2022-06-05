@@ -51,7 +51,8 @@ main{
 @media screen and (min-width: 916px){
 
     .Table-Wrapper,
-    .Calculator-Wrapper{
+    .Calculator-Wrapper,
+    .Looper-Wrapper{
         top: 0;
         margin: 20px;
     }
