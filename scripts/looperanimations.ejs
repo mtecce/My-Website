@@ -1,0 +1,52 @@
+<script>
+
+    const loopImageDisplay = document.querySelectorAll('.pui');
+    const loopImage1 = document.querySelector('.looper-schematic-wrapper');
+    const loopImage2 = document.querySelector('.looper-pcb-wrapper');
+
+
+    let imageRotationState = "schem";
+
+    const displayLoopImages = () => {
+        console.log("display loop images");
+        loopImageDisplay.forEach(elm => {
+            elm.classList.toggle("active");
+        });
+    };
+
+    displayLoopImages();
+
+    console.log(loopImages);
+
+    const leftCycleLooperImages = () => {
+        
+        if(imageRotationState == "pcb"){
+            console.log("left cycle loop images");
+            loopImage1.classList.toggle('cycle');
+            loopImage2.classList.toggle('cycle');
+            imageRotationState = "schem";
+        }
+    };
+
+    const rightCycleLooperImages = () => {
+        
+        if(imageRotationState == "schem"){
+            console.log("right cycle loop images");
+            loopImage1.classList.toggle('cycle');
+            loopImage2.classList.toggle('cycle');
+            imageRotationState = "pcb";
+        }
+        
+    };
+
+    const exitLooperImages = () => {
+        console.log("exit loop images");
+        loopImageDisplay.forEach(elm => {
+            elm.classList.toggle("active");
+        });
+        if(imageRotationState === "pcb"){
+            leftCycleLooperImages();
+        }
+    };
+
+</script>
