@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* #0e1730 */
+/* #016170 */
+/* #009393 */
+/* #00E0C6 */
+/* #FFFFFF */
+
 body{
     font-family: 'Lato', sans-serif;
     margin: 0;
-    background-color: rgb(119, 216, 156);
+    background-color: #016170;
     height: 100%;
 }
 
 .mobile{
-  background-color: white;
-  color: black;
+  background-color: #0e1730;
+  color: white;
   position: fixed;
   top: 0;
   width: 100%;

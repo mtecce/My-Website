@@ -139,10 +139,9 @@
     }
 
     #Calc{
-        top: 36px;
         width: 300px;
         height: 327px;
-        margin: 18px 18px;
+        margin: 9px 18px;
     }
 
     #Calc-Res-Wrap{
