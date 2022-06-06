@@ -6,50 +6,67 @@
         </div>
         <button class="exit-looper-images pui" onclick="exitLooperImages()">X</button>
         <div class="looper-schematic-wrapper pui">
-            <img src="/images/LooperSchematic.png" alt="Looper Schematic PNG" class="lsi pui">
+            <a href="/images/LooperSchematic.png" target="_blank">
+                <img src="/images/LooperSchematic.png" alt="Looper Schematic PNG" class="lsi pui">
+            </a>
         </div>
         <div class="looper-pcb-wrapper pui">
-            <img src="/images/PCBBoard.png" alt="Looper PNG" class="lpi pui">
+            <a href="/images/PCBBoard.png" target="_blank">
+                <img src="/images/PCBBoard.png" alt="Looper PNG" class="lpi pui">
+            </a>
         </div>
     </div>
-    <div class="Table-Wrapper">
-        <span class="Maze-Title wrap-height-item">Maze Creator/Solver</span>
-        <div class="Maze-Funcs wrap-height-item">
-            <input type="text" name="maze_size" id="maze_size" placeholder="&lt 50" class="M-F maze-size">
-            <button class="M-F New-Maze-Button">New</button>
-            <button class="M-F Solve-Maze-Button">Solve</button>
+
+    <div id="Maze-Wrap" class="Main-Wrap">
+
+        <div id="Maze-Title-Wrap" class="Title-Wrap">
+            <img src="/images/icons/cppicon.png" alt="C++ Icon" id="Cpp-Icon" class="Title-Icons">
+            <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
+            <span id="Maze-Title" class="Title maze-resize">Maze Creator/Solver</span>
         </div>
-        <table class="table-1 wrap-height-item" id="Table-1"></table>
+
+        
+        <div id="Maze-Func" class="maze-resize">
+            <input type="text" name="maze_size" id="Maze-Size" placeholder="&lt 50" class="Maze-Button">
+            <button id="New-Maze" class="Maze-Button">New</button>
+            <button id="Solve-Maze" class="Maze-Button">Solve</button>
+        </div>
+        <table id="Maze-Table" class="table-1 maze-resize" id="Table-1"></table>
     </div>
-    <div class="Calculator-Wrapper">
-        <span class="Calculator-Title">Simple Calculator</span>
-        <div class="Calculator">
+
+    <div id="Calc-Wrap" class="Main-Wrap">
+        <div id="Calc-Title-Wrap" class="Title-Wrap">
+            <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
+            <span id="Calc-Title" class="Title">Simple Calculator</span>
+        </div>
+        <div id="Calc">
             <%- include('../../../scripts/Calculator/calculator.ejs')%>
         </div>
     </div>
-    <div class="Looper-Wrapper">
-        <div class="Looper-Title-Wrapper">
-            <img src="/images/icons/arduinoicon.png" alt="Arduino Icon" class="Arduino-Icon Looper-Title-Icons">
-            <img src="/images/icons/pcbicon.png" alt="PCB Icon" class="PCB-Icon Looper-Title-Icons">
-            <img src="/images/icons/schematicicon.png" alt="Schematic Icon" class="Schematic-Icon Looper-Title-Icons">
-            <span class="Looper-Title">Loop Switcher</span>
+
+    <div id="Loop-Wrap" class="Main-Wrap">
+        <div id="Loop-Title-Wrap" class="Title-Wrap">
+            <img src="/images/icons/arduinoicon.png" alt="Arduino Icon" id="Arduino-Icon" class="Title-Icons">
+            <img src="/images/icons/pcbicon.png" alt="PCB Icon" id="PCB-Icon" class="Title-Icons">
+            <img src="/images/icons/schematicicon.png" alt="Schematic Icon" id="Schematic-Icon" class="Title-Icons">
+            <span id="Loop-Title" class="Title">Loop Switcher</span>
         </div>
-        <p class="Looper-Description">
+        <p id="Loop-Description">
             This project is a 5 channel audio loop switching pedal. An Arduino controls a set of relays to 
             switch different audio patch bays on and off. I designed the circuit, PCB, and layout of the 
             hardware, as well as designing, developing, debugging, and implementing the code onto the hardware.
             There are a few of these being used by musicians in the Greater Philadelphia area. These pedals
             can be built on request, but are not actively market or produce them.
         </p>
-        <div class="Looper-Links-Wrapper">
+        <div id="Loop-Link-Wrap">
             <a href="https://github.com/mtecce/Loop-Switcher/blob/main/V2/5Bank3Modes.V2/5Bank3Modes.V2.ino">
-                <img src="/images/icons/scripticon.webp" alt="Code" class="INO-Image">
+                <img src="/images/icons/scripticon.webp" alt="Code" id="INO-Img" class="INO-Image">
             </a>
-            <p class="Loop-GH-Desc">Link to GitHub Repo</p>
-            <img src="/images/icons/imageicon.png" alt="Image" onclick="displayLoopImages();" class="Loop-Images-PopUp-Icon">
-            <p class="Image-PopUp-Desc">Click Image to View Photos</p>
+            <p id="Loop-GH-Desc" class="Loop-GH-Desc">Link to GitHub Repo</p>
+            <img src="/images/icons/imageicon.png" alt="Image" onclick="displayLoopImages();" id="Loop-Img-Pop-Icon">
+            <p id="Img-Pop-Desc">Click Image to View Photos</p>
         </div>
     </div>
-
-
 </main>
+
+<!-- https://youtu.be/QiJv8It9Uhc -->

@@ -1,11 +1,11 @@
 <script>
 
     //Maze Items
-    const tabWrapper = document.querySelector(".Table-Wrapper");
-    const size_input = document.querySelector("#maze_size");
-    const new_button = document.querySelector(".New-Maze-Button");
-    const solve_button = document.querySelector(".Solve-Maze-Button");
-    const tab1 = document.getElementById('Table-1');
+    const tabWrapper = document.querySelector("#Maze-Wrap");
+    const size_input = document.querySelector("#Maze-Size");
+    const new_button = document.querySelector("#New-Maze");
+    const solve_button = document.querySelector("#Solve-Maze");
+    const tab1 = document.getElementById('Maze-Table');
 
     let nm = new MazeBuilder();
     let size = 5;
@@ -16,7 +16,7 @@
 
     const sizeTableWrap = () => {
         let h = 3;
-        let whi = document.querySelectorAll(".wrap-height-item");
+        let whi = document.querySelectorAll(".maze-resize");
         whi.forEach((item) => {
             h += item.clientHeight + item.clientTop;
         });
@@ -44,7 +44,7 @@
                 newMaze();
             }
             if(window.innerWidth <= 450){
-                sizeTableWrap();
+                //sizeTableWrap();
             }else if(window.innerWidth < 916){
                 tabWrapper.style.height = 250;
             }

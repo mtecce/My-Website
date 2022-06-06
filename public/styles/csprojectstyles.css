@@ -3,22 +3,47 @@ main{
     position: relative;
 }
 
-.Table-Wrapper,
-.Calculator-Wrapper{
-    width: 100%;
-    background-color: white;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.Maze-Title,
-.Calculator-Title{
+.Main-Wrap{
     position: absolute;
     width: 100%;
-    text-align: center;
-    font-size: 30px;
-    padding: 13px 0;
+    background-color: #e4e4e4;
     border-radius: 20px;
+}
+
+.Title-Wrap{
+    height: 50px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.Title-Icons{
+    position: absolute;
+    padding: 0 5px;
+    width: 50px;
+}
+
+.Title{
+    position: absolute;
+    width: 90%;
+    text-align: right;
+    font-size: 20px;
+    padding: 13px 5%;
+    border-radius: 20px;
+}
+
+#JS-Icon{
+    position: absolute;
+    padding: 0;
+    border: 1px solid black;
+    margin: 10px;
+    width: 28px;
+}
+
+#Cpp-Icon{
+    padding: 0;
+    width: 35px;
+    left: 50px;
+    margin: 8px 10px;
 }
 
 /* //////////////////////////////// */
@@ -40,7 +65,7 @@ main{
     
     main{
         top: 20px;
-        left: 80px;
+        left: 90px;
         width: 80%;
     }
 }
@@ -50,11 +75,9 @@ main{
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
-    .Table-Wrapper,
-    .Calculator-Wrapper,
-    .Looper-Wrapper{
+    .Main-Wrap{
         top: 0;
-        margin: 20px;
+        margin: 10px;
     }
 
 }

@@ -1,0 +1,131 @@
+.looper-images,
+.looper-images,
+.looper-images-background,
+.left-loop-button,
+.right-loop-button,
+.exit-looper-images,
+.looper-schematic-wrapper,
+.lsi,
+.looper-pcb-wrapper,
+.lpi{
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+.looper-images.active{
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.looper-images-background.active{
+    visibility: visible;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: .75;
+    border-radius: 40px;
+}
+
+.left-loop-button.active,
+.right-loop-button.active{
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: none;
+    background-color: #b5b5b5;
+}
+
+.left-loop-button{
+    left: 2.5vw;
+    visibility: hidden;
+}
+
+.right-loop-button{
+    right: 2.5vw;
+}
+
+.left-looper-background.active{
+    visibility: visible;
+    position: fixed;
+    width: 40vw;
+    height: 80vh;
+    background-color: black;
+    opacity: .75;
+}
+
+.right-looper-background.active{
+    visibility: visible;
+    position: fixed;
+    width: 40vw;
+    height: 80vh;
+    background-color: black;
+    opacity: .75;
+    left: 50vw;
+}
+
+.exit-looper-images.active{
+    visibility: visible;
+    position: fixed;
+    right: 30px;
+    top: 95px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #e4e4e4;
+    font-size: 25px;
+}
+
+.looper-schematic-wrapper.active{
+    visibility: visible;
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transition: all 0.5s;
+}
+
+.lsi.active{
+    visibility: visible;
+    position: absolute;
+    width: 60vw;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.looper-pcb-wrapper.active{
+    visibility: visible;
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 150%;
+    top: 50%;
+    transition: all 0.5s;
+}
+
+.lpi.active{
+    visibility: visible;
+    position: absolute;
+    width: 60vw;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.looper-schematic-wrapper.active.cycle{
+    left: -50%;
+}
+
+.looper-pcb-wrapper.active.cycle{
+    left: 50%;
+}

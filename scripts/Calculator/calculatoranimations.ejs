@@ -4,13 +4,14 @@
 
     let curs = true;
     const speed = 500;
+    const cursor = document.getElementById('Calc-Res-Cursor');
 
     const cursorBlink = () => {
         if(curs){
-            document.getElementById('calc-result-cursor').style.opacity = 0;
+            cursor.style.opacity = 0;
             curs = false;
         }else{
-            document.getElementById('calc-result-cursor').style.opacity = 1;
+            cursor.style.opacity = 1;
             curs = true;
         }
     };
@@ -21,7 +22,7 @@
 
     /* CALCULATOR FUNCTIONS SCRIPT */
 
-    const resultText = document.getElementById('calc-result-text');
+    const resultText = document.getElementById('Calc-Res-Text');
 
     let currentResultText = "";
     let needsRightParenthesis = false;

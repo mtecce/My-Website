@@ -1,16 +1,21 @@
-.Calculator-Wrapper{
-    position: absolute;
+#Calc-Wrap{
     height: 575px;
 }
 
-.Calculator{
+#Calc-Title{
+    text-align: center;
+    padding: 13px 0;
+    width: 100%;
+}
+
+#Calc{
     position: relative;
     background-color: black;
     margin: 0;
     border-radius: 20px;
 }
 
-.calc-result-wrapper{
+#Calc-Res-Wrap{
     position: relative;
     background-color: black;
     color: rgb(231, 193, 255);
@@ -20,13 +25,13 @@
     border-radius: 20px;
 }
 
-.calc-result{
+#Calc-Res{
     font-size: 25px;
     margin: 0;
 }
 
-.buttons-table-l,
-.buttons-table{
+#Calc-Norm-Buttons,
+#Calc-Landscape-Buttons{
     position: relative;
     border-collapse: separate;
     border-spacing: 11px;
@@ -49,19 +54,23 @@
 /* //////////////////////////////// */
 @media screen and (max-width:450px){
 
-    .Calculator{
-        top: 61px;
+    #Calc-Wrap{
+        top: 462px;
+    }
+
+    #Calc{
+        top: 12px;
         width: 300px;
         height: 500px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .calc-result-wrapper{
+    #Calc-Res-Wrap{
         padding: 50px 0;
     }
 
-    .buttons-table-l{
+    #Calc-Landscape-Buttons{
         visibility: hidden;
         position: absolute;
         top: 0px;
@@ -76,32 +85,32 @@
 /* //////////////////////////////// */
 @media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
     
-    .Calculator-Wrapper{
+    #Calc-Wrap{
         height: 330px;
     }
 
-    .Calculator-Title{
+    #Calc-Title{
         width: 267px;
         margin: 20px 10px;
         z-index: 1;
     }
 
-    .Calculator{
+    #Calc{
         height: 330px;
     }
 
-    .calc-result-wrapper{
+    #Calc-Res-Wrap{
         width: 50%;
         left: 50%;
         top: 50px;
         padding: 25px 0;
     }
 
-    .buttons-table-l{
+    #Calc-Landscape-Buttons{
         top: 25px;
     }
 
-    .buttons-table{
+    #Calc-Norm-Buttons{
         visibility: hidden;
         position: absolute;
         top: 0px;
@@ -119,33 +128,32 @@
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
-    .Calculator-Wrapper{
+    #Calc-Wrap{
         width: 336px;
         height: 395px;
-        left: 376px;
+        left: 356px;
     }
 
-    .Calculator-Title{
-        
+    #Calc-Title{
         font-size: 20px;
     }
 
-    .Calculator{
+    #Calc{
         top: 36px;
         width: 300px;
         height: 327px;
         margin: 18px 18px;
     }
 
-    .calc-result-wrapper{
+    #Calc-Res-Wrap{
         padding: 20px 0;
     }
 
-    .calc-result{
+    #Calc-Res{
 
     }
 
-    .buttons-table{
+    #Calc-Norm-Buttons{
         top: 10px;
         border-spacing: 10px;
     }
@@ -157,7 +165,7 @@
 
     }
 
-    .buttons-table-l{
+    #Calc-Landscape-Buttons{
         visibility: hidden;
         position: absolute;
         left: 20px;

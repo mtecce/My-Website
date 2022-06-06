@@ -1,201 +1,18 @@
-.looper-images,
-.looper-images,
-.looper-images-background,
-.left-loop-button,
-.right-loop-button,
-.exit-looper-images,
-.looper-schematic-wrapper,
-.lsi,
-.looper-pcb-wrapper,
-.lpi{
-    visibility: hidden;
-    width: 1px;
-    height: 1px;
-}
-
-.looper-images.active{
-    visibility: visible;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.looper-images-background.active{
-    visibility: visible;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    opacity: .75;
-    border-radius: 40px;
-}
-
-.left-loop-button.active,
-.right-loop-button.active{
-    visibility: visible;
-    position: absolute;
-    top: 50%;
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
-    border: none;
-    background-color: #b5b5b5;
-}
-
-.left-loop-button{
-    left: 2.5vw;
-}
-
-.right-loop-button{
-    right: 2.5vw;
-}
-
-.left-looper-background.active{
-    visibility: visible;
-    position: fixed;
-    width: 40vw;
-    height: 80vh;
-    background-color: black;
-    opacity: .75;
-}
-
-.right-looper-background.active{
-    visibility: visible;
-    position: fixed;
-    width: 40vw;
-    height: 80vh;
-    background-color: black;
-    opacity: .75;
-    left: 50vw;
-}
-
-.exit-looper-images.active{
-    visibility: visible;
-    position: fixed;
-    right: 30px;
-    top: 95px;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid #e4e4e4;
-    font-size: 25px;
-}
-
-.looper-schematic-wrapper.active{
-    visibility: visible;
-    position: absolute;
-    width: auto;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    transition: all 0.5s;
-}
-
-.lsi.active{
-    visibility: visible;
-    position: absolute;
-    width: 60vw;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.looper-pcb-wrapper.active{
-    visibility: visible;
-    position: absolute;
-    width: auto;
-    height: auto;
-    left: 150%;
-    top: 50%;
-    transition: all 0.5s;
-}
-
-.lpi.active{
-    visibility: visible;
-    position: absolute;
-    width: 60vw;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.looper-schematic-wrapper.active.cycle{
-    left: -50%;
-    /* transform: translateX(-100%); */
-}
-
-.looper-pcb-wrapper.active.cycle{
-    left: 50%;
-    /* transform: translateX(-100%); */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Looper-Wrapper{
-    width: 100%;
-    background-color: white;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.Looper-Title{
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    padding: 13px 0;
-    border-radius: 20px;
-}
-
-.Looper-Wrapper{
-    position: absolute;
+#Loop-Wrap{
     height: 395px;
     width: 336px;
     left: 752px;
-    background-color: #e4e4e4;
 }
 
-.Looper-Title-Wrapper{
-    height: 50px;
-    border-radius: 20px;
-    background-color: white;
-}
-
-.Looper-Title-Icons{
-    position: absolute;
-    padding: 0 5px;
-    width: 50px;
-}
-
-.PCB-Icon{
+#PCB-Icon{
     left: 60px;
 }
 
-.Schematic-Icon{
+#Schematic-Icon{
     left: 120px;
 }
 
-.Looper-Title{
-    font-size: 20px;
-    width: 156px;
-    right: 0;
-}
-
-.Looper-Description{
+#Loop-Description{
     top: 60px;
     position: absolute;
     background-color: white;
@@ -204,7 +21,7 @@
     padding: 2.5%;
 }
 
-.Looper-Links-Wrapper{
+#Loop-Link-Wrap{
     position: absolute;
     width: 90%;
     padding: 2.5%;
@@ -215,13 +32,13 @@
     border-radius: 20px;
 }
 
-.INO-Image{
+#INO-Img{
     position: absolute;
     width: 40px;
     margin: 9px 0;
 }
 
-.Loop-GH-Desc{
+#Loop-GH-Desc{
     position: absolute;
     margin: 12px 0;
     font-size: 14px;
@@ -229,14 +46,14 @@
     width: 80px;
 }
 
-.Loop-Images-PopUp-Icon{
+#Loop-Img-Pop-Icon{
     position: absolute;
     left: 47%;
     width: 59px;
     margin: 9px 0;
 }
 
-.Image-PopUp-Desc{
+#Img-Pop-Desc{
     position: absolute;
     font-size: 14px;
     left: 68%;
@@ -248,6 +65,11 @@
 /*    Phone Portrait Orientation    */
 /* //////////////////////////////// */
 @media screen and (max-width:450px){
+
+    #Loop-Wrap{
+        left: 0;
+        top: 1060px;
+    }
 
 }
 
@@ -263,11 +85,11 @@
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
-    .Looper-Wrapper{
+    #Loop-Wrap{
         height: 395px;
         width: 336px;
         left: 0;
-        top: 435px;
+        top: 415px;
         background-color: #e4e4e4;
     }
 
@@ -275,12 +97,12 @@
 
 @media screen and (min-width: 1120px){
 
-    .Looper-Wrapper{
+    #Loop-Wrap{
         position: absolute;
         top: 0;
         height: 395px;
         width: 336px;
-        left: 752px;
+        left: 712px;
         background-color: #e4e4e4;
     }
 

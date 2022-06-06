@@ -1,9 +1,10 @@
-.Maze-Funcs{
+#Maze-Func{
     position: absolute;
     padding: 10px 0;
+    margin: 0 2.5%;
 }
 
-.M-F{
+.Maze-Button{
     text-align: center;
     border-style: none;
     background-color: black;
@@ -13,14 +14,17 @@
     width: 30%;
 }
 
-.maze-size{
+#Maze-Size{
     border: 1px solid black;
     background-color: #3f3f3f;
 }
 
-.table-1{
+#Maze-Table{
     position: absolute;
     border-spacing: 0;
+    width: 280px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 td{
@@ -43,29 +47,25 @@ td.dissapear{
 /* //////////////////////////////// */
 @media screen and (max-width:450px){
 
-    .Table-Wrapper{
-        height: 135px;
+    #Maze-Wrap{
+        height: 420px;
     }
 
-    .Maze-Funcs{
-        margin: 0 2.5%;
-        border-top: 3px solid black;
-        top: 60px;
+    #Maze-Func{
+        top: 52px;
     }
 
-    .M-F{
+    .Maze-Button{
         height: 50px;
         border-radius: 25px;
     }
 
-    .New-Maze-Button{
+    #New-Maze{
         margin: 0 3%;
     }
 
-    .table-1{
-        width: 90%;
-        margin: 0 5%;
-        top: 133px;
+    #Maze-Table{
+        top: 124px;
     }
 }
 
@@ -74,35 +74,33 @@ td.dissapear{
 /* //////////////////////////////// */
 @media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
     
-    .Table-Wrapper{
+    #Maze-Wrap{
         height: 250px;
         border-radius: 50px;
     }
 
-    .Maze-Title{
+    #Maze-Title{
         width: 37%;
         padding: 10px 4%;
         margin: 0 2.5%;
         border-radius: 0;
-        border-bottom: 2px solid black;
     }
 
-    .Maze-Funcs{
+    #Maze-Func{
         padding: 0;
         top: 100px;
         width: 50%;
     }
 
-    .M-F{
+    .Maze-Button{
         width: 80%;
         margin: 5px 10%;
         height: 35px;
         border-radius: 17.5px;
     }
 
-    .table-1{
+    #Maze-Table{
         right: 0;
-        width: 200px;
         margin: 25px 5%;
     }
 }
@@ -112,32 +110,23 @@ td.dissapear{
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
-    .Table-Wrapper{
-        position: absolute;
+    #Maze-Wrap{
         height: 395px;
         width: 336px;
     }
 
-    .Maze-Title{
-        font-size: 20px;
-    }
-
-    .Maze-Funcs{
-        margin: 0 15%;
-        border-top: 2px solid black;
+    #Maze-Func{
         top: 49px;
     }
 
-    .M-F{
+    .Maze-Button{
         font-size: 20px;
         border-radius: 15px;
         height: 30px;
         transform: translateX(10%);
     }
 
-    .table-1{
-        width: 80%;
-        margin: 0 10%;
+    #Maze-Table{
         top: 100px;
     }
 }
