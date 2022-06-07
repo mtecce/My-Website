@@ -7,25 +7,35 @@
     visibility: hidden;
     height: 0px;
     width: 0px;
+    margin: 0;
+    padding: 0;
   }
 
-  .desktop{
-    background-color: white;
+  #Desktop-Header{
+    position: fixed;
+    width: 100%;
+    background-color: #0e1730;
   }
 
-  .nav-home{
-    position: absolute;
-    line-height: 65px;
-    border-right: 1px solid black;
+  #Desktop-Header p{
+    width: 100%;
+    font-size: 35px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #DBF5F0;
   }
 
-  .home-text{
-    text-align: left;
-    font-size: 27.5px;
-    padding: 16px 16px;
+  #Desktop-Nav{
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 62px;
+    background-color: #A4E5E0;
   }
-
-  .nav-list{
+ 
+  #Desktop-Nav-List{
     cursor: default;
     height: 65px;
     margin: 0;
@@ -34,8 +44,8 @@
     justify-content: space-between;
     list-style: none;
     box-sizing: content-box;
-    width: 76%;
-    padding-left: 21%;
+    width: 100%;
+    padding: 0;
   }
 
   .list-item-formatting{
@@ -46,23 +56,18 @@
     line-height: 65px;
     
     vertical-align: top;
-    padding: 0;
+    padding: 0 10px;
   }
 
-  .desktop nav a,
-  .desktop nav ul li a{
+  .text-wrapper{
     text-decoration: none;
-    color: black;
+    color: #0e1730;
   }
 
   .text-formatting{
-    
     text-align: left;
     font-size: 20px;
     padding: 20px 15px;
   }
 
-  .resume-text{
-
-  }
 }

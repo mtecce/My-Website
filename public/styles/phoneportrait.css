@@ -249,7 +249,8 @@
   #More-Slide,
   #More-Slide :is(a,div,img),
   .hambackground,
-  .desktop{
+  .desktop,
+  .nav-top{
     visibility: hidden;
     z-index: -50;
     width: 0;
@@ -263,7 +264,7 @@
 
   .hambackground{
     background-color: #0C6170;
-    position: absolute;
+    position: fixed;
     border-radius: 6px;
     border: none;
     top: -16.6%;
@@ -456,10 +457,27 @@
   }
 
   .desktop,
-  .desktop :is(nav,a,span,ul,li),
+  .nav-top,
   .name-banner,
   #Mobile-Dropdown-Wrapper,
   #Mobile-Dropdown-Wrapper :is(ul,li,div,a,p,img){
+    visibility: hidden;
+    z-index: -50;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+}
+
+@media screen and (min-width:916px){
+
+  #Mobile-Dropdown-Wrapper,
+  #Mobile-Dropdown-Wrapper :is(ul,li,div,a,p,img),
+  .hambackground,
+  #Mobile-Header,
+  #Mobile-Header :is(div,a,p){
     visibility: hidden;
     z-index: -50;
     width: 0;

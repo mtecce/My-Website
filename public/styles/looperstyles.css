@@ -15,7 +15,7 @@
 #Loop-Description{
     top: 60px;
     position: absolute;
-    background-color: white;
+    background-color: #0C6170;
     border-radius: 20px;
     margin: 2.5%;
     padding: 2.5%;
@@ -26,7 +26,7 @@
     width: 90%;
     padding: 2.5%;
     margin: 2.5%;
-    background-color: white;
+    background-color: #0C6170;
     top: 304px;
     height: 58px;
     border-radius: 20px;
@@ -61,14 +61,23 @@
     margin: 12px 0;
 }
 
+#Loop-Wrap p{
+    color: #DBF5F0;
+}
+
 /* //////////////////////////////// */
 /*    Phone Portrait Orientation    */
 /* //////////////////////////////// */
-@media screen and (max-width:450px){
+@media screen and (max-width: 450px){
+
+    .looper-images{
+        left: 0;
+    }
 
     #Loop-Wrap{
         left: 0;
         top: 1060px;
+        width: 100%;
     }
 
 }
@@ -77,7 +86,26 @@
 /*   Phone Landscape Orientation    */
 /* //////////////////////////////// */
 @media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
+
+    .looper-images{
+        left: 0;
+    }
     
+    #Loop-Wrap{
+        width: 100%;
+        left: 0;
+        top: 40px;
+        height: 330px;
+    }
+
+    #Loop-Description{
+        top: 50px;
+    }
+
+    #Loop-Link-Wrap{
+        top: 224px;
+    }
+
 }
 
 /* //////////////////////////////// */

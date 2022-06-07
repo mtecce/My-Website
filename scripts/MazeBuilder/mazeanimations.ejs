@@ -1,12 +1,7 @@
 <script>
-
     //Maze Items
-    const tabWrapper = document.querySelector("#Maze-Wrap");
     const size_input = document.querySelector("#Maze-Size");
-    const new_button = document.querySelector("#New-Maze");
-    const solve_button = document.querySelector("#Solve-Maze");
     const tab1 = document.getElementById('Maze-Table');
-
     let nm = new MazeBuilder();
     let size = 5;
     let make_new_maze = false;
@@ -14,17 +9,7 @@
     let currently_solving = false;
     let solved_maze = false;
 
-    const sizeTableWrap = () => {
-        let h = 3;
-        let whi = document.querySelectorAll(".maze-resize");
-        whi.forEach((item) => {
-            h += item.clientHeight + item.clientTop;
-        });
-        tabWrapper.style.height = h+15;
-    };
-
-    new_button.addEventListener("click", () => {
-
+    const newClick = () => {
         if(currently_solving){
             setTimeout(() => {
                 new_button.click();
@@ -43,17 +28,12 @@
                 size = parseInt(i_s);
                 newMaze();
             }
-            if(window.innerWidth <= 450){
-                //sizeTableWrap();
-            }else if(window.innerWidth < 916){
-                tabWrapper.style.height = 250;
-            }
             has_maze = true;
             make_new_maze = true;
         }
-    });
+    };
 
-    solve_button.addEventListener("click", () => {
+    const solveClick = () => {
         if(has_maze){
             if(solved_maze){
                 alert("You already solved the maze");
@@ -63,15 +43,13 @@
         }else{
             alert("You need to create a maze first");
         }
-    });
+    };
 
     //maze functions
     const newMaze = () => {
-
         nm.instantiateMaze(size);
         let num_cells = size*2 + 1;
         let p_size = tab1.clientWidth/num_cells;
-        
         //add to the table
         for(let i = 0; i < num_cells; i++){
             let newRow = tab1.insertRow();
@@ -79,17 +57,12 @@
                 let newCell = newRow.insertCell();
                     newCell.style.width = p_size + "px";
                     newCell.style.height = p_size + "px";
-                
                 if(nm.maze_matrix[i][j] == "#"){
                     newCell.classList.toggle("wall");
                 }
             }
         }
-
-        
     };
-
-    new_button.click();
 
     const solve = () => {
         let time = 0;
@@ -126,5 +99,5 @@
         }
         solved_maze = true;
     };
-
+    newClick();
 </script>

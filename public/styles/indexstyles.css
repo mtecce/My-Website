@@ -68,6 +68,11 @@ main{
 /* //////////////////////////////// */
 @media screen and (min-width: 916px){
 
+    main{
+        top: 127px;
+        z-index: -1;
+    }
+
     .block-1{
         width: 60%;
     }
@@ -85,6 +90,7 @@ main{
 }
 
 @media screen and (min-width: 1440px) and (min-height: 750px){
+    
 
     .main-header{
         font-size: 33px;
