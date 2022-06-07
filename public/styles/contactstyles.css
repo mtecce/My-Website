@@ -1,5 +1,6 @@
 main{
     z-index: 0;
+    height: 0;
     position: relative;
     top: 60px;
 }
@@ -7,9 +8,10 @@ main{
 .contact-strip-list{
     list-style: none;
     position: relative;
+    height: 0;
+    margin: 0 5%;
     width: 90%;
     padding-inline-start: 0;
-    margin: 2.5% 5%;
 }
 
 .list-item-format{
@@ -20,6 +22,7 @@ main{
     border-radius: 35px;
     background-color: white;
     margin: 10px 0;
+    background-color: #0e1730;
     transition: all 0.25s;
 }
 
@@ -32,13 +35,7 @@ main{
     width: 100%;
 }
 
-.emailicon{
-    position: absolute;
-    width: 37px;
-    padding: 15px;
-    padding-bottom: 14px;
-    padding-left: 10%;
-}
+
 
 .strip-text{
     position: absolute;
@@ -48,7 +45,7 @@ main{
     padding: 18px 0;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: #DBF5F0;
 }
 
 .contact-arrow{
@@ -65,12 +62,10 @@ main{
     transform: rotate(-90deg);
 }
 
-
-
 .form-element{
     position: relative;
     z-index: -1;
-    background-color: #eaeaea;
+    background-color: #A4E5E0;
     height: 59px;
     padding: 0 30px;
     border-radius: 35px;
@@ -101,21 +96,23 @@ main{
 
 .submission-input{
     margin-top: 5px;
-    background-color: white;
+    background-color: #DBF5F0;
 }
 
 .small-box{
+    font: inherit;
     height: 35px;
     border-radius: 20px;
-    border: 2px solid rgb(119,216,156);
+    border: 2px solid #37BEB0;
     width: 100%;
 }
 
 .big-box{
+    font: inherit;
     position: relative;
     height: 10px;
     width: 100%;
-    border: 2px solid rgb(119, 216, 156);
+    border: 2px solid #37BEB0;
     border-radius: 15px;
 }
 
@@ -132,24 +129,25 @@ main{
 .submit-button{
     position: relative;
     font-size: 14px;
-    background-color: rgb(119, 216, 156);
-    color: white;
+    background-color: #0e1730;
+    color: #DBF5F0;
+    font-family: 'Lato', sans-serif;
     border-radius: 25px;
     padding: 10px 35px;
     top: -160px;
+    border: none;
 }
 
 .instagram-item,
 .facebook-item,
 .github-item,
-.linkedin-item{
+.linkedin-item,
+.indeed-item,
+.discord-item{
     top: 0px;
 }
 
-.contact-instagramicon,
-.contact-facebookicon,
-.contact-githubicon,
-.contact-linkedinicon{
+.contact-icons{
     position: absolute;
     width: 35px;
     padding: 15px;
@@ -191,7 +189,8 @@ main{
 .facebook-item.active,
 .instagram-item.active,
 .github-item.active,
-.linkedin-item.active{
+.linkedin-item.active,
+.discord-item.active{
     top: 370px;
 }
 
@@ -210,15 +209,7 @@ main{
 @media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
 
     main{
-        top: 40px;
-    }
-
-    .github-item,
-    .linkedin-item{
-        visibility: hidden;
-        z-index: -50;
-        width: 0;
-        height: 0;
+        top: 0;
     }
 
     .contact-strip-list{
@@ -228,8 +219,17 @@ main{
     }
 
     .facebook-item,
-    .instagram-item{
+    .instagram-item,
+    .discord-item{
         top: -26px;
+    }
+
+    .github-item,
+    .linkedin-item{
+        visibility: hidden;
+        z-index: -50;
+        width: 0;
+        height: 0;
     }
     
 }
@@ -240,76 +240,49 @@ main{
 @media screen and (min-width: 916px){
 
     main{
-        top: 15px;
+        top: 140px;
     }
 
-    .github-item,
-    .linkedin-item,
-    .contact-arrow{
-        visibility: hidden;
-        z-index: -50;
-        width: 0;
-        height: 0;
+    .list-item-format{
+        position: absolute;
+        width: 45%;
+        height: 70px;
+        margin: 0 2.5%;
     }
 
-    .contact-strip-list{
-        margin: 0 5%;
-        width: 90%;
-    }
-
-    .contact-item{
-        height: 100px;
-        border-radius: 50px;
-    }
-
-    .emailicon{
-        width: 63px;
-        padding: 16px;
-        padding-bottom: 21px;
+    .contact-icons{
+        width: 50px;
+        padding: 10px;
         padding-left: 7.5%;
     }
 
     .strip-text{
-        font-size: 35px;
-        padding: 29px 0;
+        font-size: 30px;
+        padding: 17px 0;
+        
     }
 
     .form-element{
-        height: 675px;
+        position: absolute;
+        width: 100%;
+        height: 610px;
         padding: 0;
-        border-radius: 40px;
+        margin: 0;
     }
 
     .form-divs{
         width: 90%;
+        margin: 5px 0;
         padding: 0 5%;
     }
 
     .name-div{
-        top: 105px;
-    }
-
-    .email-div{
-        top: 115px;
-    }
-
-    .message-div{
-        top: 125px;
-    }
-
-    .submit-button{
-        top: 140px;
-        padding: 7.5px 8%;
-        margin: 0 5%;
-        border-radius: 35px;
-        font: inherit;
-        font-size: 35px;
-        font-weight: bold;
-        border: 2px solid black;
+        top: 70px;
+        margin-top: 10px;
     }
 
     .submission-labels{
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .small-box{
@@ -324,34 +297,58 @@ main{
         font: inherit;
         height: 200px;
         padding: 10px 2%;
-        border-radius: 36px;
+        border-radius: 25px;
         font-size: 22px;
     }
 
-    .contact-instagramicon,
-    .contact-facebookicon{
-        padding: 33px 15px;
-        padding-left: 10%;
+    .email-div{
+        top: 75px;
     }
 
-    .bottom-row{
-        top: 585px;
-        width: 46%;
-        height: 100px;
-        border-radius: 50px;
+    .message-div{
+        top: 80px;
     }
 
-    .facebook-item{
-        margin-right: 3%;
+    .submit-button{
+        top: 97px;
+        padding: 7.5px 8%;
+        margin: 0 5%;
+        border-radius: 35px;
+        font-family: 'Lato', sans-serif;
+        font-size: 35px;
+        border: none;
+    }
+
+    .facebook-item,
+    .instagram-item,
+    .discord-item,
+    .indeed-item{
+        left: 50%;
     }
 
     .instagram-item{
-        margin-left: 3%;
+        top: 130px;
     }
 
-    .facebook-text,
-    .instagram-text{
-        padding: 30px 0;
+    .discord-item{
+        top: 273px;
+    }
+
+    .indeed-item{
+        top: 400px;
+    }
+
+    .github-item,
+    .github-item :is(span,img,a),
+    .linkedin-item,
+    .linkedin-item :is(span,img,a),
+    .contact-arrow{
+        visibility: hidden;
+        z-index: -50;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
     }
 
 }
