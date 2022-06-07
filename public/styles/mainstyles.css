@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 /* #0e1730 */
-/* #016170 */
-/* #009393 */
-/* #00E0C6 */
-/* #FFFFFF */
+/* #0C6170 */
+/* #37BEB0 */
+/* #A4E5E0 */
+/* #DBF5F0 */
 
 body{
     font-family: 'Lato', sans-serif;
     margin: 0;
-    background-color: #016170;
+    background-color: #37BEB0;
     height: 100%;
-}
-
-.mobile{
-  background-color: #0e1730;
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2;
 }

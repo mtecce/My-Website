@@ -1,26 +1,34 @@
-<div class="drop">
-    <ul class="mainmenu">
-        <li class="m0">
-            <a href="MichaelTecceResume.pdf" target="_blank">Resume</a>
+<div id="Mobile-Dropdown-Wrapper">
+    <ul id="Main-Dropdown-List">
+        <li id="MDL-0" class="Dropdown-List-Items">
+            <a href="MichaelTecceResume.pdf" target="_blank" class="Dropdown-Item-Text">
+                <p>Resume</p>
+            </a>
         </li>
-        <li class="m1">
-            <div class="proj">
-                <div class="arrow">
-                    <img src="images/arrow.webp" alt="Arrow" class="arrowicon"/>
+        <li id="MDL-1" class="Dropdown-List-Items">
+            <div id="Project-Wrapper" class="Dropdown-Item-Text">
+                <div id="Arrow-Icon-Wrapper" onclick="arrowDrop();">
+                    <img src="images/arrow.webp" alt="Arrow" id="DD-Arrow-Icon"/>
                 </div>
-                <p>Projects</p>
+                <p >Projects</p>
             </div>
-            <ul class="seconddrop">
-                <li class="csm">
-                    <a href="/csprojects">~CS Projects~</a>
+            <ul id="Sub-Dropdown-List" class="sub-drop">
+                <li id="SDL-1" class="Dropdown-List-Items SDD-List-Items sub-drop">
+                    <a href="/csprojects" class="Dropdown-Item-Text SDD-Text">
+                        <p>~CS Projects~</p>
+                    </a>
                 </li>
-                <li class="mm">
-                    <a href="/musicprojects">~Music Projects~</a>
+                <li id="SDL-2" class="Dropdown-List-Items SDD-List-Items sub-drop">
+                    <a href="/musicprojects" class="Dropdown-Item-Text SDD-Text">
+                        <p>~Music Projects~</p>
+                    </a>
                 </li>
             </ul>
         </li>
-        <li class="m2">
-            <a href="/contact">Contact</a>
+        <li id="MDL-2" class="Dropdown-List-Items sub-drop">
+            <a href="/contact" class="Dropdown-Item-Text">
+                <p>Contact</p>
+            </a>
         </li>
     </ul>
 </div>

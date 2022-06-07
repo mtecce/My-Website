@@ -1,34 +1,32 @@
 <script>
     //ham animations
-    const hamicon = document.querySelector(".icon0");
-    const hamlines = document.querySelectorAll(".ham span");
+    const hamlines = document.querySelectorAll(".ham-line");
 
     //mainmenu dropdown animations
-    const dropdownlinks = document.querySelectorAll(".mainmenu li");
-    const contactdropdown = document.querySelector(".m2");
-    const mainmenuprojectsdrop = document.querySelector(".seconddrop");
+    const dropdownwrapper = document.getElementById("Mobile-Dropdown-Wrapper");
+    const dropdownlinks = document.querySelectorAll(".Dropdown-List-Items");
+    
 
     //mainmenu arrow animations
-    const arrowicon = document.querySelector(".arrow");
-    const arrowimage = document.querySelector(".arrowicon");
+    const arrowimage = document.getElementById("DD-Arrow-Icon");
+    const submenudrop = document.querySelectorAll(".sub-drop");
 
     //header animation
     const header = document.querySelector("header");
     const headericons = document.querySelectorAll(".sidemove");
 
     //folder slide animations
-    const foldericon = document.querySelector(".icon4");
+    const foldericon = document.getElementById("Icon4");
     const headerprojectsmenu = document.querySelector(".projectslide");
 
     //dots slide animations
-    const dotsicon = document.querySelector(".icon7");
+    const dotsicon = document.getElementById("Icon7");
     const movementdots = document.querySelectorAll(".dot-move");
     const headermoremenu = document.querySelector(".moreslide");
     
     const arrowDrop = () => {
         arrowimage.classList.toggle("activeN");
-        contactdropdown.classList.toggle("activeN");
-        mainmenuprojectsdrop.classList.toggle("activeN");
+        submenudrop.forEach((item) => item.classList.toggle("activeN"));
     };
 
     const collapseSlideMenu = () => {
@@ -48,15 +46,16 @@
     dotsicon.addEventListener("click", (e)=>{
         movementdots.forEach((dot) => dot.classList.toggle("active"));
         headermoremenu.classList.toggle("active");
-    })
+    });
 
-    hamicon.addEventListener("click",(e)=>{
+    const hamClick = () => {
         //for mobile landscape transform
         header.classList.toggle("active");
         headericons.forEach((icon) => icon.classList.toggle("active"));
 
         //for mobile portrait transform
         hamlines.forEach((line) => line.classList.toggle("active"));
+        dropdownwrapper.classList.toggle("active");
         dropdownlinks.forEach((link) => link.classList.toggle("active"));
         
         //for mobile portrait transform: when exiting menu, closes the sub menu
@@ -64,9 +63,6 @@
             arrowDrop();
         }
         collapseSlideMenu();
-    });
+    }
 
-    arrowicon.addEventListener("click",(e)=>{
-        arrowDrop();
-    });
 </script>
