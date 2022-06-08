@@ -59,69 +59,143 @@
     };
 
     const determineOutputValue = () => {
-        let res = calculateResult(currentResultText);
+        let res = parseParenthesis(currentResultText);
         console.log(res);
     };
 
-    const calculateResult = (value) => {
+    const parseParenthesis = (value) => {
         let og = value;
         while(value.includes("(")){
             let ind1 = value.indexOf("(");
             let ind2 = value.indexOf(")");
-            let recRes = calculateResult(value.substring(ind1+1,ind2));
+            let recRes = parseParenthesis(value.substring(ind1+1,ind2));
             value = value.substring(0,ind1) + recRes + value.substring(ind2+1);
         }
-        console.log("calculateResult", og, value);
-        value = doCalc(value);
+        console.log("parseParenthesis", og, value);
+        value = doPEMDMAS(value);
         return value;
     };
 
-    const doCalc = (value) => {
-        let returnValue = 0;
-        if(value.includes("x")){
-            let calcIndex = value.indexOf("x");
-            let left = value.substring(0,calcIndex);
-            let right = value.substring(calcIndex+1);
-            let leftTempInd = determineOpIndexLeft(left);
-            let rightTempInd = determineOpIndexRight(right);
-
-            console.log(left,right);
-            console.log(leftTempInd,calcIndex+rightTempInd);
-            //console.log(value,value.substring(leftTempInd,calcIndex),value.substring(calcIndex+rightTempInd));
-            //console.log(value.substring(leftTempInd,calcIndex+rightTempInd));
-            //let leftVal = value.substring(0,leftTempInd) + doCalc()
-
-
-
-            returnValue = parseFloat(left) * parseFloat(right);
-            // returnValue = value.substring(0,leftTempInd) + doCalc(value.substring(calcIndex+1,))
-
-
-
-        }else if(value.includes("/")){
-            let calcIndex = value.indexOf("/");
-            let left = doCalc(value.substring(0,calcIndex));
-            let right = doCalc(value.substring(calcIndex+1));
-            returnValue = parseFloat(left) / parseFloat(right);
-        }else if(value.includes("%")){
-            let calcIndex = value.indexOf("%");
-            let left = doCalc(value.substring(0,calcIndex));
-            let right = doCalc(value.substring(calcIndex+1));
-            returnValue = parseFloat(left) % parseFloat(right);
-        }else if(value.includes("+")){
-            let calcIndex = value.indexOf("+");
-            let left = doCalc(value.substring(0,calcIndex));
-            let right = doCalc(value.substring(calcIndex+1));
-            returnValue = parseFloat(left) + parseFloat(right);
-        }else if(value.includes("-")){
-            let calcIndex = value.indexOf("-");
-            let left = doCalc(value.substring(0,calcIndex));
-            let right = doCalc(value.substring(calcIndex+1));
-            returnValue = parseFloat(left) - parseFloat(right);
-        }else{
-            returnValue = parseFloat(value);
+    const doPEMDMAS = (value) => {
+        let tempVal = value;
+        let opsLeft = true;
+        let totalOps = 0;
+        while(opsLeft){
+            if(tempVal.includes("x")){
+                let ind = tempVal.indexOf("x");
+                let leftOfOp = tempVal.substring(0,ind);
+                let leftInd = determineOpIndexLeft(leftOfOp);
+                let rightOfOp = tempVal.substring(ind+1);
+                let rightInd = determineOpIndexRight(rightOfOp);
+                let leftVal = tempVal.substring(leftInd,ind);
+                let rightVal = "";
+                if(rightInd == 0){
+                    rightVal = tempVal.substring(ind+1);
+                }else{
+                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
+                }
+                tempVal = tempVal.substring(0,leftInd) +
+                doCalc(leftVal,rightVal,"x") + tempVal.substring(ind+1,ind+1+rightInd);
+            }else if(tempVal.includes("/")){
+                let ind = tempVal.indexOf("/");
+                let leftOfOp = tempVal.substring(0,ind);
+                let leftInd = determineOpIndexLeft(leftOfOp);
+                let rightOfOp = tempVal.substring(ind+1);
+                let rightInd = determineOpIndexRight(rightOfOp);
+                let leftVal = tempVal.substring(leftInd,ind);
+                let rightVal = "";
+                if(rightInd == 0){
+                    rightVal = tempVal.substring(ind+1);
+                }else{
+                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
+                }
+                console.log(leftInd,rightInd);
+                console.log(leftVal,rightVal);
+                tempVal = tempVal.substring(0,leftInd) +
+                doCalc(leftVal,rightVal,"/") + tempVal.substring(ind+1,ind+1+rightInd);
+            }else if(tempVal.includes("%")){
+                let ind = tempVal.indexOf("%");
+                let leftOfOp = tempVal.substring(0,ind);
+                let leftInd = determineOpIndexLeft(leftOfOp);
+                let rightOfOp = tempVal.substring(ind+1);
+                let rightInd = determineOpIndexRight(rightOfOp);
+                let leftVal = tempVal.substring(leftInd,ind);
+                let rightVal = "";
+                if(rightInd == 0){
+                    rightVal = tempVal.substring(ind+1);
+                }else{
+                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
+                }
+                console.log(leftInd,rightInd);
+                console.log(leftVal,rightVal);
+                tempVal = tempVal.substring(0,leftInd) +
+                doCalc(leftVal,rightVal,"%") + tempVal.substring(ind+1,ind+1+rightInd);
+            }else if(tempVal.includes("+")){
+                let ind = tempVal.indexOf("+");
+                let leftOfOp = tempVal.substring(0,ind);
+                let leftInd = determineOpIndexLeft(leftOfOp);
+                let rightOfOp = tempVal.substring(ind+1);
+                let rightInd = determineOpIndexRight(rightOfOp);
+                let leftVal = tempVal.substring(leftInd,ind);
+                let rightVal = "";
+                if(rightInd == 0){
+                    rightVal = tempVal.substring(ind+1);
+                }else{
+                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
+                }
+                console.log(leftInd,rightInd);
+                console.log(leftVal,rightVal);
+                tempVal = tempVal.substring(0,leftInd) +
+                doCalc(leftVal,rightVal,"+") + tempVal.substring(ind+1,ind+1+rightInd);
+            }else if(tempVal.includes("-")){
+                let ind = tempVal.indexOf("-");
+                let leftOfOp = tempVal.substring(0,ind);
+                let leftInd = determineOpIndexLeft(leftOfOp);
+                let rightOfOp = tempVal.substring(ind+1);
+                let rightInd = determineOpIndexRight(rightOfOp);
+                let leftVal = tempVal.substring(leftInd,ind);
+                let rightVal = "";
+                if(rightInd == 0){
+                    rightVal = tempVal.substring(ind+1);
+                }else{
+                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
+                }
+                console.log(leftInd,rightInd);
+                console.log(leftVal,rightVal);
+                tempVal = tempVal.substring(0,leftInd) +
+                doCalc(leftVal,rightVal,"-") + tempVal.substring(ind+1,ind+1+rightInd);
+            }else{
+                opsLeft = false;
+            }
+            totalOps++;
+            if(totalOps > 20){
+                opsLeft = false;
+            }
+            console.log(tempVal,tempVal.length);
         }
-        return returnValue;
+        return tempVal;
+    };
+
+    const doCalc = (leftVal,rightVal,op) => {
+        let retVal = 0;
+        switch(op){
+            case "+":
+                retVal = parseFloat(leftVal) + parseFloat(rightVal);
+                break;
+            case "-":
+                retVal = parseFloat(leftVal) - parseFloat(rightVal);
+                break;
+            case "x":
+                retVal = parseFloat(leftVal) * parseFloat(rightVal);
+                break;
+            case "/":
+                retVal = parseFloat(leftVal) / parseFloat(rightVal);
+                break;
+            case "%":
+                retVal = parseFloat(leftVal) % parseFloat(rightVal);
+                break;
+        }
+        return retVal;
     };
 
     const determineOpIndexLeft = (value) => {
@@ -132,16 +206,15 @@
                 opInd = tInd;
             }
         });
-        if(opInd > 0){
-            opInd += 1;
+        if(opInd != 0){
+            opInd++;
         }
         return opInd;
     };
 
     const determineOpIndexRight = (value) => {
-        let opInd = value.length-1;
+        let opInd = value.length;
         equalsNeededCharacters.forEach(op => {
-
             if(value.includes(op)){
                 let tInd = value.indexOf(op);
                 if(tInd < opInd){
@@ -149,8 +222,8 @@
                 }
             }
         });
-        if(opInd != value.length-1){
-            opInd += 1;
+        if(opInd == value.length){
+            opInd = 0;
         }
         return opInd;
     };
