@@ -8,14 +8,14 @@ main{
 .Main-Wrap{
     position: absolute;
     width: 100%;
-    background-color: #DBF5F0;
+    background-color: white;
     border-radius: 20px;
 }
 
 .Title-Wrap{
     height: 50px;
     border-radius: 20px;
-    background-color: #0e1730;
+    background-color: #ECB172;
 }
 
 .Title-Icons{
@@ -31,13 +31,13 @@ main{
     font-size: 20px;
     padding: 13px 5%;
     border-radius: 20px;
-    color: #DBF5F0;
+    color: black;
 }
 
 #JS-Icon{
     position: absolute;
     padding: 0;
-    border: 1px solid #DBF5F0;
+    border: 1px solid white;
     margin: 10px;
     width: 28px;
 }

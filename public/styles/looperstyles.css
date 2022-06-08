@@ -15,7 +15,7 @@
 #Loop-Description{
     top: 60px;
     position: absolute;
-    background-color: #0C6170;
+    background-color: #F4EFE6;
     border-radius: 20px;
     margin: 2.5%;
     padding: 2.5%;
@@ -26,7 +26,7 @@
     width: 90%;
     padding: 2.5%;
     margin: 2.5%;
-    background-color: #0C6170;
+    background-color: #F4EFE6;
     top: 304px;
     height: 58px;
     border-radius: 20px;
@@ -62,7 +62,7 @@
 }
 
 #Loop-Wrap p{
-    color: #DBF5F0;
+    color: black;
 }
 
 /* //////////////////////////////// */
@@ -118,7 +118,6 @@
         width: 336px;
         left: 0;
         top: 415px;
-        background-color: #e4e4e4;
     }
 
 }
@@ -131,7 +130,6 @@
         height: 395px;
         width: 336px;
         left: 712px;
-        background-color: #e4e4e4;
     }
 
 }

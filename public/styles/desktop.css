@@ -14,7 +14,7 @@
   #Desktop-Header{
     position: fixed;
     width: 100%;
-    background-color: #0e1730;
+    background-color: black;
   }
 
   #Desktop-Header p{
@@ -23,7 +23,8 @@
     margin: 0;
     padding: 10px 0;
     text-align: center;
-    color: #DBF5F0;
+    font-weight: bold;
+    color: #F4EFE6;
   }
 
   #Desktop-Nav{
@@ -32,7 +33,7 @@
     margin: 0;
     padding: 0;
     top: 62px;
-    background-color: #A4E5E0;
+    background-color: #ECB172;
   }
  
   #Desktop-Nav-List{
@@ -61,7 +62,7 @@
 
   .text-wrapper{
     text-decoration: none;
-    color: #0e1730;
+    color: black;
   }
 
   .text-formatting{

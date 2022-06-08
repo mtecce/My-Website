@@ -7,7 +7,7 @@
 .Maze-Button{
     text-align: center;
     border-style: none;
-    background-color: #0e1730;
+    background-color: #375A63;
     color: #DBF5F0;
     font: inherit;
     font-size: 25px;
@@ -15,8 +15,8 @@
 }
 
 #Maze-Size{
-    background-color: #0e1730;
-    color: #DBF5F0;
+    background-color: #375A63;
+    color: white;
 }
 
 #Maze-Table{
@@ -31,7 +31,7 @@ td{
     opacity: 1;
     border: none;
     transition: opacity 0.5s;
-    background-color: #37BEB0;
+    background-color: #6795A0;
 }
 
 td.dissapear{
@@ -39,7 +39,7 @@ td.dissapear{
 }
 
 .wall{
-    background-color: #0e1730;
+    background-color: black;
 }
 
 /* //////////////////////////////// */

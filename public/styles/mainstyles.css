@@ -6,9 +6,33 @@
 /* #A4E5E0 */
 /* #DBF5F0 */
 
+.Color-Set-1{
+    background-color: #0e1730;
+}
+
+.Color-Set-2{
+    background-color: #0c6170;
+}
+
+.Color-Set-3{
+    background-color: #37BEB0;
+}
+
+.Color-Set-4{
+    background-color: #A4E5E0;
+}
+
+.Color-Set-4{
+    background-color: #DBF5F0;
+}
+
 body{
     font-family: 'Lato', sans-serif;
     margin: 0;
-    background-color: #37BEB0;
+    background-color: #F4EFE6;
     height: 0;
+}
+
+.image-invert{
+    filter: invert(1);
 }
