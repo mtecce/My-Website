@@ -61,6 +61,7 @@
     const determineOutputValue = () => {
         let res = parseParenthesis(currentResultText);
         console.log(res);
+        return(res);
     };
 
     const parseParenthesis = (value) => {
@@ -82,88 +83,15 @@
         let totalOps = 0;
         while(opsLeft){
             if(tempVal.includes("x")){
-                let ind = tempVal.indexOf("x");
-                let leftOfOp = tempVal.substring(0,ind);
-                let leftInd = determineOpIndexLeft(leftOfOp);
-                let rightOfOp = tempVal.substring(ind+1);
-                let rightInd = determineOpIndexRight(rightOfOp);
-                let leftVal = tempVal.substring(leftInd,ind);
-                let rightVal = "";
-                if(rightInd == 0){
-                    rightVal = tempVal.substring(ind+1);
-                }else{
-                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
-                }
-                tempVal = tempVal.substring(0,leftInd) +
-                doCalc(leftVal,rightVal,"x") + tempVal.substring(ind+1,ind+1+rightInd);
+                tempVal = splitValue(tempVal,"x");
             }else if(tempVal.includes("/")){
-                let ind = tempVal.indexOf("/");
-                let leftOfOp = tempVal.substring(0,ind);
-                let leftInd = determineOpIndexLeft(leftOfOp);
-                let rightOfOp = tempVal.substring(ind+1);
-                let rightInd = determineOpIndexRight(rightOfOp);
-                let leftVal = tempVal.substring(leftInd,ind);
-                let rightVal = "";
-                if(rightInd == 0){
-                    rightVal = tempVal.substring(ind+1);
-                }else{
-                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
-                }
-                console.log(leftInd,rightInd);
-                console.log(leftVal,rightVal);
-                tempVal = tempVal.substring(0,leftInd) +
-                doCalc(leftVal,rightVal,"/") + tempVal.substring(ind+1,ind+1+rightInd);
+                tempVal = splitValue(tempVal,"/");
             }else if(tempVal.includes("%")){
-                let ind = tempVal.indexOf("%");
-                let leftOfOp = tempVal.substring(0,ind);
-                let leftInd = determineOpIndexLeft(leftOfOp);
-                let rightOfOp = tempVal.substring(ind+1);
-                let rightInd = determineOpIndexRight(rightOfOp);
-                let leftVal = tempVal.substring(leftInd,ind);
-                let rightVal = "";
-                if(rightInd == 0){
-                    rightVal = tempVal.substring(ind+1);
-                }else{
-                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
-                }
-                console.log(leftInd,rightInd);
-                console.log(leftVal,rightVal);
-                tempVal = tempVal.substring(0,leftInd) +
-                doCalc(leftVal,rightVal,"%") + tempVal.substring(ind+1,ind+1+rightInd);
+                tempVal = splitValue(tempVal,"%");
             }else if(tempVal.includes("+")){
-                let ind = tempVal.indexOf("+");
-                let leftOfOp = tempVal.substring(0,ind);
-                let leftInd = determineOpIndexLeft(leftOfOp);
-                let rightOfOp = tempVal.substring(ind+1);
-                let rightInd = determineOpIndexRight(rightOfOp);
-                let leftVal = tempVal.substring(leftInd,ind);
-                let rightVal = "";
-                if(rightInd == 0){
-                    rightVal = tempVal.substring(ind+1);
-                }else{
-                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
-                }
-                console.log(leftInd,rightInd);
-                console.log(leftVal,rightVal);
-                tempVal = tempVal.substring(0,leftInd) +
-                doCalc(leftVal,rightVal,"+") + tempVal.substring(ind+1,ind+1+rightInd);
+                tempVal = splitValue(tempVal,"+");
             }else if(tempVal.includes("-")){
-                let ind = tempVal.indexOf("-");
-                let leftOfOp = tempVal.substring(0,ind);
-                let leftInd = determineOpIndexLeft(leftOfOp);
-                let rightOfOp = tempVal.substring(ind+1);
-                let rightInd = determineOpIndexRight(rightOfOp);
-                let leftVal = tempVal.substring(leftInd,ind);
-                let rightVal = "";
-                if(rightInd == 0){
-                    rightVal = tempVal.substring(ind+1);
-                }else{
-                    rightVal = tempVal.substring(ind+1,ind+1+rightInd);
-                }
-                console.log(leftInd,rightInd);
-                console.log(leftVal,rightVal);
-                tempVal = tempVal.substring(0,leftInd) +
-                doCalc(leftVal,rightVal,"-") + tempVal.substring(ind+1,ind+1+rightInd);
+                tempVal = splitValue(tempVal,"-");
             }else{
                 opsLeft = false;
             }
@@ -171,28 +99,54 @@
             if(totalOps > 20){
                 opsLeft = false;
             }
-            console.log(tempVal,tempVal.length);
         }
         return tempVal;
     };
 
-    const doCalc = (leftVal,rightVal,op) => {
+    const splitValue = (tempVal,calcOp) => {
+
+        let ind = tempVal.indexOf(calcOp);
+
+        let leftOfOp = tempVal.substring(0,ind);
+        let leftInd = determineOpIndexLeft(leftOfOp);
+        let rightOfOp = tempVal.substring(ind+1);
+        let rightInd = determineOpIndexRight(rightOfOp);
+
+        let returnVal = tempVal.substring(0,leftInd);
+        returnVal += doCalc(tempVal.substring(leftInd,ind+rightInd+1),calcOp);
+        returnVal += tempVal.substring(ind+rightInd+1);
+
+        console.log(leftOfOp,rightOfOp);
+
+        console.log(tempVal.substring(0,leftInd));
+        console.log(tempVal.substring(leftInd,ind+rightInd+1));
+        console.log(tempVal.substring(ind+rightInd+1));
+
+
+        return returnVal;
+    };
+
+    const doCalc = (value,op) => {
         let retVal = 0;
+        let ind = value.indexOf(op);
+        let leftVal = parseFloat(value.substring(0,ind));
+        let rightVal = parseFloat(value.substring(ind+1));
+
         switch(op){
             case "+":
-                retVal = parseFloat(leftVal) + parseFloat(rightVal);
+                retVal = leftVal + rightVal;
                 break;
             case "-":
-                retVal = parseFloat(leftVal) - parseFloat(rightVal);
+                retVal = leftVal - rightVal;
                 break;
             case "x":
-                retVal = parseFloat(leftVal) * parseFloat(rightVal);
+                retVal = leftVal * rightVal;
                 break;
             case "/":
-                retVal = parseFloat(leftVal) / parseFloat(rightVal);
+                retVal = leftVal / rightVal;
                 break;
             case "%":
-                retVal = parseFloat(leftVal) % parseFloat(rightVal);
+                retVal = leftVal % rightVal;
                 break;
         }
         return retVal;
@@ -201,9 +155,19 @@
     const determineOpIndexLeft = (value) => {
         let opInd = 0;
         equalsNeededCharacters.forEach(op => {
-            let tInd = value.indexOf(op);
-            if(tInd > opInd){
-                opInd = tInd;
+            let foundAll = false;
+
+            while(!foundAll){
+
+                if(value.includes(op)){
+                    let tInd = value.indexOf(op);
+                    if(tInd > opInd){
+                        opInd = tInd;
+                        value = value.substring(0,opInd)+"0"+value.substring(opInd+1);
+                    }
+                }else{
+                    foundAll = true;
+                }
             }
         });
         if(opInd != 0){
@@ -222,9 +186,9 @@
                 }
             }
         });
-        if(opInd == value.length){
-            opInd = 0;
-        }
+        // if(opInd == value.length){
+        //     opInd = 0;
+        // }
         return opInd;
     };
 
