@@ -19,6 +19,10 @@ app.get('/csprojects', (req,res) =>{
     res.render('csprojects');
 });
 
+app.get('/musicprojects', (req,res) => {
+    res.render('musicprojects')
+});
+
 app.get('/contact', (req,res) =>{
     res.render('contact');
 });
