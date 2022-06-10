@@ -28,10 +28,8 @@ main{
 }
 
 
-/* //////////////////////////////// */
-/*    Phone Portrait Orientation    */
-/* //////////////////////////////// */
-@media screen and (max-width:450px){
+/* Mobile Portrait */
+@media screen and (max-width: 450px) and (max-height: 916px){
 
     main{
         top: 60px;
@@ -48,10 +46,8 @@ main{
 
 }
 
-/* //////////////////////////////// */
-/*   Phone Landscape Orientation    */
-/* //////////////////////////////// */
-@media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
+/* Mobile Landscape */
+@media screen and (min-width: 451px) and (max-width: 916px) and (max-height: 450px){
 
     main{
         left: 60px;
@@ -63,10 +59,30 @@ main{
 
 }
 
-/* //////////////////////////////// */
-/*     Desktop Orientation    */
-/* //////////////////////////////// */
-@media screen and (min-width: 916px){
+/* Desktop Portrait */
+@media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
+    main{
+        top: 127px;
+        z-index: -1;
+    }
+
+    .block-1{
+        width: 60%;
+    }
+
+    .block-1,
+    .block-2{
+        margin: 2.5%;
+    }
+
+    .bp{
+        
+        padding: 2.5% 0;
+    }
+}
+
+/* Desktop Landscape */
+@media screen and (min-width:917px){
 
     main{
         top: 127px;

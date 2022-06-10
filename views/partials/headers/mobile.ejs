@@ -1,5 +1,170 @@
-<%- include('../mobile/dropdown.ejs')%>
+<!-- Mobile Portrait Dropdown Menu -->
+<div id="Mobile-Dropdown-Wrapper">
+  <ul id="Main-Dropdown-List">
+      <li id="MDL-0" class="Dropdown-List-Items">
+          <a href="MichaelTecceResume.pdf" target="_blank" class="Dropdown-Item-Text">
+              <p>Resume</p>
+          </a>
+      </li>
+      <li id="MDL-1" class="Dropdown-List-Items">
+          <div id="Project-Wrapper" class="Dropdown-Item-Text">
+              <div id="Arrow-Icon-Wrapper" onclick="arrowDrop();">
+                  <img src="images/blackarrow.png" alt="Arrow" id="DD-Arrow-Icon"/>
+              </div>
+              <p >Projects</p>
+          </div>
+          <ul id="Sub-Dropdown-List" class="sub-drop">
+              <li id="SDL-1" class="Dropdown-List-Items SDD-List-Items sub-drop">
+                  <a href="/csprojects" class="Dropdown-Item-Text SDD-Text">
+                      <p>~CS Projects~</p>
+                  </a>
+              </li>
+              <li id="SDL-2" class="Dropdown-List-Items SDD-List-Items sub-drop">
+                  <a href="/musicprojects" class="Dropdown-Item-Text SDD-Text">
+                      <p>~Music Projects~</p>
+                  </a>
+              </li>
+          </ul>
+      </li>
+      <li id="MDL-2" class="Dropdown-List-Items sub-drop">
+          <a href="/contact" class="Dropdown-Item-Text">
+              <p>Contact</p>
+          </a>
+      </li>
+  </ul>
+</div>
+
+<!-- Mobile Landscape Hamburger Background -->
 <div class="hambackground"></div>
+
+<!-- Mobile Icons -->
 <header id="Mobile-Header" class="mobile">
-  <%- include('../mobile/icons.ejs')%>
+  <div id="Icons-Element">
+
+    <div id="Name-Banner" class="name-banner">
+        <p id="Name-Text" class="name-text">Michael Tecce</p>
+    </div>
+
+    <div id="Icon0" class="icon-container sidemove" onclick="hamClick();">
+        <div id="Ham">
+            <span class="ham-line top-line"></span>
+            <span class="ham-line mid-line"></span>
+            <span class="ham-line bottom-line"></span>
+        </div>
+    </div>
+
+    <a href="/" id="Icon1" class="icon-container sidemove">
+        <div id="Icon1-Wrapper" class="Icon-Wrapper iconi1">
+            <img src="images/icons/homeicon.png" alt="Home" id="Home-Icon" class="icon-size homeicon image-invert"/>
+        </div>
+    </a>
+    <a href="https://www.github.com/mtecce" id="Icon2" class="icon-container sidemove">
+        <div class="Icon-Wrapper iconi2">
+            <img src="images/icons/githubicon.png" alt="Github" class="icon-size githubicon image-invert">
+        </div>
+    </a>
+    <a href="https://www.linkedin.com/in/michael-tecce-5a4802194/" id="Icon3" class="icon-container sidemove">
+        <div class="Icon-Wrapper iconi3">
+            <img src="images/icons/linkedinicon.png" alt="LinkedIn" class="icon-size linkedinicon image-invert">
+        </div>
+    </a>
+    
+    <div id="Icon4" class="icon-container icon sidemove">
+        <div class="Icon-Wrapper iconi4">
+            <img src="images/icons/foldericon.png" alt="Projects" class="icon-size projecticon image-invert">
+        </div>
+    </div>
+
+    <div id="Project-Slide" class="icon-container projectslide">
+        <a href="/csprojects" id="Icon5" class="icon-container slide-container">
+            <div class="Icon-Wrapper iconi5">
+                <img src="images/icons/scripticon.png" alt="CSProj" class="icon-size scripticon image-invert">
+            </div>
+        </a>
+        <a href="/musicprojects" id="Icon6" class="icon-container slide-container">
+            <div class="Icon-Wrapper iconi6">
+                <img src="images/icons/musicicon.png" alt="MusicProj" class="icon-size musicicon image-invert">
+            </div>
+        </a>
+    </div>
+    <div id="Icon7" class="icon-container icon sidemove">
+        <div class="dots">
+            <span class="is top-dot dot-move"></span>
+            <span class="is mid-dot"></span>
+            <span class="is bottom-dot dot-move"></span>
+        </div>
+    </div>
+    <div id="More-Slide" class="icon-container moreslide">
+        <a href="MichaelTecceResume.pdf" id="Icon8" target="_blank" class="icon-container slide-container">
+            <div class="Icon-Wrapper iconi8">
+                <img src="images/icons/fileicon.png" alt="Resume" class="icon-size resumeicon image-invert">
+            </div>
+        </a>
+        <a href="/contact" id="Icon9" class="icon-container slide-container">
+            <div class="Icon-Wrapper iconi9">
+                <img src="images/icons/contacticon.png" alt="Contact" class="icon-size contacticon image-invert">
+            </div>
+        </a>
+    </div>
+
+    <!-- Tablet Icons -->
+    <a href="MichaelTecceResume.pdf" id="Icon10" target="_blank" class="icon-container">
+        <div class="Icon-Wrapper iconi10">
+            <img src="images/icons/fileicon.png" alt="Resume" class="icon-size resumeicon image-invert">
+        </div>
+    </a>
+    <a href="/csprojects" id="Icon11" class="icon-container">
+        <div class="Icon-Wrapper iconi11">
+            <img src="images/icons/scripticon.png" alt="CSProj" class="icon-size scripticon image-invert">
+        </div>
+    </a>
+    <a href="/musicprojects" id="Icon12" class="icon-container">
+        <div class="Icon-Wrapper iconi12">
+            <img src="images/icons/musicicon.png" alt="MusicProj" class="icon-size musicicon image-invert">
+        </div>
+    </a>
+    <a href="/contact" id="Icon13" class="icon-container">
+        <div class="Icon-Wrapper iconi13">
+            <img src="images/icons/contacticon.png" alt="Contact" class="icon-size contacticon image-invert">
+        </div>
+    </a>
+</div>
 </header>
+
+<header id="Desktop-Header" class="desktop">
+  <p>Michael Tecce</p>
+</header>
+<nav id="Desktop-Nav" class="nav-top">
+  <ul id="Desktop-Nav-List" class="nav-list">
+    <li class="list-item-formatting">
+      <a href="/" class="text-wrapper">
+        <span class="text-formatting">Home</span>
+      </a>
+    </li>
+    <li class="list-item-formatting">
+      <a href="https://www.github.com/mtecce" class="text-wrapper">
+        <span class="text-formatting github-text">GitHub</span>
+      </a>
+    </li>
+    <li class="list-item-formatting">
+      <a href="MichaelTecceResume.pdf" target="_blank" class="text-wrapper">
+        <span class="text-formatting resume-text">Resume</span>
+      </a>
+    </li>
+    <li class="list-item-formatting">
+      <a href="/csprojects" class="text-wrapper">
+        <span class="text-formatting csprojects-text">Projects</span>
+      </a>
+    </li>
+    <li class="list-item-formatting">
+      <a href="/musicprojects" class="text-wrapper">
+        <span class="text-formatting musicprojects-text">Music</span>
+      </a>
+    </li>
+    <li class="list-item-formatting">
+      <a href="/contact" class="text-wrapper">
+        <span class="text-formatting contact-text">Contact</span>
+      </a>
+    </li>
+  </ul>
+</nav>

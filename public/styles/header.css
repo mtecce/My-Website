@@ -1,0 +1,6 @@
+#Mobile-Header{
+    position: fixed;
+    z-index: 2;
+    background-color: #ECB172;
+    color: black;
+}

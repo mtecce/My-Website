@@ -49,10 +49,8 @@
     transition: background-color 0.05s;
 }
 
-/* //////////////////////////////// */
-/*    Phone Portrait Orientation    */
-/* //////////////////////////////// */
-@media screen and (max-width:450px){
+/* Mobile Portrait */
+@media screen and (max-width: 450px) and (max-height: 916px){
 
     #Calc-Wrap{
         top: 462px;
@@ -80,10 +78,8 @@
 
 }
 
-/* //////////////////////////////// */
-/*   Phone Landscape Orientation    */
-/* //////////////////////////////// */
-@media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
+/* Mobile Landscape */
+@media screen and (min-width: 451px) and (max-width: 916px) and (max-height: 450px){
     
     #Calc-Wrap{
         height: 330px;
@@ -105,6 +101,7 @@
 
     #Calc{
         position: absolute;
+        width: 100%;
         z-index: 0;
         height: 330px;
         top: 0;
@@ -119,6 +116,7 @@
 
     #Calc-Landscape-Buttons{
         top: 25px;
+        width: 100%;
     }
 
     #Calc-Norm-Buttons{
@@ -134,10 +132,105 @@
     font-size: 35px;
 }
 
-/* //////////////////////////////// */
-/*  Desktop Landscape Orientation   */
-/* //////////////////////////////// */
-@media screen and (min-width: 916px){
+/* Desktop Portrait */
+@media screen and (min-width: 451px) and (max-width: 712px) and (min-height: 451px){
+
+    #Calc-Wrap{
+        width: 336px;
+        height: 395px;
+        top: 415px;
+    }
+
+    #Calc-Title{
+        font-size: 20px;
+    }
+
+    #Calc{
+        width: 300px;
+        height: 327px;
+        margin: 9px 18px;
+    }
+
+    #Calc-Res-Wrap{
+        padding: 20px 0;
+    }
+
+    #Calc-Res{
+
+    }
+
+    #Calc-Norm-Buttons{
+        top: 10px;
+        border-spacing: 10px;
+    }
+
+    .calc-button{
+        height: 37px;
+        font-size: 20px;
+        border-radius: 19px;
+
+    }
+
+    #Calc-Landscape-Buttons{
+        visibility: hidden;
+        position: absolute;
+        left: 20px;
+        z-index: -5;
+    }
+
+}
+
+/* Desktop Portrait */
+@media screen and (min-width: 713px) and (max-width: 916px) and (min-height: 451px){
+
+    #Calc-Wrap{
+        width: 336px;
+        height: 395px;
+        top: 0px;
+        left: 356px;
+    }
+
+    #Calc-Title{
+        font-size: 20px;
+    }
+
+    #Calc{
+        width: 300px;
+        height: 327px;
+        margin: 9px 18px;
+    }
+
+    #Calc-Res-Wrap{
+        padding: 20px 0;
+    }
+
+    #Calc-Res{
+
+    }
+
+    #Calc-Norm-Buttons{
+        top: 10px;
+        border-spacing: 10px;
+    }
+
+    .calc-button{
+        height: 37px;
+        font-size: 20px;
+        border-radius: 19px;
+
+    }
+
+    #Calc-Landscape-Buttons{
+        visibility: hidden;
+        position: absolute;
+        left: 20px;
+        z-index: -5;
+    }
+
+}
+
+/* Desktop Landscape */
+@media screen and (min-width:917px){
 
     #Calc-Wrap{
         width: 336px;

@@ -42,10 +42,8 @@ td.dissapear{
     background-color: black;
 }
 
-/* //////////////////////////////// */
-/*    Phone Portrait Orientation    */
-/* //////////////////////////////// */
-@media screen and (max-width:450px){
+/* Mobile Portrait */
+@media screen and (max-width: 450px) and (max-height: 916px){
 
     #Maze-Wrap{
         height: 420px;
@@ -69,10 +67,8 @@ td.dissapear{
     }
 }
 
-/* //////////////////////////////// */
-/*   Phone Landscape Orientation    */
-/* //////////////////////////////// */
-@media screen and (min-width:450px) and (max-width: 916px) and (max-height: 512px){
+/* Mobile Landscape */
+@media screen and (min-width: 451px) and (max-width: 916px) and (max-height: 450px){
     
     #Maze-Wrap{
         height: 314px;
@@ -109,10 +105,38 @@ td.dissapear{
 }
 
 /* //////////////////////////////// */
-/*  Desktop Landscape Orientation   */
+/*  Desktop Portrait Orientation   */
 /* //////////////////////////////// */
-@media screen and (min-width: 916px){
+@media screen and (min-height: 512px) and (max-width: 916px){
 
+}
+
+/* Desktop Portrait */
+@media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
+
+    #Maze-Wrap{
+        height: 395px;
+        width: 336px;
+    }
+
+    #Maze-Func{
+        top: 49px;
+    }
+
+    .Maze-Button{
+        font-size: 20px;
+        border-radius: 15px;
+        height: 30px;
+        transform: translateX(10%);
+    }
+
+    #Maze-Table{
+        top: 100px;
+    }
+}
+
+/* Desktop Landscape */
+@media screen and (min-width:917px){
     #Maze-Wrap{
         height: 395px;
         width: 336px;
