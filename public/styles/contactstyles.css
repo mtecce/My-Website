@@ -248,7 +248,8 @@ main{
 @media screen and (min-width: 917px){
 
     main{
-        top: 140px;
+        top: 128px;
+        height: calc(100vh - 128px);
     }
 
     .list-item-format{
@@ -344,6 +345,10 @@ main{
 
     .linkedin-item{
         top: 400px;
+    }
+
+    .contact-linkedinicon{
+        width: 44px;
     }
 
     .github-item,
