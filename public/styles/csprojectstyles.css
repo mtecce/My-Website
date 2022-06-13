@@ -61,7 +61,7 @@ main{
 }
 
 #Maze-Title{
-    width: 225px;
+    width: 222px;
 }
 
 #Calc-Title{
@@ -69,11 +69,11 @@ main{
 }
 
 #Loop-Title{
-    width: 150px;
+    width: 144px;
 }
 
 #AR-Title{
-    width: 188px;
+    width: 133px;
 }
 
 .Title,
@@ -260,16 +260,64 @@ td.dissapear{
 }
 
 #AR-Description{
-    top: 60px;
     position: relative;
     background-color: #F4EFE6;
     border-radius: 20px;
-    margin: 2.5%;
-    padding: 2.5%;
+    margin: 20px 10px;
+    padding: 10px;
 }
 
-#AR-Wrap p{
-    color: black;
+#AR-Link-Wrap{
+    position: relative;
+    background-color: #F4EFE6;
+    border-radius: 20px;
+    margin: 20px 10px;
+}
+
+.AR-Link-Item{
+    position: relative;
+    height: 45px;
+}
+
+#AR-Link-1-Wrap{
+
+}
+
+#AR-Link-2-Wrap{
+    
+}
+
+#AR-Link-3-Wrap{
+    
+}
+
+.AR-Link-Icons{
+    width: 30px;
+    margin: 7.5px 15px;
+}
+
+#AR-GH-Icon{
+
+}
+
+#AR-Web-Icon{
+
+}
+
+#AR-YT-Icon{
+
+}
+
+#AR-Img-Pop-Icon{
+    margin: 12px 15px;
+}
+
+.AR-Link-Text{
+    position: absolute;
+    font-size: 18px;
+    top: 0;
+    margin: 11px;
+    left: 60px;
 }
 
 /* Mobile Portrait */
@@ -295,7 +343,7 @@ td.dissapear{
     }
 
     #AR-Title{
-        width: calc(100% - 142px);
+        width: calc(100% - 179px);
     }
 
     #Calc{
@@ -322,7 +370,6 @@ td.dissapear{
         left: 0;
     }
 
-    
 }
 
 /* Mobile Landscape */
@@ -489,7 +536,37 @@ td.dissapear{
     }
 
     #AR-Description{
-        top: 0;
+        margin: 10px;
+    }
+
+    #AR-Link-Wrap{
+        margin: 10px;
+        height: 77px;
+    }
+
+    .AR-Link-Item{
+        height: 30px;
+        width: 50%;
+        padding: 4.5px 0;
+    }
+
+    .AR-Link-Rightside{
+        left: 50%;
+        transform: translateY(-200%);
+    }
+
+    .AR-Link-Icons{
+        width: 25px;
+        margin: 2.5px 15px;
+    }
+
+    #AR-Img-Pop-Icon{
+        margin: 8px 15px;
+    }
+
+    .AR-Link-Text{
+        font-size: 16px;
+        margin: 9px 0;
     }
 }
 
