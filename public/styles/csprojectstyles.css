@@ -1,15 +1,13 @@
 main{
-    z-index: 0;
-    position: relative;
-    top: 62px;
+    position: absolute;
     z-index: -1;
 }
 
 .Main-Wrap{
-    position: absolute;
     width: 100%;
     background-color: white;
     border-radius: 20px;
+    height: 575px;
 }
 
 .Title-Wrap{
@@ -31,7 +29,6 @@ main{
     font-size: 20px;
     padding: 13px 5%;
     border-radius: 20px;
-    color: black;
 }
 
 #JS-Icon{
@@ -51,8 +48,12 @@ main{
 
 #Project-Grid{
     display: grid;
-    gap: 50px;
-    grid-template-columns: 336px;
+    gap: 25px;
+}
+
+.Title,
+.Outer-Text{
+    color: black;
 }
 
 /* Mobile Portrait */
@@ -60,8 +61,13 @@ main{
 
     main{
         width: 90%;
-        margin: 0 5%;
-        top: 25px;
+        margin: 5%;
+        height: calc(100vh - 60px);
+        top: 60px;
+    }
+
+    .Main-Wrap{
+        width: 100%;
     }
 }
 
@@ -69,13 +75,20 @@ main{
 @media screen and (min-width: 451px) and (max-width: 916px) and (max-height: 450px){
     
     main{
-        left: 90px;
-        width: 80%;
-        top: 0;
+        left: 53px;
+        width: calc(100vw - 53px);
+    }
+
+    #Project-Grid{
+        width: 90%;
+        margin: 15px 5%;
+        row-gap: 15px;
     }
 
     .Main-Wrap{
         position: relative;
+        height: 330px;
+        width: 100%;
     }
 }
 
@@ -83,12 +96,18 @@ main{
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
 
     main{
-        top: 99px;
+        top: 100px;
+        height: calc(100vh - 100px);
+        width: 100%;
     }
 
     .Main-Wrap{
-        top: 0;
-        margin: 10px;
+        width: 330px;
+    }
+
+    .Title{
+        width: 304px;
+        padding: 13px;
     }
 }
 
@@ -105,3 +124,17 @@ main{
     }
 
 }
+
+@media screen and (min-width: 685px) and (min-height: 451px) {
+    #Project-Grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1040px){
+    #Project-Grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
