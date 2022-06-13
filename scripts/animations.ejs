@@ -9,6 +9,7 @@
 
     //mainmenu arrow animations
     const arrowimage = document.getElementById("DD-Arrow-Icon");
+    const submenuitem = document.getElementById("MDL-1");
     const submenudrop = document.querySelectorAll(".sub-drop");
 
     //header animation
@@ -26,6 +27,7 @@
     
     const arrowDrop = () => {
         arrowimage.classList.toggle("activeN");
+        submenuitem.classList.toggle("activeN");
         submenudrop.forEach((item) => item.classList.toggle("activeN"));
     };
 

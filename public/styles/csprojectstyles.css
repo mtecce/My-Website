@@ -578,8 +578,8 @@ td.dissapear{
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
 
     main{
-        top: 100px;
-        height: calc(100vh - 140px);
+        top: 60px;
+        height: calc(100vh - 100px);
         width: calc(100% - 40px);
         margin: 20px;
     }
@@ -623,8 +623,8 @@ td.dissapear{
 @media screen and (min-width:917px){
 
     main{
-        top: 129px;
-        height: calc(100vh - 169px);
+        top: 60px;
+        height: calc(100vh - 100px);
         width: calc(100% - 40px);
         margin: 20px;
     }

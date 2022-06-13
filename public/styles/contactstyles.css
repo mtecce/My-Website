@@ -238,7 +238,13 @@ main{
     }
 
     main{
-        top: 99px;
+        top: 80px;
+        margin: 0 5%;
+    }
+
+    .contact-strip-list{
+        margin: 0;
+        width: 100%;
     }
 }
 
@@ -248,7 +254,7 @@ main{
 @media screen and (min-width: 917px){
 
     main{
-        top: 128px;
+        top: 80px;
         height: calc(100vh - 128px);
     }
 
