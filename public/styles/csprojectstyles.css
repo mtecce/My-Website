@@ -3,6 +3,16 @@ main{
     z-index: -1;
 }
 
+/* GRID */
+
+#Project-Grid{
+    display: grid;
+    gap: 25px;
+    justify-items: center;
+}
+
+/* Section Wrap */
+
 .Main-Wrap{
     width: 100%;
     background-color: white;
@@ -10,29 +20,23 @@ main{
     height: 575px;
 }
 
+/* Title Wraps */
+
 .Title-Wrap{
     height: 50px;
     border-radius: 20px;
     background-color: #ECB172;
 }
 
+/* Title Icons */
+
 .Title-Icons{
-    position: absolute;
+    position: relative;
     padding: 0 5px;
     width: 50px;
 }
 
-.Title{
-    position: absolute;
-    width: 90%;
-    text-align: right;
-    font-size: 20px;
-    padding: 13px 5%;
-    border-radius: 20px;
-}
-
 #JS-Icon{
-    position: absolute;
     padding: 0;
     border: 1px solid white;
     margin: 10px;
@@ -42,17 +46,229 @@ main{
 #Cpp-Icon{
     padding: 0;
     width: 35px;
-    left: 50px;
     margin: 8px 10px;
 }
 
-#Project-Grid{
-    display: grid;
-    gap: 25px;
+/* Title Text */
+
+.Title{
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    font-size: 20px;
+    padding: 13px 0;
+    border-radius: 20px;
+}
+
+#Maze-Title{
+    width: 225px;
+}
+
+#Calc-Title{
+    width: 230px;
+}
+
+#Loop-Title{
+    width: 150px;
+}
+
+#AR-Title{
+    width: 188px;
 }
 
 .Title,
 .Outer-Text{
+    color: black;
+}
+
+/* ///////////////////////////////////// */
+/*                MAZE                   */
+/* ///////////////////////////////////// */
+
+#Maze-Func{
+    position: relative;
+    background-color: #F4EFE6;
+    height: 190px;
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.Maze-Button{
+    text-align: center;
+    border-style: none;
+    background-color: #375A63;
+    color: #DBF5F0;
+    font: inherit;
+    height: 50px;
+    border-radius: 20px;
+    padding: 0;
+    font-size: 25px;
+    width: 90%;
+    margin: 10px 5%;
+}
+
+#Maze-Size{
+    background-color: #375A63;
+    color: white;
+}
+
+#New-Maze{
+    margin: 0 5%;
+}
+
+#Maze-Table-Wrapper{
+    width: 90%;
+    margin: 2.5% 5%;
+    height: 300px;
+    background-color: #F4EFE6;
+    border-radius: 20px;
+}
+
+#Maze-Table{
+    position: relative;
+    border-spacing: 0;
+    width: 270px;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+}
+
+td{
+    opacity: 1;
+    border: none;
+    transition: opacity 0.5s;
+    background-color: #6795A0;
+}
+
+td.dissapear{
+    opacity: 0;
+}
+
+.wall{
+    background-color: black;
+}
+
+/* ///////////////////////////////////// */
+/*              Calculator               */
+/* ///////////////////////////////////// */
+
+#Calc{
+    position: relative;
+    background-color: black;
+    margin: 0;
+    border-radius: 22px;
+}
+
+#Calc-Res-Wrap{
+    position: relative;
+    background-color: black;
+    color: rgb(231, 193, 255);
+    text-align: right;
+    vertical-align: middle;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+#Calc-Res{
+    font-size: 25px;
+    margin: 0;
+}
+
+#Calc-Norm-Buttons,
+#Calc-Landscape-Buttons{
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 11px;
+    top: 0px;
+}
+
+.calc-button{
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(47,47,47);
+    color: rgb(231, 193, 255);
+    transition: background-color 0.05s;
+}
+
+/* ///////////////////////////////////// */
+/*                LOOPER                 */
+/* ///////////////////////////////////// */
+
+#Loop-Description{
+    position: relative;
+    background-color: #F4EFE6;
+    border-radius: 20px;
+    margin: 5% 2.5%;
+    padding: 2.5%;
+}
+
+#Loop-Link-Wrap{
+    position: relative;
+    width: 90%;
+    padding: 2.5%;
+    margin: 2.5%;
+    margin-top: 30px;
+    background-color: #F4EFE6;
+    height: 220px;
+    border-radius: 20px;
+}
+
+.Loop-Link-Item{
+    position: relative;
+    height: 50%;
+}
+
+#Loop-GH-Icon{
+    position: absolute;
+    width: 70px;
+    margin: 20px;
+}
+
+#Loop-GH-Desc{
+    position: absolute;
+    margin: 0;
+    padding: 43.5px 0;
+    font-size: 20px;
+    left: 110px;
+}
+
+#Loop-Img-Pop-Icon{
+    position: absolute;
+    width: 80px;
+    margin: 27.5px 12px;
+}
+
+#Img-Pop-Desc{
+    position: absolute;
+    font-size: 20px;
+    left: 110px;
+    margin: 0;
+    padding: 32px 0;
+}
+
+/* ///////////////////////////////////// */
+/*                AR                     */
+/* ///////////////////////////////////// */
+
+.AR-IMGS{
+    width: 36px;
+    padding: 7px 5px;
+}
+
+#AR-Description{
+    top: 60px;
+    position: relative;
+    background-color: #F4EFE6;
+    border-radius: 20px;
+    margin: 2.5%;
+    padding: 2.5%;
+}
+
+#AR-Wrap p{
     color: black;
 }
 
@@ -66,9 +282,47 @@ main{
         top: 60px;
     }
 
-    .Main-Wrap{
-        width: 100%;
+    #Maze-Title{
+        width: calc(100% - 105px);
     }
+
+    #Calc-Title{
+        width: calc(100% - 100px);
+    }
+
+    #Loop-Title{
+        width: calc(100% - 180px);
+    }
+
+    #AR-Title{
+        width: calc(100% - 142px);
+    }
+
+    #Calc{
+        top: 12px;
+        width: 300px;
+        height: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #Calc-Res-Wrap{
+        padding: 50px 0;
+    }
+
+    #Calc-Landscape-Buttons{
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        z-index: -5;
+    }
+
+    .looper-images{
+        left: 0;
+    }
+
+    
 }
 
 /* Mobile Landscape */
@@ -88,8 +342,159 @@ main{
     .Main-Wrap{
         position: relative;
         height: 330px;
+    }
+
+    .Title{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #Maze-Title{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #Maze-Table-Wrapper{
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        margin: 12px;
+    }
+
+    #Maze-Table{
+        transform: none;
+        width: 214px;
+        left: 0;
+        top: 0;
+        margin: 13px;
+    }
+
+    #Maze-Func{
+        position: absolute;
+        padding: 0;
+        left: 50%;
+        height: 240px;
+        width: 45%;
+        margin: 2.5% 12px;
+    }
+
+    .Maze-Button{
+        width: 80%;
+        margin: 15px 10%;
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    #New-Maze{
+        margin: 15px 10%;
+    }
+
+    #Calc-Title-Wrap{
+        position: relative;
+        z-index: 1;
+    }
+
+    #Calc-Title{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    #Calc{
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        height: 330px;
+        top: 0;
+    }
+
+    #Calc-Res-Wrap{
+        width: 50%;
+        left: 50%;
+        top: 50px;
+        padding: 25px 0;
+    }
+
+    #Calc-Landscape-Buttons{
+        top: 25px;
         width: 100%;
     }
+
+    #Calc-Norm-Buttons{
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        z-index: -5;
+    }
+
+    #Loop-Title{
+        width: calc(100% - 180px);
+    }
+
+    .looper-images{
+        left: 0;
+    }
+
+    #Loop-Description{
+        margin: 10px 2.5%;
+    }
+
+    #Loop-Link-Wrap{
+        height: 60px;
+        margin-top: 2.5%;
+    }
+
+    .Loop-Link-Item{
+        position: absolute;
+        height: 100%;
+    }
+
+    #Loop-GH-Icon{
+        width: 50px;
+        margin: 5px;
+    }
+    
+    #Loop-GH-Desc{
+        width: 150px;
+        font-size: 16px;
+        margin: 0;
+        padding: 20.75px 0;
+        left: 70px;
+    }
+
+    #Loop-Link-2-Wrap{
+        left: 47%;
+    }
+    
+    #Loop-Img-Pop-Icon{
+        width: 65px;
+        margin: 7.5px 0;
+
+    }
+    
+    #Img-Pop-Desc{
+        width: 200px;
+        left: 70px;
+        font-size: 16px;
+        margin: 0;
+        padding: 20.75px 0;
+    }
+
+    #AR-Title{
+        width: calc(100% - 142px);
+    }
+
+    #AR-Description{
+        top: 0;
+    }
+}
+
+.big-b{
+    font-size: 35px;
 }
 
 /* Desktop Portrait */
@@ -97,18 +502,44 @@ main{
 
     main{
         top: 100px;
-        height: calc(100vh - 100px);
-        width: 100%;
+        height: calc(100vh - 140px);
+        width: calc(100% - 40px);
+        margin: 20px;
     }
 
     .Main-Wrap{
         width: 330px;
     }
 
-    .Title{
-        width: 304px;
-        padding: 13px;
+    #Calc{
+        width: 300px;
+        height: 500px;
+        margin: 9px 18px;
     }
+
+    #Calc-Res-Wrap{
+        padding: 50px 0;
+    }
+
+
+    #Calc-Norm-Buttons{
+        border-spacing: 10px;
+    }
+
+    .calc-button{
+        height: 62px;
+        font-size: 20px;
+        border-radius: 50%;
+
+    }
+
+    #Calc-Landscape-Buttons{
+        visibility: hidden;
+        position: absolute;
+        left: 20px;
+        z-index: -5;
+    }
+    
 }
 
 /* Desktop Landscape */
@@ -116,16 +547,46 @@ main{
 
     main{
         top: 129px;
+        height: calc(100vh - 169px);
+        width: calc(100% - 40px);
+        margin: 20px;
     }
 
     .Main-Wrap{
-        top: 0;
-        margin: 10px;
+        width: 330px;
+    }
+
+    #Calc{
+        width: 300px;
+        height: 500px;
+        margin: 9px 18px;
+    }
+
+    #Calc-Res-Wrap{
+        padding: 50px 0;
+    }
+
+    #Calc-Norm-Buttons{
+        border-spacing: 10px;
+    }
+
+    .calc-button{
+        height: 62px;
+        font-size: 20px;
+        border-radius: 50%;
+
+    }
+
+    #Calc-Landscape-Buttons{
+        visibility: hidden;
+        position: absolute;
+        left: 20px;
+        z-index: -5;
     }
 
 }
 
-@media screen and (min-width: 685px) and (min-height: 451px) {
+@media screen and (min-width: 725px) and (min-height: 451px) {
     #Project-Grid{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -137,4 +598,43 @@ main{
     }
 }
 
+@media screen and (min-width: 1395px){
+    #Project-Grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
+
+
+/* ///////////////////////////////////// */
+/*       Calculator Animations           */
+/* ///////////////////////////////////// */
+
+.clear-b{
+    color: red;
+}
+
+.fun-b{
+    color: rgb(250, 162, 152);
+}
+
+.eq-b{
+    background-color: rgb(250, 162, 152);
+    color: black;
+}
+
+.calc-button.fade-in{
+    background-color: rgb(231, 193, 255);
+}
+
+.clear-b.fade-in{
+    background-color: red;
+}
+
+.eq-b.fade-in{
+    background-color: rgb(47, 47, 47);;
+}
+
+.fun-b.fade-in{
+    background-color: rgb(250, 162, 152);
+}
