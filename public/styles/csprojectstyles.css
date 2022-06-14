@@ -9,23 +9,26 @@ main{
     display: grid;
     gap: 25px;
     justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
 }
 
 /* Section Wrap */
 
 .Main-Wrap{
     width: 100%;
-    background-color: white;
-    border-radius: 20px;
     height: 575px;
+    background: 
+    conic-gradient(#515151,#515151) padding-box,
+    repeating-conic-gradient(darkorchid 0%,#37fff9 5%, darkorchid 10%) border-box;
+    border-radius: 25px;
+    border: 5px solid transparent;
+    overflow: hidden;
 }
-
 /* Title Wraps */
 
 .Title-Wrap{
     height: 50px;
-    border-radius: 20px;
-    background-color: #ECB172;
+    background-color: black;
 }
 
 /* Title Icons */
@@ -41,6 +44,7 @@ main{
     border: 1px solid white;
     margin: 10px;
     width: 28px;
+    margin-left: 15px;
 }
 
 #Cpp-Icon{
@@ -57,7 +61,6 @@ main{
     text-align: center;
     font-size: 20px;
     padding: 13px 0;
-    border-radius: 20px;
 }
 
 #Maze-Title{
@@ -78,7 +81,59 @@ main{
 
 .Title,
 .Outer-Text{
-    color: black;
+    color: white;
+}
+
+/* ///////////////////////////////////// */
+/*             AR/Loop Styles            */
+/* ///////////////////////////////////// */
+
+.Descriptions{
+    position: relative;
+    border-radius: 20px;
+    background-color: #737373;
+    margin: 20px 10px;
+    padding: 10px;
+    height: 275px;
+    width: 290px;
+}
+
+.link-wrap{
+    position: relative;
+    width: 290px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.link-item{
+    position: relative;
+    height: 45px;
+}
+
+.link-icons{
+    width: 30px;
+    margin: 7.5px 15px;
+}
+
+.image-icon{
+    margin: 12px 15px;
+}
+
+.link-text{
+    position: absolute;
+    font-size: 18px;
+    top: 0;
+    margin: 11px;
+    left: 60px;
+}
+
+/* ///////////////////////////////////// */
+/*                AR                     */
+/* ///////////////////////////////////// */
+
+.AR-IMGS{
+    width: 36px;
+    padding: 7px 5px;
 }
 
 /* ///////////////////////////////////// */
@@ -87,7 +142,6 @@ main{
 
 #Maze-Func{
     position: relative;
-    background-color: #F4EFE6;
     height: 190px;
     border-radius: 20px;
     width: 90%;
@@ -97,8 +151,8 @@ main{
 .Maze-Button{
     text-align: center;
     border-style: none;
-    background-color: #375A63;
-    color: #DBF5F0;
+    background-color: #2f2f2f;
+    color: white;
     font: inherit;
     height: 50px;
     border-radius: 20px;
@@ -109,7 +163,6 @@ main{
 }
 
 #Maze-Size{
-    background-color: #375A63;
     color: white;
 }
 
@@ -118,19 +171,20 @@ main{
 }
 
 #Maze-Table-Wrapper{
-    width: 90%;
-    margin: 2.5% 5%;
+    position: relative;
+    width: 300px;
+    margin: 4% 0;
     height: 300px;
-    background-color: #F4EFE6;
-    border-radius: 20px;
+    background: repeating-conic-gradient(darkorchid 0%,#37fff9 50%, darkorchid 100%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #Maze-Table{
     position: relative;
     border-spacing: 0;
-    width: 270px;
+    width: 100%;
     left: 50%;
-    top: 15px;
     transform: translateX(-50%);
 }
 
@@ -138,7 +192,7 @@ td{
     opacity: 1;
     border: none;
     transition: opacity 0.5s;
-    background-color: #6795A0;
+    background-color: white;
 }
 
 td.dissapear{
@@ -194,132 +248,6 @@ td.dissapear{
     transition: background-color 0.05s;
 }
 
-/* ///////////////////////////////////// */
-/*                LOOPER                 */
-/* ///////////////////////////////////// */
-
-#Loop-Description{
-    position: relative;
-    background-color: #F4EFE6;
-    border-radius: 20px;
-    margin: 5% 2.5%;
-    padding: 2.5%;
-}
-
-#Loop-Link-Wrap{
-    position: relative;
-    width: 90%;
-    padding: 2.5%;
-    margin: 2.5%;
-    margin-top: 30px;
-    background-color: #F4EFE6;
-    height: 220px;
-    border-radius: 20px;
-}
-
-.Loop-Link-Item{
-    position: relative;
-    height: 50%;
-}
-
-#Loop-GH-Icon{
-    position: absolute;
-    width: 70px;
-    margin: 20px;
-}
-
-#Loop-GH-Desc{
-    position: absolute;
-    margin: 0;
-    padding: 43.5px 0;
-    font-size: 20px;
-    left: 110px;
-}
-
-#Loop-Img-Pop-Icon{
-    position: absolute;
-    width: 80px;
-    margin: 27.5px 12px;
-}
-
-#Img-Pop-Desc{
-    position: absolute;
-    font-size: 20px;
-    left: 110px;
-    margin: 0;
-    padding: 32px 0;
-}
-
-/* ///////////////////////////////////// */
-/*                AR                     */
-/* ///////////////////////////////////// */
-
-.AR-IMGS{
-    width: 36px;
-    padding: 7px 5px;
-}
-
-#AR-Description{
-    position: relative;
-    background-color: #F4EFE6;
-    border-radius: 20px;
-    margin: 20px 10px;
-    padding: 10px;
-}
-
-#AR-Link-Wrap{
-    position: relative;
-    background-color: #F4EFE6;
-    border-radius: 20px;
-    margin: 20px 10px;
-}
-
-.AR-Link-Item{
-    position: relative;
-    height: 45px;
-}
-
-#AR-Link-1-Wrap{
-
-}
-
-#AR-Link-2-Wrap{
-    
-}
-
-#AR-Link-3-Wrap{
-    
-}
-
-.AR-Link-Icons{
-    width: 30px;
-    margin: 7.5px 15px;
-}
-
-#AR-GH-Icon{
-
-}
-
-#AR-Web-Icon{
-
-}
-
-#AR-YT-Icon{
-
-}
-
-#AR-Img-Pop-Icon{
-    margin: 12px 15px;
-}
-
-.AR-Link-Text{
-    position: absolute;
-    font-size: 18px;
-    top: 0;
-    margin: 11px;
-    left: 60px;
-}
-
 /* Mobile Portrait */
 @media screen and (max-width: 450px) and (max-height: 916px){
 
@@ -344,6 +272,14 @@ td.dissapear{
 
     #AR-Title{
         width: calc(100% - 179px);
+    }
+
+    .Descriptions,
+    .link-wrap{
+        margin-left: 0;
+        margin-right: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     #Calc{
@@ -380,10 +316,15 @@ td.dissapear{
         width: calc(100vw - 53px);
     }
 
+    .looper-images{
+        left: 0;
+    }
+
     #Project-Grid{
         width: 90%;
         margin: 15px 5%;
         row-gap: 15px;
+        grid-template-columns: none;
     }
 
     .Main-Wrap{
@@ -397,45 +338,18 @@ td.dissapear{
         transform: translateX(-50%);
     }
 
+    #AR-Title{
+        width: calc(100% - 142px);
+    }
+
+    #Loop-Title{
+        width: calc(100% - 180px);
+    }
+
     #Maze-Title{
         width: 50%;
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    #Maze-Table-Wrapper{
-        position: absolute;
-        width: 240px;
-        height: 240px;
-        margin: 12px;
-    }
-
-    #Maze-Table{
-        transform: none;
-        width: 214px;
-        left: 0;
-        top: 0;
-        margin: 13px;
-    }
-
-    #Maze-Func{
-        position: absolute;
-        padding: 0;
-        left: 50%;
-        height: 240px;
-        width: 45%;
-        margin: 2.5% 12px;
-    }
-
-    .Maze-Button{
-        width: 80%;
-        margin: 15px 10%;
-        height: 50px;
-        border-radius: 25px;
-    }
-
-    #New-Maze{
-        margin: 15px 10%;
     }
 
     #Calc-Title-Wrap{
@@ -448,6 +362,85 @@ td.dissapear{
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
+    }
+
+    .Descriptions{
+        margin: 5px 1.25%;
+        padding: 7.5px 2.5%;
+        width: 92.5%;
+        height: 154px;
+    }
+
+    .link-wrap{
+        width: 97.5%;
+        height: 96px;
+        margin: 5px 1.25%;
+    }
+
+    .link-item{
+        height: 40px;
+        width: 50%;
+        padding: 4px 0;
+    }
+
+    .link-rightside{
+        left: 50%;
+        transform: translateY(-200%);
+    }
+
+    .link-icons{
+        width: 35px;
+        margin: 2.5px 15px;
+    }
+
+    .image-icon{
+        width: 40px;
+        margin: 8px 13px;
+    }
+
+    .link-text{
+        font-size: 18px;
+        padding: 4px 0;
+        margin: 9px 0;
+    }
+
+    #Maze-Table-Wrapper{
+        position: absolute;
+        width: 255px;
+        height: 255px;
+        margin: 12px 0;
+        left: 25%;
+        transform: translateX(-50%);
+        border-radius: 0;
+    }
+
+    #Maze-Table{
+        transform: none;
+        width: 255px;
+        left: 0;
+        top: 0;
+    }
+
+    #Maze-Func{
+        position: absolute;
+        padding: 0;
+        left: 75%;
+        transform: translateX(-50%);
+        height: 255px;
+        width: 255px;
+        margin: 12px 0;
+        border-radius: 15px;
+    }
+
+    .Maze-Button{
+        width: 90%;
+        margin: 19px 5%;
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    #New-Maze{
+        margin: 15px 5%;
     }
 
     #Calc{
@@ -477,97 +470,6 @@ td.dissapear{
         left: 20px;
         z-index: -5;
     }
-
-    #Loop-Title{
-        width: calc(100% - 180px);
-    }
-
-    .looper-images{
-        left: 0;
-    }
-
-    #Loop-Description{
-        margin: 10px 2.5%;
-    }
-
-    #Loop-Link-Wrap{
-        height: 60px;
-        margin-top: 2.5%;
-    }
-
-    .Loop-Link-Item{
-        position: absolute;
-        height: 100%;
-    }
-
-    #Loop-GH-Icon{
-        width: 50px;
-        margin: 5px;
-    }
-    
-    #Loop-GH-Desc{
-        width: 150px;
-        font-size: 16px;
-        margin: 0;
-        padding: 20.75px 0;
-        left: 70px;
-    }
-
-    #Loop-Link-2-Wrap{
-        left: 47%;
-    }
-    
-    #Loop-Img-Pop-Icon{
-        width: 65px;
-        margin: 7.5px 0;
-
-    }
-    
-    #Img-Pop-Desc{
-        width: 200px;
-        left: 70px;
-        font-size: 16px;
-        margin: 0;
-        padding: 20.75px 0;
-    }
-
-    #AR-Title{
-        width: calc(100% - 142px);
-    }
-
-    #AR-Description{
-        margin: 10px;
-    }
-
-    #AR-Link-Wrap{
-        margin: 10px;
-        height: 77px;
-    }
-
-    .AR-Link-Item{
-        height: 30px;
-        width: 50%;
-        padding: 4.5px 0;
-    }
-
-    .AR-Link-Rightside{
-        left: 50%;
-        transform: translateY(-200%);
-    }
-
-    .AR-Link-Icons{
-        width: 25px;
-        margin: 2.5px 15px;
-    }
-
-    #AR-Img-Pop-Icon{
-        margin: 8px 15px;
-    }
-
-    .AR-Link-Text{
-        font-size: 16px;
-        margin: 9px 0;
-    }
 }
 
 .big-b{
@@ -578,10 +480,8 @@ td.dissapear{
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
 
     main{
-        top: 60px;
-        height: calc(100vh - 100px);
-        width: calc(100% - 40px);
-        margin: 20px;
+        top: 70px;
+        width: 100%;
     }
 
     .Main-Wrap{
@@ -623,10 +523,9 @@ td.dissapear{
 @media screen and (min-width:917px){
 
     main{
-        top: 60px;
-        height: calc(100vh - 100px);
-        width: calc(100% - 40px);
-        margin: 20px;
+        top: 80px;
+        width: 100%;
+
     }
 
     .Main-Wrap{
@@ -662,26 +561,6 @@ td.dissapear{
     }
 
 }
-
-@media screen and (min-width: 725px) and (min-height: 451px) {
-    #Project-Grid{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width: 1040px){
-    #Project-Grid{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (min-width: 1395px){
-    #Project-Grid{
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-
 
 /* ///////////////////////////////////// */
 /*       Calculator Animations           */

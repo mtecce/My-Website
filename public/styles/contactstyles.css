@@ -9,8 +9,10 @@ main{
     list-style: none;
     position: relative;
     height: 0;
-    margin: 0 5%;
+    margin: 0;
     width: 90%;
+    left: 49%;
+    transform: translateX(-50%);
     padding-inline-start: 0;
 }
 
@@ -21,7 +23,10 @@ main{
     height: 65px;
     border-radius: 35px;
     margin: 10px 0;
-    background-color: #ECB172;
+    background:
+    conic-gradient(black,black) padding-box,
+    repeating-conic-gradient(darkorchid 0%,#37fff9 16%, darkorchid 33%) border-box;
+    border: 5px solid transparent;
     transition: all 0.25s;
 }
 
@@ -34,8 +39,6 @@ main{
     width: 100%;
 }
 
-
-
 .strip-text{
     position: absolute;
     font-size: 25px;
@@ -44,7 +47,7 @@ main{
     padding: 18px 0;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .contact-arrow{
@@ -64,9 +67,11 @@ main{
 .form-element{
     position: relative;
     z-index: -1;
-    background-color: white;
+    background-color: #515151;
     height: 59px;
-    padding: 0 30px;
+    width: 82%;
+    left: -1%;
+    padding: 0 10%;
     border-radius: 35px;
 }
 
@@ -91,18 +96,18 @@ main{
 
 .submission-labels{
     padding-left: 14px;
+    color: white;
 }
 
 .submission-input{
     margin-top: 5px;
-    background-color: #F4EFE6;
+    background-color: white;
 }
 
 .small-box{
     font: inherit;
     height: 35px;
     border-radius: 20px;
-    border: 2px solid #375A63;
     width: 100%;
 }
 
@@ -111,7 +116,6 @@ main{
     position: relative;
     height: 10px;
     width: 100%;
-    border: 2px solid #375A63;
     border-radius: 15px;
 }
 
@@ -129,7 +133,7 @@ main{
     position: relative;
     font-size: 14px;
     background-color: black;
-    color: #F4EFE6;
+    color: white;
     font-family: 'Lato', sans-serif;
     border-radius: 25px;
     padding: 10px 35px;
@@ -190,7 +194,7 @@ main{
 .github-item.active,
 .linkedin-item.active,
 .discord-item.active{
-    top: 370px;
+    top: 375px;
 }
 
 /* Mobile Portrait */
@@ -207,36 +211,40 @@ main{
         margin: 0;
         margin-left: 100px;
         width: 80%;
+        left: 0;
+        transform: none;
     }
 
     .facebook-item,
     .instagram-item,
     .discord-item{
-        top: -26px;
+        top: -19px;
+    }
+
+    .facebook-item.active,
+    .instagram-item.active,
+    .discord-item.active{
+        top: 355px;
     }
 
     .github-item,
-    .linkedin-item{
+    .github-item :is(span,img,a),
+    .linkedin-item,
+    .linkedin-item :is(span,img,a){
         visibility: hidden;
         z-index: -50;
         width: 0;
         height: 0;
+        padding: 0;
+        border: none;
+        margin: 0;
     }
     
 }
 
 /* Desktop Portrait */
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
-    .github-item,
-    .github-item :is(span,img,a){
-        visibility: hidden;
-        z-index: -50;
-        width: 0;
-        height: 0;
-        padding: 0;
-        margin: 0;
-    }
-
+    
     main{
         top: 80px;
         margin: 0 5%;
@@ -245,6 +253,17 @@ main{
     .contact-strip-list{
         margin: 0;
         width: 100%;
+    }
+
+    .github-item,
+    .github-item :is(span,img,a){
+        visibility: hidden;
+        z-index: -50;
+        width: 0;
+        height: 0;
+        padding: 0;
+        border: none;
+        margin: 0;
     }
 }
 
@@ -279,7 +298,8 @@ main{
 
     .form-element{
         position: absolute;
-        width: 100%;
+        width: 102%;
+        left: -1%;
         height: 610px;
         padding: 0;
         margin: 0;
@@ -329,7 +349,6 @@ main{
         padding: 7.5px 8%;
         margin: 0 5%;
         border-radius: 35px;
-        font-family: 'Lato', sans-serif;
         font-size: 35px;
         border: none;
     }
@@ -341,17 +360,19 @@ main{
         left: 50%;
     }
 
+    .facebook-item{
+        top: calc(610px * 0.25);
+    }
+
     .instagram-item{
-        top: 130px;
+        top: calc(610px * 0.5);
     }
 
     .discord-item{
-        top: 273px;
+        top: calc((610px * 0.75));
     }
 
-    .linkedin-item{
-        top: 400px;
-    }
+    
 
     .contact-linkedinicon{
         width: 44px;
