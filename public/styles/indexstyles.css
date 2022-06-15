@@ -9,6 +9,7 @@ main{
     width: 90%;
     border-radius: 20px;
     margin: 5%;
+    z-index: -1;
 }
 
 .main-header{
@@ -26,7 +27,12 @@ main{
 #Header-Wrapper{
     position: sticky;
     top: 60px;
-    z-index: 1;
+    z-index: 0;
+}
+
+:root{
+    --wh: 60vw;
+    --bs: 4px;
 }
 
 #Photo-Wrapper{
@@ -34,11 +40,6 @@ main{
     margin: 15px 0;
     left: 50%;
     transform: translateX(-50%);
-}
-
-:root{
-    --wh: 60vw;
-    --bs: 4px;
 }
 
 #Photo-Background{
@@ -103,6 +104,10 @@ a:visited{
         --wh: 60vh;
     }
 
+    #Header-Wrapper{
+        top: 0;
+    }
+
     #Academic-Header{
         top: 0;
         transform: translateX(-53px);
@@ -160,22 +165,4 @@ a:visited{
         margin-top: 2.5%;
     }
 
-}
-
-@keyframes rotating{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotatingrev{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(-360deg);
-    }
 }

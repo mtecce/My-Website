@@ -1,42 +1,76 @@
 main{
     z-index: 0;
-    height: 0;
     position: relative;
     top: 60px;
 }
 
-.contact-strip-list{
-    list-style: none;
+:root{
+    --w: 100%;
+    --h: 73px;
+    --bs: 4px;
+    --iw: calc(100% - 8px);
+    --ih: 65px;
+    --bgs: 90vw;
+    --br: 35px;
+    --dds: 372px;
+}
+
+#Contact-Item,
+#Contact-Strip-List{
     position: relative;
-    height: 0;
-    margin: 0;
     width: 90%;
-    left: 49%;
+    left: 50%;
     transform: translateX(-50%);
     padding-inline-start: 0;
 }
 
-.list-item-format{
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 65px;
-    border-radius: 35px;
-    margin: 10px 0;
-    background:
-    conic-gradient(black,black) padding-box,
-    repeating-conic-gradient(darkorchid 0%,#37fff9 16%, darkorchid 33%) border-box;
-    border: 5px solid transparent;
-    transition: all 0.25s;
+#Contact-Item{
+    height: var(--h);
+    margin: 20px 0;
 }
 
-.list-items-dropped{
-    transition: all 0.25s;
+#Contact-Strip-List{
+    list-style: none;
+    display: grid;
+    row-gap: 20px;
+    margin: 0;
+}
+
+.Trim-Wrap{
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    border-radius: var(--br);
+    overflow: hidden;
+}
+
+.Contact-Background{
+    background: repeating-conic-gradient(darkorchid 0%,#37fff9 5%, darkorchid 10%);
+    height: var(--bgs);
+    width: var(--bgs);
+    animation: rotating-contact 10s linear infinite;
+}
+
+.list-item-format{
+    position: relative;
+    top: var(--bs);
+    width: var(--iw);
+    height: var(--ih);
+    border-radius: var(--br);
+    background-color: black;
+    overflow: hidden;
+    animation: rotating-contact-rev 10s linear infinite;
 }
 
 .strip-shape-format{
     position: absolute;
     width: 100%;
+}
+
+.contact-icons{
+    position: absolute;
+    width: 35px;
+    padding: 15px 0 15px 10%;
 }
 
 .strip-text{
@@ -54,8 +88,7 @@ main{
     position: relative;
     width: 9%;
     height: 30px;
-    margin: 18px 0;
-    margin-left: 83%;
+    margin: 18px 0 18px 83%;
     z-index: 2;
 }
 
@@ -65,32 +98,31 @@ main{
 }
 
 .form-element{
-    position: relative;
+    position: absolute;
     z-index: -1;
     background-color: #515151;
-    height: 59px;
-    width: 82%;
-    left: -1%;
+    height: var(--h);
+    width: 80%;
+    top: 0;
     padding: 0 10%;
-    border-radius: 35px;
+    border-radius: var(--br);
+    margin: 0;
 }
 
 .form-divs{
-    margin: 5px 0;
+    position: relative;
+    margin: 10px 0;
 }
 
 .name-div{
-    position: relative;
     top: 0px;
 }
 
 .email-div{
-    position: relative;
     top: -67px;
 }
 
 .message-div{
-    position: relative;
     top: -120px;
 }
 
@@ -99,102 +131,56 @@ main{
     color: white;
 }
 
-.submission-input{
-    margin-top: 5px;
-    background-color: white;
-}
-
-.small-box{
-    font: inherit;
-    height: 35px;
-    border-radius: 20px;
+input,
+textarea{
     width: 100%;
+    height: 35px;
+    font: inherit;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .big-box{
-    font: inherit;
-    position: relative;
     height: 10px;
-    width: 100%;
-    border-radius: 15px;
-}
-
-.submission-form{
-    position: relative;
-    background-color: white;
-    top: 70px;
-    height: 478px;
-    width: 95%;
-    border-radius: 27px;
-    margin-left: 2.5%;
 }
 
 .submit-button{
     position: relative;
-    font-size: 14px;
+    font-size: 16px;
     background-color: black;
     color: white;
     font-family: 'Lato', sans-serif;
     border-radius: 25px;
-    padding: 10px 35px;
-    top: -160px;
+    padding: 10px 0;
+    top: -170px;
+    width: 50%;
     border: none;
-}
-
-.instagram-item,
-.facebook-item,
-.github-item,
-.linkedin-item,
-.indeed-item,
-.discord-item{
-    top: 0px;
-}
-
-.contact-icons{
-    position: absolute;
-    width: 35px;
-    padding: 15px;
-    padding-left: 10%;
 }
 
 .contact-drop-group{
     transition: all 0.25s;
 }
 
+#Contact-Item.active,
+.form-element.active{
+    height: calc(var(--dds) + var(--h));
+}
+
 .contact-arrow-icon.active{
     transform: rotate(90deg);
 }
 
-.form-element.active{
-    height: 440px;
-}
-
-.name-div.active{
-    top: 70px;
-}
-
-.email-div.active{
-    top: 73px;
-}
-
-.message-div.active{
-    top: 75px;
+.form-divs.active,
+.submit-button.active{
+    top: var(--h);
 }
 
 .big-box.active{
     height: 140px;
-}
-
-.submit-button.active{
-    top: 85px;
-}
-
-.facebook-item.active,
-.instagram-item.active,
-.github-item.active,
-.linkedin-item.active,
-.discord-item.active{
-    top: 375px;
 }
 
 /* Mobile Portrait */
@@ -207,30 +193,25 @@ main{
         top: 0;
     }
 
-    .contact-strip-list{
-        margin: 0;
-        margin-left: 100px;
-        width: 80%;
-        left: 0;
+    :root{
+        --bgs: calc(90vw - 53px);
+    }
+
+    #Contact-Item,
+    #Contact-Strip-List{
+        width: calc(90% - 53px);
+        left: calc(53px + 5%);
         transform: none;
     }
 
-    .facebook-item,
-    .instagram-item,
-    .discord-item{
-        top: -19px;
+    #Contact-Item{
+        margin-bottom: -20px;
     }
 
-    .facebook-item.active,
-    .instagram-item.active,
-    .discord-item.active{
-        top: 355px;
-    }
-
-    .github-item,
-    .github-item :is(span,img,a),
-    .linkedin-item,
-    .linkedin-item :is(span,img,a){
+    #Github-Item,
+    #Github-Item :is(div,span,img,a),
+    #Linkedin-Item,
+    #Linkedin-Item :is(div,span,img,a){
         visibility: hidden;
         z-index: -50;
         width: 0;
@@ -238,6 +219,7 @@ main{
         padding: 0;
         border: none;
         margin: 0;
+        animation: none;
     }
     
 }
@@ -246,17 +228,41 @@ main{
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
     
     main{
-        top: 80px;
-        margin: 0 5%;
+        top: 60px;
     }
 
-    .contact-strip-list{
-        margin: 0;
-        width: 100%;
+    :root{
+        --h: 100px;
+        --ih: 92px;
+        --br: 50px;
     }
 
-    .github-item,
-    .github-item :is(span,img,a){
+    #Contact-Item{
+        margin-bottom: 0;
+    }
+
+    .contact-icons{
+        width: 50px;
+        padding: 21px 0 21px 10%;
+    }
+
+    .strip-text{
+        font-size: 35px;
+        padding: 25px 0;
+    }
+
+    .contact-arrow{
+        width: 50px;
+        height: 50px;
+        margin: 21px 0 21px 83%;
+    }
+
+    .contact-arrow-icon{
+        width: 50px;
+    }
+
+    #Github-Item,
+    #Github-Item :is(div,span,img,a){
         visibility: hidden;
         z-index: -50;
         width: 0;
@@ -264,6 +270,7 @@ main{
         padding: 0;
         border: none;
         margin: 0;
+        animation: none;
     }
 }
 
@@ -274,120 +281,135 @@ main{
 
     main{
         top: 80px;
-        height: calc(100vh - 128px);
+        height: calc(100vh - 80px);
     }
 
-    .list-item-format{
+    :root{
+        --h: 100px;
+        --ih: 92px;
+        --br: 50px;
+        --bgs: 45vw;
+    }
+
+    #Contact-Item,
+    #Contact-Strip-List{
         position: absolute;
         width: 45%;
-        height: 70px;
+        left: 0;
         margin: 0 2.5%;
+        transform: none;
+    }
+
+    #Contact-Strip-List{
+        left: 50%;
+        margin-top: -90px;
+        row-gap: 90px;
     }
 
     .contact-icons{
         width: 50px;
-        padding: 10px;
-        padding-left: 7.5%;
+        padding: 21px 0 21px 10%;
     }
 
     .strip-text{
-        font-size: 30px;
-        padding: 17px 0;
-        
+        font-size: 35px;
+        padding: 25px 0;
+    }
+
+    .contact-arrow{
+        visibility: hidden;
     }
 
     .form-element{
-        position: absolute;
-        width: 102%;
-        left: -1%;
-        height: 610px;
+        width: 100%;
+        height: 668px;
         padding: 0;
-        margin: 0;
     }
 
     .form-divs{
         width: 90%;
-        margin: 5px 0;
         padding: 0 5%;
     }
 
     .name-div{
-        top: 70px;
-        margin-top: 10px;
+        top: 100px;
+    }
+
+    .email-div{
+        top: 110px;
+    }
+
+    .message-div{
+        top: 120px;
     }
 
     .submission-labels{
         font-size: 24px;
     }
 
-    .small-box{
-        font: inherit;
-        height: 55px;
-        padding: 0 2%;
+    input,
+    textarea{
         border-radius: 28px;
         font-size: 22px;
+        padding: 8px 22px;
+    }
+
+    .small-box{
+        height: 55px;
     }
 
     .big-box{
-        font: inherit;
         height: 200px;
-        padding: 10px 2%;
-        border-radius: 25px;
-        font-size: 22px;
-    }
-
-    .email-div{
-        top: 75px;
-    }
-
-    .message-div{
-        top: 80px;
     }
 
     .submit-button{
-        top: 97px;
-        padding: 7.5px 8%;
-        margin: 0 5%;
-        border-radius: 35px;
+        top: 135px;
+        width: 45%;
+        left: 5%;
         font-size: 35px;
-        border: none;
+        border-radius: 31px;
     }
 
-    .facebook-item,
-    .instagram-item,
-    .discord-item,
-    .linkedin-item{
-        left: 50%;
-    }
-
-    .facebook-item{
-        top: calc(610px * 0.25);
-    }
-
-    .instagram-item{
-        top: calc(610px * 0.5);
-    }
-
-    .discord-item{
-        top: calc((610px * 0.75));
-    }
-
-    
-
-    .contact-linkedinicon{
-        width: 44px;
-    }
-
-    .github-item,
-    .github-item :is(span,img,a),
-    .contact-arrow{
+    #Github-Item,
+    #Github-Item :is(div,span,img,a){
         visibility: hidden;
         z-index: -50;
         width: 0;
         height: 0;
         padding: 0;
+        border: none;
         margin: 0;
+        animation: none;
     }
 
 }
 
+@keyframes rotating-contact{
+    from{
+        transform:
+        translateX(calc(-1 * (var(--bgs) - var(--w)) / 2))
+        translateY(calc(-1 * (var(--bgs) - var(--h)) / 2))
+        rotate(0deg);
+    }
+    to{
+        transform:
+        translateX(calc(-1 * (var(--bgs) - var(--w)) / 2))
+        translateY(calc(-1 * (var(--bgs) - var(--h)) / 2))
+        rotate(360deg);
+    }
+}
+
+@keyframes rotating-contact-rev{
+    from{
+        transform: 
+        translateX(calc((var(--bgs) - var(--w)) / 2))
+        translateY(calc((var(--bgs) - var(--h)) / 2))
+        rotate(0deg);
+    }
+    to{
+        transform:
+        translateX(calc((var(--bgs) - var(--w)) / 2))
+        translateY(calc((var(--bgs) - var(--h)) / 2))
+        rotate(-360deg);
+    }
+}
