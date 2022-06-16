@@ -19,6 +19,7 @@ main{
     gap: 25px;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(var(--tw),1fr));
+    padding-bottom: 25px;
 }
 
 
