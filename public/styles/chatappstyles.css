@@ -63,7 +63,7 @@ main{
 .user-name{
     position: relative;
     font-size: var(--ufs);
-    margin: 0 10px;
+    margin: 0 10px 2.5px 10px;
     overflow-wrap: break-word;
     hyphens: auto;
     color: black;
@@ -97,14 +97,14 @@ main{
 }
 
 .sent-message-format.self{
-    background-color: darkorchid;
+    background-color: #7400db;
     text-align: right;
     left: 100%;
     transform: translateX(-100%);
 }
 
 .sent-message-format.other{
-    background-color: #b11919;
+    background-color: #920000;
     text-align: left;
 }
 
@@ -145,7 +145,7 @@ main{
     margin: 10px 2.5% 10px 0;
     width: 39px;
     height: 39px;
-    background-color: blue;
+    background-color: #7400db;
     border-radius: 50%;
 }
 
