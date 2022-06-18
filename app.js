@@ -25,7 +25,7 @@ mongoose.connect(uri,{useNewUrlParser: true} )
 app.listen(process.env.PORT || 3000);
 
 app.get('/',(req,res) => {
-    console.log(req.ip);
+    //console.log(req.ip);
     res.render('index');
 });
 
@@ -43,7 +43,7 @@ app.get('/contact', (req,res) =>{
 
 app.get('/chat',(req,res) => {
     let username = req.url.substring(req.url.indexOf('=')+1);
-    console.log(username);
+    //console.log(username);
     Message.find().sort()
         .then((result) => {
             res.render('chat',{user: username, messages:result});

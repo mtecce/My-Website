@@ -5,6 +5,7 @@
     --mfs: 20px;
     --phbr: 17px;
     --pv: 5px;
+    --iw: 39px
 }
 
 body{
@@ -56,7 +57,7 @@ main{
 
 .message-div{
     position: relative;
-    margin: 6.5% 0;
+    margin: 15px 0;
 }
 
 .user-name{
@@ -115,7 +116,7 @@ main{
 #New-Message-Wrapper{
     background-color: white;
     border-radius: 25px;
-    width: 80%;
+    width: calc(100% - 7.5% - var(--iw));
     margin: 10px 0 10px 2.5%;
 }
 
@@ -146,4 +147,12 @@ main{
     height: 39px;
     background-color: blue;
     border-radius: 50%;
+}
+
+#Send-Icon{
+    position: relative;
+    width: 27px;
+    top: 50%;
+    left: 56%;
+    transform: translateX(-50%) translateY(-50%);
 }

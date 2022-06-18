@@ -116,7 +116,7 @@ main{
 }
 
 /* ///////////////////////////////////// */
-/*             AR/Loop Styles            */
+/*             AR/Loop/Chat Styles            */
 /* ///////////////////////////////////// */
 
 .Descriptions{
@@ -284,29 +284,26 @@ td.dissapear{
 /* ///////////////////////////////////// */
 
 #Chat-Form-Div{
-    width: 90%;
-    height: 100px;
     position: relative;
-    margin: 0 5%;
-    top: 45%;
-    transform: translateY(-50%);
+    width: 310px;
+    border-radius: 20px;
+    margin: 10px;
 }
 
 #Chat-Form{
-    height: 100%;
+    height: 180px;
+    width: inherit;
     margin: 0;
 }
 
 #user-name-input{
-    width: 65%;
+    width: inherit;
     font-size: 20px;
-    height: 100%;
 }
 
 #submit-button{
-    width: 30%;
+    width: inherit;
     font-size: 20px;
-    height: 100%;
 }
 
 /* Mobile Portrait */
@@ -541,6 +538,24 @@ td.dissapear{
         top: 0px;
         left: 20px;
         z-index: -5;
+    }
+
+    #Chat-Form-Div{
+        width: 97.5%;
+        margin: 5px 1.25%;
+        height: 96px;
+    }
+
+    #Chat-Form{
+
+    }
+
+    #user-name-input{
+
+    }
+
+    #submit-button{
+
     }
 }
 

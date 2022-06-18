@@ -58,24 +58,29 @@
                     e.preventDefault();
                 }
             }
+        }else if(e.keyCode == 13){
+            e.preventDefault();
+            sendMessage();
         }
     });
 
     const sendMessage = (un) => {
         let messageObj = document.getElementById('New-Message');
-        let data = {
+        if(messageObj.innerText.length > 0){
+            let data = {
             'sender': userName,
             'content': messageObj.innerText
+            }
+            $.ajax({
+                method: 'POST',
+                url: '/chat',
+                dataType: 'application/json; charset=utf-8',
+                data: data
+            }).then((data) => {
+                console.log(data);
+            });
+            messageObj.innerText = '';
+            loadMessages();
         }
-        $.ajax({
-            method: 'POST',
-            url: '/chat',
-            dataType: 'application/json; charset=utf-8',
-            data: data
-        }).then((data) => {
-            console.log(data);
-        });
-        messageObj.innerText = '';
-        loadMessages();
     };
 </script>
