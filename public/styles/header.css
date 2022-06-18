@@ -2,13 +2,6 @@ header{
   z-index: 1;
 }
 
-#Mobile-Dropdown-Wrapper a:link,
-#Mobile-Dropdown-Wrapper a:visited,
-header a:link,
-header a:visited{
-    color: white;
-}
-
 #Mobile-Header{
     position: fixed;
     z-index: 2;

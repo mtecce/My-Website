@@ -1,0 +1,150 @@
+
+
+main{
+    position: absolute;
+    width: 100%;
+    height: 92vh;
+    /* height: 100%; */
+    bottom: 0;
+}
+
+:root{
+    --nfs: 45px;
+    --nbs: 10px;
+    --ufs: 15px;
+    --mfs: 20px;
+    --phbr: 17px;
+    --pv: 5px;
+}
+
+#Username-Header{
+    position: fixed;
+    height: calc(var(--nfs) + var(--nbs));
+    font-size: var(--nfs);
+    text-align: center;
+    background-color: white;
+    color: black;
+    margin: 0;
+    z-index: 5;
+    width: 100%;
+}
+
+#Chat-Window{
+    width: inherit;
+    /* height: 92vh; */
+    background-color: #e2e2e2;
+}
+
+#Chat-Content-Grid{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+    max-height: calc(100vh - var(--nbs) - var(--nfs));
+    bottom: 0;
+}
+
+#Messages-Wrapper{
+    position: relative;
+    width: 95%;
+    margin: 0 2.5%;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.message-div{
+    position: relative;
+    margin: 6.5% 0;
+}
+
+.user-name{
+    position: relative;
+    font-size: var(--ufs);
+    margin: 0 10px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    color: black;
+}
+
+.sent-message-format{
+    position: relative;
+    width: fit-content;
+    max-width: 60%;
+    font-size: var(--mfs);
+    padding: var(--pv) var(--phbr);
+    margin: 0;
+    border-radius: var(--phbr);
+    overflow-wrap: break-word;
+    hyphens: auto;
+    color: white;
+}
+
+.message-div.self{
+}
+
+.message-div.other{
+    
+}
+
+.user-name.self{
+    text-align: right;
+}
+
+.user-name.other{
+}
+
+.sent-message-format.self{
+    background-color: darkorchid;
+    text-align: right;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.sent-message-format.other{
+    background-color: #b11919;
+    text-align: left;
+}
+
+#New-Message-Strip{
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+}
+
+#New-Message-Wrapper{
+    background-color: white;
+    border-radius: 25px;
+    width: 80%;
+    margin: 10px 0 10px 2.5%;
+}
+
+#New-Message{
+    position: relative;
+    color: black;
+    font-size: var(--mfs);
+    padding: 7.5px;
+    margin: 5px;
+    border-radius: 25px;
+}
+
+#New-Message-Wrapper:focus,
+#New-Message:focus{
+    outline:none;
+}
+
+#New-Message:empty:not(:focus)::before{
+    content: attr(ghost-text);
+}
+
+#Send-Message-Button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px 2.5% 10px 0;
+    width: 39px;
+    height: 39px;
+    background-color: blue;
+    border-radius: 50%;
+}

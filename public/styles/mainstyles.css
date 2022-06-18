@@ -22,6 +22,15 @@ a:visited{
     color: #37fff9;
 }
 
+#Contact-Strip-List a:link,
+#Contact-Strip-List a:visited,
+#Mobile-Dropdown-Wrapper a:link,
+#Mobile-Dropdown-Wrapper a:visited,
+header a:link,
+header a:visited{
+    color: white;
+}
+
 /* Mobile Portrait */
 @media screen and (max-width: 450px) and (max-height: 916px){}
 /* Mobile Landscape */

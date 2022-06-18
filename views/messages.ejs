@@ -1,0 +1,15 @@
+<% if(messages.length > 0) {%>
+    <% messages.forEach(message => {%>
+        <% if(message.sender == 'admin') {%>
+            <div class="message-div self">
+                <p class="user-name self"><%= message.sender %></p>
+                <p class="sent-message-format self"><%= message.content %></p>
+            </div>
+        <% }else{ %>
+            <div class="message-div other">
+                <p class="user-name other"><%= message.sender %></p>
+                <p class="sent-message-format other"><%= message.content %></p>
+            </div>
+        <% } %>
+    <% }); %>
+<% } %>     

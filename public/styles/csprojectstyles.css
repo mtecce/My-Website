@@ -279,6 +279,36 @@ td.dissapear{
     transition: background-color 0.05s;
 }
 
+/* ///////////////////////////////////// */
+/*               CHAT APP                */
+/* ///////////////////////////////////// */
+
+#Chat-Form-Div{
+    width: 90%;
+    height: 100px;
+    position: relative;
+    margin: 0 5%;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+#Chat-Form{
+    height: 100%;
+    margin: 0;
+}
+
+#user-name-input{
+    width: 65%;
+    font-size: 20px;
+    height: 100%;
+}
+
+#submit-button{
+    width: 30%;
+    font-size: 20px;
+    height: 100%;
+}
+
 /* Mobile Portrait */
 @media screen and (max-width: 450px) and (max-height: 916px){
 
