@@ -296,14 +296,16 @@ td.dissapear{
     margin: 0;
 }
 
-#user-name-input{
-    width: inherit;
-    font-size: 20px;
-}
-
+#user-name-input,
 #submit-button{
     width: inherit;
-    font-size: 20px;
+    height: 30%;
+    margin: 5% 0;
+    font-size: 25px;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    color: black;
 }
 
 /* Mobile Portrait */
@@ -542,20 +544,26 @@ td.dissapear{
 
     #Chat-Form-Div{
         width: 97.5%;
-        margin: 5px 1.25%;
-        height: 96px;
+        margin: 23px 1.25%;
+        height: 60px;
     }
 
     #Chat-Form{
-
+        height: inherit;
     }
 
-    #user-name-input{
-
-    }
-
+    #user-name-input,
     #submit-button{
-
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        margin: 0 5%;
+        border-radius: 40px;
+    }
+    
+    #submit-button{
+        width: 30%;
+        left: 60%;
     }
 }
 
