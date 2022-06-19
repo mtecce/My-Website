@@ -1,16 +1,9 @@
 <script>
 
-    const messageList = document.getElementById('Messages-Wrapper');
-    messageList.scrollTop = messageList.scrollHeight;
+    let currentMessageList = document.getElementById('Messages-Wrapper');
+    currentMessageList.scrollTop = currentMessageList.scrollHeight;
     const newMessageWrap = document.getElementById('New-Message-Wrapper');
     let userName = document.getElementById('Username-Hidden').innerText;
-    let lastMessageID = '';
-
-    if(messageList.children.length > 0){
-        lastMessageID = $("#Messages-Wrapper div").last()[0].id;
-    }else{
-        console.log('no messages');
-    }
 
     const loadMessageLoop = () => {
         setInterval(() => {
@@ -22,32 +15,18 @@
 
     const loadMessages = () => {
         let tempURL = '/chat?uName=' + userName;
-        $.ajax({url: tempURL ,method:'GET'});
+        //$.ajax({url: tempURL ,method:'GET'});
         $.ajax({url: tempURL ,method:'GET'})
             .then((data) => {
-                
-                let node = new DOMParser().parseFromString(data,'text/html').body;
-                let wrapchildren = node.querySelector('#Messages-Wrapper').children;
-                let cycledOldMessages = false;
-                for(let i = 0; i < wrapchildren.length; i++){
-                    let tempID = wrapchildren[i].id;
-                    if(cycledOldMessages){
-                        
-                        if(i+1 == wrapchildren.length){
-                            lastMessageID = tempID;
-                            messageList.appendChild(wrapchildren[i]);
-                        }else{
-                            messageList.appendChild(wrapchildren[i]);
-                        }
+                let loadedItems = new DOMParser().parseFromString(data,'text/html').body.querySelector('#Messages-Wrapper').children;
+                let tempCount = currentMessageList.children.length;
+                currentMessageList.replaceChildren(...loadedItems);
 
-                        messageList.scrollTop = messageList.scrollHeight;
-
-                    }else{
-                        if(lastMessageID == tempID){
-                            cycledOldMessages = true;
-                        }
-                    }
+                if(tempCount < currentMessageList.children.length){
+                    currentMessageList.scrollTop = currentMessageList.scrollHeight;
                 }
+
+                
             });
     };
 
@@ -64,7 +43,8 @@
         }
     });
 
-    const sendMessage = (un) => {
+    const sendMessage = () => {
+        console.log('send');
         let messageObj = document.getElementById('New-Message');
         if(messageObj.innerText.length > 0){
             let data = {
@@ -82,5 +62,16 @@
             messageObj.innerText = '';
             loadMessages();
         }
+    };
+
+    const deleteMessage = (obj) => {
+        let tempID = (obj.parentNode).parentNode.id;
+        $.ajax({
+            method: 'DELETE',
+            url: '/chat',
+            dataType: 'String',
+            data: {'id':tempID}
+        });
+        loadMessages();
     };
 </script>

@@ -1,4 +1,4 @@
-<p id="Username-Hidden"><%= user %> </p>
+<p id="Username-Hidden"><%= user %></p>
 <main>
     <div id="Chat-Window">
         <div id="Chat-Content-Grid">
@@ -8,12 +8,20 @@
                         <% if(message.sender == user) {%>
                             <div class="message-div self" id="<%= message._id %>">
                                 <p class="user-name self"><%= message.sender %></p>
-                                <p class="sent-message-format self"><%= message.content %></p>
+                                <div class="message-line">
+                                    <p class="sent-message-format self"><%= message.content %></p>
+                                    <img src="/images/icons/trashicon.png" alt="Trash" id="<%= message._id %>" class="Trash-Icon self image-invert" onclick="deleteMessage(this);">
+                                </div>
                             </div>
                         <% }else{ %>
                             <div class="message-div other" id="<%= message._id %>">
                                 <p class="user-name other"><%= message.sender %></p>
-                                <p class="sent-message-format other"><%= message.content %></p>
+                                <div class="message-line">
+                                    <% if(user == 'admin'){%>
+                                        <img src="/images/icons/trashicon.png" alt="Trash" id="<%= message._id %>" class="Trash-Icon other image-invert" onclick="deleteMessage(this);">
+                                    <% } %>
+                                    <p class="sent-message-format other"><%= message.content %></p>
+                                </div>
                             </div>
                         <% } %>
                     <% }); %>
@@ -23,7 +31,7 @@
                 <div id="New-Message-Wrapper" spellcheck="true" contenteditable="true" style="user-select: text;" role="text">
                     <p id="New-Message" style="user-select: text; white-space: pre-wrap; word-break: break-word;" ghost-text="Enter Message"></p>
                 </div>
-                <div id="Send-Message-Button" onclick="sendMessage(userName);">
+                <div id="Send-Message-Button" onclick="sendMessage();">
                     <img src="/images/icons/sendicon.png" alt="Send" id="Send-Icon">
                 </div>
             </div>
