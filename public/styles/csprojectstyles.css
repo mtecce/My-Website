@@ -19,7 +19,7 @@ main{
     gap: 25px;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(var(--tw),1fr));
-    padding-bottom: 25px;
+    padding: 20px;
 }
 
 
@@ -110,14 +110,23 @@ main{
     width: 133px;
 }
 
+#Chat-Title{
+    width: 128px;
+}
+
 .Title,
 .Outer-Text{
     color: white;
 }
 
 /* ///////////////////////////////////// */
-/*             AR/Loop/Chat Styles            */
+/*             AR/Loop/Chat Styles       */
 /* ///////////////////////////////////// */
+
+.SMALL-IMGS{
+    width: 36px;
+    padding: 7px 5px;
+}
 
 .Descriptions{
     position: relative;
@@ -156,15 +165,6 @@ main{
     top: 0;
     margin: 11px;
     left: 60px;
-}
-
-/* ///////////////////////////////////// */
-/*                AR                     */
-/* ///////////////////////////////////// */
-
-.AR-IMGS{
-    width: 36px;
-    padding: 7px 5px;
 }
 
 /* ///////////////////////////////////// */
@@ -313,7 +313,7 @@ td.dissapear{
 
     main{
         width: 90%;
-        margin: 5%;
+        margin: 0 5%;
         height: calc(100vh - 60px);
         top: 60px;
     }
@@ -382,7 +382,6 @@ td.dissapear{
 
     #Project-Grid{
         width: 100%;
-        margin: 15px 0;
         row-gap: 15px;
         grid-template-columns: none;
     }
@@ -575,7 +574,7 @@ td.dissapear{
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
 
     main{
-        top: 70px;
+        top: 60px;
         width: 100%;
     }
 
@@ -618,7 +617,7 @@ td.dissapear{
 @media screen and (min-width:917px){
 
     main{
-        top: 80px;
+        top: 60px;
         width: 100%;
 
     }

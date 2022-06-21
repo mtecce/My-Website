@@ -28,8 +28,13 @@ app.get('/csprojects', (req,res) =>{
     res.render('csprojects');
 });
 
+app.get('/pictures', (req,res) => {
+    let ps = req.url.substring(req.url.indexOf('=')+1);
+    res.render('pictures', {pictureset: ps});
+});
+
 app.get('/musicprojects', (req,res) => {
-    res.render('musicprojects')
+    res.render('musicprojects');
 });
 
 app.get('/contact', (req,res) =>{

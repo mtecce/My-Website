@@ -11,6 +11,13 @@ body{
     margin: 0;
     background-color: #2f2f2f;
     height: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
 }
 
 .image-invert{

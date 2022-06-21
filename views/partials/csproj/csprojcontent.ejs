@@ -1,31 +1,39 @@
 <main>
-    <div class="looper-images pui">
-        <div class="looper-images-background pui">
-            <button class="left-loop-button pui" onclick="leftCycleLooperImages()"><</button>
-            <button class="right-loop-button pui" onclick="rightCycleLooperImages();">></button>
+    <div id="Loop-Popup" class="lpu">
+        <div id="Popup-Background" class="lpu loopexit"></div>
+        <div id="Popup-Buttons" class="lpu">
+            <img src="/images/whitearrow.png" alt="Left Cycle" id="Picture-Button" class="left lpu lcli">
+            <div id="Exit-Button" class="lpu loopexit">
+                <span id="xline" class="lpu l1"></span>
+                <span id="xline" class="lpu l2"></span>
+            </div>
+            <img src="/images/whitearrow.png" alt="Right Cycle" id="Picture-Button" class="right lpu rcli">
         </div>
-        <button class="exit-looper-images pui" onclick="exitLooperImages()">X</button>
-        <div class="looper-schematic-wrapper pui">
-            <a href="/images/LooperSchematic.png" target="_blank">
-                <img src="/images/LooperSchematic.png" alt="Looper Schematic PNG" class="lsi pui">
-            </a>
-        </div>
-        <div class="looper-pcb-wrapper pui">
-            <a href="/images/PCBBoard.png" target="_blank">
-                <img src="/images/PCBBoard.png" alt="Looper PNG" class="lpi pui">
-            </a>
+        <div id="Loop-Images-Trim" class="lpu">
         </div>
     </div>
-
+    <div id="AR-Popup" class="apu">
+        <div id="Popup-Background" class="apu arexit"></div>
+        <div id="Popup-Buttons" class="apu">
+            <img src="/images/whitearrow.png" alt="Left Cycle" id="Picture-Button" class="left apu lcai">
+            <div id="Exit-Button" class="apu arexit">
+                <span id="xline" class="apu l1"></span>
+                <span id="xline" class="apu l2"></span>
+            </div>
+            <img src="/images/whitearrow.png" alt="Right Cycle" id="Picture-Button" class="right apu rcai">
+        </div>
+        <div id="AR-Images-Trim" class="apu">
+        </div>
+    </div>
     <div id="Project-Grid">
         <div class="Trim-Wrap">
             <div class="Project-Background">
                 <div id="AR-Wrap" class="Main-Wrap">
                     <div id="AR-Title-Wrap" class="Title-Wrap">
                         <img src="/images/icons/jsicon.png" alt="JS-Icon2" id="JS-Icon" class="Title-Icons">
-                        <img src="/images/icons/aricon.png" alt="ARJS-Icon" id="AR-Icon" class="Title-Icons AR-IMGS">
-                        <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="Title-Icons AR-IMGS image-invert">
-                        <img src="/images/icons/threejsicon.png" alt="THREE-Icon" id="THREE-Icon" class="Title-Icons AR-IMGS image-invert">
+                        <img src="/images/icons/aricon.png" alt="ARJS-Icon" id="AR-Icon" class="Title-Icons SMALL-IMGS">
+                        <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="Title-Icons SMALL-IMGS image-invert">
+                        <img src="/images/icons/threejsicon.png" alt="THREE-Icon" id="THREE-Icon" class="Title-Icons SMALL-IMGS image-invert">
                         <span id="AR-Title" class="Title">AR App</span>
                     </div>
                     <p id="AR-Description" class="Descriptions Outer-Text">
@@ -53,10 +61,36 @@
                                 <p id="AR-YT-Desc" class="Outer-Text link-text">Link to Demo Video</p>
                             </a>
                         </div>
-                        <div id="AR-Link-4-Wrap" class="link-item link-rightside" onclick="displayARImages();">
+                        <div id="AR-Link-4-Wrap" class="link-item link-rightside">
                             <img src="/images/icons/imageicon.png" alt="Image"  id="AR-Img-Pop-Icon" class="link-icons image-icon">
                             <p id="AR-Img-Desc" class="Outer-Text link-text">View Photos</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Trim-Wrap">
+            <div class="Project-Background">
+                <div id="Chat-Wrap" class="Main-Wrap">
+                    <div id="Chat-Title-Wrap" class="Title-Wrap">
+                        <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
+                        <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="Title-Icons SMALL-IMGS image-invert">
+                        <img src="/images/icons/ajaxicon.png" alt="AJAX Icon" id="AJAX-Icon" class="Title-Icons SMALL-IMGS">
+                        <img src="/images/icons/mongodbicon.png" alt="MongoDB Icon" id="MONGO-Icon" class="Title-Icons SMALL-IMGS">
+                        <span id="Chat-Title" class="Title">Chat App</span>
+                    </div>
+                    <p id="Chat-Description" class="Descriptions Outer-Text">
+                        This is a minimalistic real time messaging web application built from scratch. 
+                        The messages come in at real time and are saved to a NoSQL database. 
+                        The project incorporates jQuery, AJAX, Express, Mongoose, MongoDB, and Javascript. 
+                        There is no security incorporated into the chat, 
+                        but the chat was not made to be a secure person-to-person chatting application but simply a display of front and backend skills.
+                    </p>
+                    <div id="Chat-Form-Div">
+                        <form action="/chat" id="Chat-Form" method="get" target="_self">
+                            <input type="text" id="user-name-input" name="uName" placeholder="Enter Your Name">
+                            <input type="submit" value="CHAT" id="submit-button">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -84,7 +118,7 @@
                                 <p id="Loop-GH-Desc" class="link-text Outer-Text">Link to GitHub Repo</p>
                             </a>
                         </div>
-                        <div id="Loop-Link-2-Wrap" class="link-item" onclick="displayLoopImages();">
+                        <div id="Loop-Link-2-Wrap" class="link-item">
                             <img src="/images/icons/imageicon.png" alt="Image" id="Loop-Img-Pop-Icon" class="link-icons image-icon">
                             <p id="Img-Pop-Desc" class="link-text Outer-Text">View Photos</p>
                         </div>
@@ -126,25 +160,6 @@
                     </div>
                     <div id="Calc">
                         <%- include('../../../scripts/Calculator/calculator.ejs')%>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="Chat-Wrap" class="Main-Wrap">
-                    <div id="Chat-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
-                        <span id="Chat-Title" class="Title">Chat App</span>
-                    </div>
-                    <p id="Chat-Description" class="Descriptions Outer-Text">
-
-                    </p>
-                    <div id="Chat-Form-Div">
-                        <form action="/chat" id="Chat-Form" method="get" target="_self">
-                            <input type="text" id="user-name-input" name="uName" placeholder="Enter Your Name">
-                            <input type="submit" value="CHAT" id="submit-button">
-                        </form>
                     </div>
                 </div>
             </div>
