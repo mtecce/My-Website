@@ -11,12 +11,14 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// MongoDB Connection
 mongoose.connect(uri,{useNewUrlParser: true} )
 .then((result) => {
     console.log('connected to db');
 })
 .catch((err) => console.log(err));
 
+// Other Stuff
 app.listen(process.env.PORT || 3000);
 
 app.get('/',(req,res) => {
@@ -42,3 +44,7 @@ app.get('/contact', (req,res) =>{
 });
 
 app.use('/chat', chatRoutes);
+
+app.use((req,res) => {
+    res.status(404).render('404');
+})
