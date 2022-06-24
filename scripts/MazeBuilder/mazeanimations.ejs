@@ -1,24 +1,41 @@
 <script>
+
+    that = this;
+
     //Maze Items
     const size_input = document.querySelector("#Maze-Size");
-    const tab1 = document.getElementById('Maze-Table');
-    let nm = new MazeBuilder();
+    const new_maze_button = document.querySelector('#New-Maze');
+    const solve_maze_button = document.querySelector('#Solve-Maze');
+
+    const animate_create_switch = document.querySelector('#Show-Create-Check');
+    const animate_solve_switch = document.querySelector('#Show-Solve-Check');
+    const create_speed_input = document.querySelector('#Create-Speed-Slider');
+    const solve_speed_input = document.querySelector('#Solve-Speed-Slider');
+
+    const maze_table = document.getElementById('Maze-Table');
+
+    let nm = new MazeBuilder(maze_table);
     let size = 5;
     let make_new_maze = false;
     let has_maze = false;
-    let currently_solving = false;
-    let solved_maze = false;
+    this.currently_solving = false;
+    this.solved_maze = false;
+
+    new_maze_button.addEventListener("click",()=> newClick());
+    solve_maze_button.addEventListener("click",()=> solveClick());
 
     const newClick = () => {
-        if(currently_solving){
+        if(this.currently_solving){
             setTimeout(() => {
                 new_button.click();
             },50);
         }else{
+            // animate_create_switch.checked
+            // parseInt(create_speed_input.value)
             if(make_new_maze){
                 const allCells = document.querySelector("tbody");
                 allCells.parentElement.removeChild(allCells);
-                nm = new MazeBuilder();
+                nm = new MazeBuilder(maze_table);
                 solved_maze = false;
             }
             let i_s = size_input.value;
@@ -35,10 +52,14 @@
 
     const solveClick = () => {
         if(has_maze){
-            if(solved_maze){
+            if(this.solved_maze){
                 alert("You already solved the maze");
             }else{
-                solve();
+                this.currently_solving = true;
+                nm.solveMaze(
+                    animate_solve_switch.checked,
+                    parseInt(solve_speed_input.value)
+                );
             }
         }else{
             alert("You need to create a maze first");
@@ -47,57 +68,9 @@
 
     //maze functions
     const newMaze = () => {
-        nm.instantiateMaze(size);
-        let num_cells = size*2 + 1;
-        let p_size = tab1.clientWidth/num_cells;
-        //add to the table
-        for(let i = 0; i < num_cells; i++){
-            let newRow = tab1.insertRow();
-            for(let j = 0; j < num_cells; j++){
-                let newCell = newRow.insertCell();
-                    newCell.style.width = p_size + "px";
-                    newCell.style.height = p_size + "px";
-                if(nm.maze_matrix[i][j] == "#"){
-                    newCell.classList.toggle("wall");
-                }
-            }
-        }
+        nm.instantiateMaze(
+            size,animate_create_switch.checked,parseInt(create_speed_input.value)
+        );
     };
 
-    const solve = () => {
-        let time = 0;
-        nm.solveMaze();
-        let steps = nm.directions;
-        steps.splice(steps.indexOf(''));
-        let x = nm.startxcoordwall;
-        let y = 0;
-        currently_solving = true;
-        for(let i = 0; i < steps.length; i++){
-            setTimeout(() => {
-                let temp_row = tab1.rows[x];
-                let temp_cell = temp_row.cells[y];
-                temp_cell.classList.toggle("dissapear");
-                switch(steps[i]){
-                    case 'Right':
-                        y += 1;
-                        break;
-                    case 'Up':
-                        x -= 1;
-                        break;
-                    case 'Down':
-                        x += 1;
-                        break;
-                    case 'Left':
-                        y -= 1;
-                        break;
-                }
-                if(i == steps.length-1){
-                    currently_solving = false;
-                }
-            },time);
-            time += 50;
-        }
-        solved_maze = true;
-    };
-    newClick();
 </script>

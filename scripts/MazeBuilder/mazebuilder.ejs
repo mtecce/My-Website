@@ -1,51 +1,96 @@
 <script>
     class MazeBuilder{
 
-        constructor(){
+        constructor(mazeTable){
+            this.mazeTable = mazeTable;
             this.startxcoordwall = null;
             this.endxcoordwall = null;
             this.maze_matrix = []; //char
             this.coordinate_matrix = []; //bool
             this.directions = []; //string
+            this.makeCoordinates = [[],[]];
+            this.solveCoordinates = [[],[]];
             this.row_size = null;
             this.col_size = null;
             this.lastk = null;
             this.deadend = false;
             this.atend = false;
+            this.animateSolveAgl = false;
+            this.createSpeed = 0;
+            this.solveSpeed = 0;
+            this.animateTimer = 0;
+            this.solveTimer = 0;
         }
 
-        instantiateMaze(size){
+        instantiateMaze(size,animateCreate,createSpeed){
             this.numOfCells = size;
             this.sizeOfMaze = (size*2)+1;
+            if(animateCreate){this.createSpeed = createSpeed;}
             this.constructMatricies();
-            this.makeMaze(this.startxcoordwall,1);
+            setTimeout(()=>{
+                this.makeMaze(this.startxcoordwall,1);
+                this.animateMakeMaze();
+            }, this.animateTimer);
+            this.animateTimer += this.createSpeed;
         }
 
-        solveMaze(){
+        solveMaze(animateSolve,solveSpeed){
+            console.log(animateSolve,solveSpeed);
+            this.animateSolveAgl = animateSolve;
+            if(animateSolve){
+                this.solveSpeed = solveSpeed;
+                
+            }
+            console.log(this.animateSolveAgl,this.solveSpeed);
             for(let i = 0; i < this.sizeOfMaze**2; i++){this.directions.push("");}
             this.solver(this.startxcoordwall,0,[true,false,false,false],0);
+            this.animateSolve();
         }
         
         constructMatricies(){
+
+            let p_size = this.mazeTable.clientWidth / this.sizeOfMaze;
+
             for(let i = 0; i < this.sizeOfMaze; i++){
+
+                this.mazeTable.insertRow();
                 this.maze_matrix.push([]);
                 this.coordinate_matrix.push([]);
+
                 for(let j = 0; j < this.sizeOfMaze; j++){
-                    this.coordinate_matrix[i].push(false);
-                    if((i%2==0)||(i==0)){
-                        this.maze_matrix[i].push('#');
-                    }else if((j%2==0)||(j==0)){
-                        this.maze_matrix[i].push('#');
-                    }else{
-                        this.maze_matrix[i].push(' ');
-                    }
+
+                    setTimeout(()=>{
+                        let newCell = this.mazeTable.children[0].children[i].insertCell();
+                        this.mazeTable.children[0].children[i].children[j].style.width = p_size + "px";
+                        this.mazeTable.children[0].children[i].children[j].style.height = p_size + "px";
+                        this.coordinate_matrix[i].push(false);
+                        
+                        if((i%2==0)||(i==0)){
+                            this.mazeTable.children[0].children[i].children[j].classList.toggle("wall");
+                            this.maze_matrix[i].push('#');
+                        }else if((j%2==0)||(j==0)){
+                            this.mazeTable.children[0].children[i].children[j].classList.toggle("wall");
+                            this.maze_matrix[i].push('#');
+                        }else{
+                            this.maze_matrix[i].push(' ');
+                        }
+                    },this.animateTimer);
+                    this.animateTimer += this.createSpeed;
                 }
             }
-            this.startxcoordwall = this.randomOddNumberGeneratorForMazeBlock();
-            this.endxcoordwall = this.randomOddNumberGeneratorForMazeBlock();
-            this.maze_matrix[this.startxcoordwall][0] = ' ';
-            this.maze_matrix[this.endxcoordwall][this.sizeOfMaze-1] = ' ';
-            this.coordinate_matrix[this.startxcoordwall][1] = true;
+            setTimeout(()=>{
+                this.startxcoordwall = this.randomOddNumberGeneratorForMazeBlock();
+                this.mazeTable.children[0].children[this.startxcoordwall].children[0].classList.toggle("wall");
+                this.maze_matrix[this.startxcoordwall][0] = ' ';
+                this.coordinate_matrix[this.startxcoordwall][1] = true;
+            },this.animateTimer);
+            this.animateTimer += this.createSpeed;
+            setTimeout(()=>{
+                this.endxcoordwall = this.randomOddNumberGeneratorForMazeBlock();
+                this.mazeTable.children[0].children[this.endxcoordwall].children[this.sizeOfMaze-1].classList.toggle("wall");
+                this.maze_matrix[this.endxcoordwall][this.sizeOfMaze-1] = ' ';
+            },this.animateTimer);
+            this.animateTimer += this.createSpeed;
         }
         
         //ret int
@@ -62,6 +107,67 @@
             }
             return returnInt;
         }
+
+        animateMakeMaze(){
+            let tempTimer = 0;
+            for(let i = 0; i < this.makeCoordinates[0].length; i++){
+                setTimeout(()=>{
+                    let x = this.makeCoordinates[0][i];
+                    let y = this.makeCoordinates[1][i];
+                    this.mazeTable.children[0].children[x].children[y].classList.toggle('wall');
+                },tempTimer);
+                tempTimer += this.createSpeed;
+            }
+        }
+
+        animateSolve(){
+            let tempTimer = 0;
+            if(this.animateSolveAgl){
+                for(let i = 0; i < this.solveCoordinates[0].length; i++){
+                    setTimeout(()=>{
+                        let x = this.solveCoordinates[0][i];
+                        let y = this.solveCoordinates[1][i];
+                        this.mazeTable.children[0].children[x].children[y].classList.toggle('solve-color');
+                        setTimeout(()=>{
+                            this.mazeTable.children[0].children[x].children[y].classList.toggle('solve-color');
+                        },this.solveSpeed*3);
+                    },tempTimer);
+                    tempTimer += this.solveSpeed;
+                }
+            }
+
+            this.directions.splice(this.directions.indexOf(''));
+            let x = this.startxcoordwall;
+            let y = 0;
+            
+            for(let i = 0; i < this.directions.length; i++){
+                setTimeout(() => {
+                    let temp_row = this.mazeTable.children[0].children[x];
+                    let temp_cell = temp_row.children[y];
+                    temp_cell.classList.toggle("dissapear");
+                    switch(this.directions[i]){
+                        case 'Right':
+                            y += 1;
+                            break;
+                        case 'Up':
+                            x -= 1;
+                            break;
+                        case 'Down':
+                            x += 1;
+                            break;
+                        case 'Left':
+                            y -= 1;
+                            break;
+                    }
+                    if(i == this.directions.length-1){
+                        that.currently_solving = false;
+                    }
+                },tempTimer);
+                tempTimer += this.solveSpeed;
+            }
+            that.solved_maze = true;
+
+        }
         
         makeMaze(xcoor,ycoor){
             let nor = this.canGoNorth(xcoor,ycoor);
@@ -70,16 +176,18 @@
             let wes = this.canGoWest(xcoor,ycoor);
         
             if(!nor && !sou && !eas && !wes){
-                //break case
             }else{
                 let hasMoved = false;
                 while(!hasMoved){
                     let res = Math.floor(Math.random() * 4);
+                    
                     switch(res){
                         case 0:
                             if(nor){
                                 this.coordinate_matrix[xcoor-2][ycoor] = true;
                                 this.maze_matrix[xcoor-1][ycoor] = ' ';
+                                this.makeCoordinates[0].push(xcoor-1);
+                                this.makeCoordinates[1].push(ycoor);
                                 hasMoved = true;
                                 this.makeMaze(xcoor-2,ycoor);
                             }
@@ -88,6 +196,8 @@
                             if(sou){
                                 this.coordinate_matrix[xcoor+2][ycoor] = true;
                                 this.maze_matrix[xcoor+1][ycoor] = ' ';
+                                this.makeCoordinates[0].push(xcoor+1);
+                                this.makeCoordinates[1].push(ycoor);
                                 hasMoved = true;
                                 this.makeMaze(xcoor+2,ycoor);
                             }
@@ -96,6 +206,8 @@
                             if(eas){
                                 this.coordinate_matrix[xcoor][ycoor+2] = true;
                                 this.maze_matrix[xcoor][ycoor+1] = ' ';
+                                this.makeCoordinates[0].push(xcoor);
+                                this.makeCoordinates[1].push(ycoor+1);
                                 hasMoved = true;
                                 this.makeMaze(xcoor,ycoor+2);
                             }
@@ -104,6 +216,8 @@
                             if(wes){
                                 this.coordinate_matrix[xcoor][ycoor-2] = true;
                                 this.maze_matrix[xcoor][ycoor-1] = ' ';
+                                this.makeCoordinates[0].push(xcoor);
+                                this.makeCoordinates[1].push(ycoor-1);
                                 hasMoved = true;
                                 this.makeMaze(xcoor,ycoor-2);
                             }
@@ -162,10 +276,6 @@
             return ret_bool;
         }
         
-        updateMazeDOMElements(){
-        
-        }
-        
         //int int bool bool bool bool int
         solver(x,y,fromBools,k){
         
@@ -179,6 +289,8 @@
             let d = k+1;
             if(this.endChecker(x,y)){
                 this.maze_matrix[x][y] = '~';
+                this.solveCoordinates[0].push(x);
+                this.solveCoordinates[1].push(y);
                 this.directions[k] = "Right";
                 this.atend = true;
                 this.lastk = k;
@@ -194,6 +306,8 @@
         }
         
         solver_helper(x,y,fromBools,wallBools,d,k){
+            this.solveCoordinates[0].push(x);
+            this.solveCoordinates[1].push(y);
             //left wall
             if(!fromBools[0]){
                 if(!wallBools[0] && !this.atend){

@@ -144,9 +144,29 @@
                         <table id="Maze-Table" class="table-1 maze-resize" id="Table-1"></table>
                     </div>
                     <div id="Maze-Func" class="maze-resize">
-                        <input type="text" name="maze_size" id="Maze-Size" placeholder="&lt 50" class="Maze-Button">
-                        <button id="New-Maze" class="Maze-Button" onclick="newClick()">New</button>
-                        <button id="Solve-Maze" class="Maze-Button" onclick="solveClick()">Solve</button>
+                        <div id="Maze-Button-Strip-Wrapper">
+                            <input type="text" name="maze_size" id="Maze-Size" placeholder="&lt 50" class="Maze-Button">
+                            <button id="New-Maze" class="Maze-Button">New</button>
+                            <button id="Solve-Maze" class="Maze-Button">Solve</button>
+                        </div>
+                        <div id="Maze-Inputs">
+                            <div id="Creation-Line" class="checkbox-line">
+                                <input type="checkbox" name="show-create" id="Show-Create-Check" checked="true" value="ShowCreate" class="maze-checkbox">
+                                <div class="check-label">Animate Creation Algorithm</div>
+                            </div>
+                            <div id="Solving-Line" class="checkbox-line">
+                                <input type="checkbox" name="show-solve" id="Show-Solve-Check" checked="true" value="ShowSolve" class="maze-checkbox">
+                                <div class="check-label">Animate Solving Algorithm</div>
+                            </div>
+                            <div class="Slider-Wrapper">
+                                <div class="speed-label">Create Speed</div>
+                                <input type="range" min="1" max="20" value="10" name="create-speed" class="range-slider" id="Create-Speed-Slider">
+                            </div>
+                            <div class="Slider-Wrapper">
+                                <div class="speed-label">Solve Speed</div>
+                                <input type="range" min="20" max="100" value="35" name="solve-speed" class="range-slider" id="Solve-Speed-Slider">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

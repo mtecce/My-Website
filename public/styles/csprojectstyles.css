@@ -10,6 +10,7 @@ main{
     --tw: 338px;
     --th: 583px;
     --bgs: 660px;
+    --cbs: 16px;
 }
 
 /* GRID */
@@ -179,26 +180,80 @@ main{
     margin: 0 5%;
 }
 
+#Maze-Button-Strip-Wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
 .Maze-Button{
     text-align: center;
     border-style: none;
     background-color: #2f2f2f;
     color: white;
     font: inherit;
-    height: 50px;
-    border-radius: 20px;
+    height: 40px;
+    border-radius: 25px;
     padding: 0;
     font-size: 25px;
-    width: 90%;
-    margin: 10px 5%;
+    width: 32%;
 }
 
 #Maze-Size{
     color: white;
 }
 
-#New-Maze{
-    margin: 0 5%;
+#Maze-Inputs{
+    position: relative;
+    height: 140px;
+    width: 90%;
+    margin: 3% 5%;
+}
+
+.checkbox-line,
+.Slider-Wrapper{
+    position: relative;
+    height: 25%;
+    width: 100%;
+}
+
+.maze-checkbox{
+    position: relative;
+    width: var(--cbs);
+    height: var(--cbs);
+    margin: 0;
+    font: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    accent-color: darkorchid;
+}
+
+.check-label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(var(--cbs));
+    font-size: 18px;
+    margin: 0 0 0 24px;
+    color: white;
+}
+
+.speed-label{
+    position: absolute;
+    font-size: 18px;
+    width: 107px;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.range-slider{
+    position: absolute;
+    width: 56%;
+    left: 107px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 0 0 10px;
+    accent-color: darkorchid;
 }
 
 #Maze-Table-Wrapper{
@@ -232,6 +287,10 @@ td.dissapear{
 
 .wall{
     background-color: black;
+}
+
+.solve-color{
+    background-color: coral;
 }
 
 /* ///////////////////////////////////// */
@@ -503,15 +562,30 @@ td.dissapear{
     }
 
     .Maze-Button{
-        width: 90%;
-        margin: 19px 5%;
+        margin: 0 1px;
         height: 50px;
-        border-radius: 25px;
     }
 
-    #New-Maze{
-        margin: 15px 5%;
+    #Maze-Inputs{
+        height: 200px;
+        width: calc(100% - 5px);
+        margin: 5px 0 5px 5px;
     }
+
+    .check-label,
+    .speed-label{
+        font-size: 17px;
+    }
+
+    .speed-label{
+        width: 101px;
+    }
+
+    .range-slider{
+        left: 101px;
+    }
+
+
 
     #Calc{
         position: absolute;
