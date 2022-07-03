@@ -1,40 +1,96 @@
 <main>
-    <div id="Grid-Wrapper">
-        <div class="block-1">
-            <div id="Photo-Wrapper" class="image-wrapper-size">
-                <div id="Photo-Background" class="image-size">
-                    <img src="/images/me.png" alt="Me" id="Self-Photo" class="image-size">
+
+    <div id="Option-Wrapper">
+        <div id="Option-Border-Wrapper">
+            <div id="Option-Border" class="am"></div>
+            <div id="Option-Border" class="uc"></div>
+            <div id="Option-Border" class="ua"></div>
+        </div>
+        <div id="Index-Pictures-Wrapper">
+            <div id="AMB" class="Image-Border-Wrapper opt-1">
+                <div id="Photo-Background" class="Image-Style">
+                    <img src="/images/me.png" alt="Me" id="Self-Photo">
                 </div>
             </div>
-            <p id="About-Text" class="bp">
-                My name is Michael Tecce. I am a programmer specializing in software development, specifically frontend and
-                backend web development. Outside of programming I am an avid lifelong musician. My primary instrument is guitar 
-                and have started, joined, and aided multiple music projects along the Eastern Seaboard. I am also a hobbyist audio 
-                electronics technician where I focus on the development of embedded systems, analog audio circuits, and the repair
-                of such circuits.
+            <div id="UCB" class="Image-Border-Wrapper opt-2">
+                <img src="/images/UrsinusIcon.png" alt="Ursinus Icon" id="UCIcon" class="Image-Style image-invert">
+            </div>
+            <div id="UAB" class="Image-Border-Wrapper opt-3">
+                <img src="/images/UArtsIcon.png" alt="University of the Arts Icon" id="UAIcon" class="Image-Style image-invert">
+            </div>
+        </div>
+    </div>
+
+    <div id="Index-Description-Wrapper">
+        <div id="AMD" class="P-Wrapper opt-1">
+            <span id="About-Header" class="Description-Header Description-Header-Landscape amh">About Me</span>
+        </div>
+        <div id="UCD" class="P-Wrapper opt-2">
+            <span id="Ursinus-Header" class="Description-Header-Landscape">Academic History: Ursinus College</span>
+            <span id="Ursinus-Header" class="Description-Header">Academic History</span>
+            <span id="Ursinus-Header" class="Description-Header bottom-header">Ursinus College</span>
+        </div>
+        <div id="UAD" class="P-Wrapper opt-3">
+            <span id="UArts-Header" class="Description-Header-Landscape">Academic History: University of the Arts</span>
+            <span id="UArts-Header" class="Description-Header">Academic History</span>
+            <span id="UArts-Header" class="Description-Header bottom-header">University of the Arts</span>
+        </div>
+    </div>
+    
+    <div id="Index-Paragraphs-Wrapper">
+        <p id="Instruction-Text" class="active">
+            Welcome! Press an icon above to read its content :) 
+        </p>
+        <span id="AMTW" class="paragraph-wrapper">
+            <p id="About-Text" class="Text-Style">
+                My name is Michael Tecce and I am a programmer specializing in software engineering. My interests are specifically in web development, web application development,
+                and music software development.  
             </p>
-        </div>
-        <div id="Header-Wrapper">
-            <p id="Academic-Header" class="main-header">Academic History</p>
-        </div>
-        <div class="block-2">
-            <p id="AP1" class="bp">
+            <p id="About-Text" class="Text-Style">
+                Outside of programming I am an avid lifelong musician. My primary instrument is guitar and have started, 
+                joined, and aided multiple music projects along the Eastern Seaboard. 
+            </p>
+            <p id="About-Text" class="Text-Style">
+                Related to my musicianship with guitar I am also an experienced guitar repair technician, and amateur luthier (professionally trained). I have been building, modifying, and repairing 
+                stringed instruments since I was 16 years old.
+            </p>
+            <p id="About-Text" class="Text-Style">
+                I am also a hobbyist audio electronics technician where I focus on the development of embedded systems, 
+                analog audio circuits, and the repair of such circuits.
+            </p>
+        </span>
+        <span id="UCTW" class="paragraph-wrapper">
+            <p id="Ursinus-Text" class="Text-Style">
                 I received my B.Sc. in Computer Science from <a href="https://www.ursinus.edu/">Ursinus College</a> in 2022. As an 
                 undergraduate student at Ursinus College I focused my studies in software engineering, digital audio processing, 
-                and web graphics. Outside of my academic coursework I had been heavily involved in the development of an web-based augmented 
+                and web graphics.  
+            </p>
+            <p id="Ursinus-Text" class="Text-Style">
+                Outside of my academic coursework I had been heavily involved in the development of an web-based augmented 
                 reality program. The AR program was designed to mimic a counterpoint music theory classroom exercise designed
-                by <a href="https://www.ursinus.edu/live/profiles/3124-rosa-abrahams">Rosa Abrahams</a>. I also participated in
-                Ursinus College's Summer Fellows program of 2020. During this research internship I focused on the development 
-                of novel sonification techniques. Both of these projects were advised by
+                by <a href="https://www.ursinus.edu/live/profiles/3124-rosa-abrahams">Rosa Abrahams</a>.
+            </p>
+            <p id="Ursinus-Text" class="Text-Style">
+                I also participated in Ursinus College's Summer Fellows program of 2020. During this research internship 
+                I focused on the development of novel sonification techniques. Both of these projects were advised by
                 <a href="https://www.ctralie.com/index.html">Christopher Tralie</a>.
             </p>
-            <p id="AP2" class="bp">
+        </span>
+        <span id="UATC" class="paragraph-wrapper">
+            <p id="UArts-Text" class="Text-Style">
                 Prior to attending Ursinus College I was a student at <a href="https://www.uarts.edu/">The University of the Arts</a>.
                 I was pursuing a B.Sc. in Music, Business, Entrepreneurship & Technology (MBET) and focused my studies in audio electronics, 
-                digital audio production and music theory. While attended The University of the Arts I learned of my affinity towards the 
-                scientific aspects of music and audio, all while increasing my desire to become a professional computer programmer. I then 
-                transferred to Ursinus College to pursue an education in Computer Science.
+                digital audio production and music theory. 
             </p>
-        </div>
+            <p id="UArts-Text" class="Text-Style">
+                I studied audio electronics under the expert Matthew Manhire, owner of <a href="http://http://www.rootbeeraudio.com/">Rootbeer Audio</a>
+                where I learned theoretical and practical analog audio system technology, with the primary focus being vaccum tube guitar 
+                amplifiers and stringed instrument effects pedals. 
+            </p>
+            <p id="UArts-Text" class="Text-Style">
+                While attending The University of the Arts I learned of my affinity towards the scientific aspects of music and audio, all while
+                increasing my desire to become a professional computer programmer.
+            </p>
+        </span>
     </div>
 </main>

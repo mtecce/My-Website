@@ -1,6 +1,7 @@
 <script>
     //ham animations
     const hamlines = document.querySelectorAll(".ham-line");
+    const hambackground = document.querySelector(".hambackground");
 
     //mainmenu dropdown animations
     const dropdownwrapper = document.getElementById("Mobile-Dropdown-Wrapper");
@@ -53,6 +54,7 @@
     const hamClick = () => {
         //for mobile landscape transform
         header.classList.toggle("active");
+        hambackground.classList.toggle("active");
         headericons.forEach((icon) => icon.classList.toggle("active"));
 
         //for mobile portrait transform

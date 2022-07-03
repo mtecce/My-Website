@@ -1,0 +1,62 @@
+<script>
+    const options1 = document.querySelectorAll(".opt-1");
+    const options2 = document.querySelectorAll(".opt-2");
+    const options3 = document.querySelectorAll(".opt-3");
+
+    const textMain = document.getElementById('Instruction-Text');
+    const textAbout = document.getElementById('About-Text');
+    const textUC = document.getElementById('Ursinus-Text');
+    const textUA = document.getElementById('UArts-Text');
+
+    const optionObjects = document.querySelectorAll("#Option-Border");
+    const optionHeaders = document.querySelectorAll(".P-Wrapper");
+    const optionTexts = document.querySelectorAll('.paragraph-wrapper');
+
+    let activeOption = [false,false,false];
+    let descriptiontoggles = ["am","uc","ua"];
+    let choseOption = false;
+
+    options1.forEach(opt => {
+        opt.addEventListener("click", () => optionToggle(0,1,2));
+    });
+
+    options2.forEach(opt => {
+        opt.addEventListener("click", () => optionToggle(1,0,2));
+    });
+
+    options3.forEach(opt => {
+        opt.addEventListener("click", () => optionToggle(2,0,1));
+    });
+
+    const optionToggle = (ind1, ind2, ind3) => {
+        if(!choseOption){
+            textMain.classList.toggle('active');
+            choseOption = true;
+        }
+        if(!activeOption[ind1]){
+            if(activeOption[ind2]){
+                optionObjects[ind2].classList.toggle('active');
+                optionHeaders.forEach(opt => {
+                    opt.classList.toggle(descriptiontoggles[ind2])
+                });
+                optionTexts[ind2].classList.toggle('active');
+                activeOption[ind2] = false;
+            }
+            if(activeOption[ind3]){
+                optionObjects[ind3].classList.toggle('active');
+                optionHeaders.forEach(opt => {
+                    opt.classList.toggle(descriptiontoggles[ind3])
+                });
+                optionTexts[ind3].classList.toggle('active');
+                activeOption[ind3] = false;
+            }
+            optionObjects[ind1].classList.toggle('active');
+            optionHeaders.forEach(opt => {
+                    opt.classList.toggle(descriptiontoggles[ind1])
+                });
+            optionTexts[ind1].classList.toggle('active');
+            activeOption[ind1] = true;
+        }
+    };
+
+</script>

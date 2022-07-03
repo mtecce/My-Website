@@ -6,7 +6,6 @@ header{
     position: fixed;
     z-index: 2;
     background-color: rgb(0 0 0 / 80%);
-    backdrop-filter: blur(5px);
 }
 
 @media screen and (max-width: 450px) and (max-height: 916px){
@@ -159,21 +158,21 @@ header{
     #Mobile-Header{
       width: 100%;
       height: 60px;
+      top: 0;
     }
   
     #Icons-Element{
-      position: inherit;
-      display: block;
-      width: 0;
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
       z-index: 6;
     }
   
     #Name-Banner{
-      position: fixed;
+      position: relative;
       width: 45%;
-      top: 0px;
       margin: 16px 2.5%;
-      left: 25%;
       color: white;
     }
   
@@ -186,19 +185,11 @@ header{
   
     #Icon0,
     #Icon1{
-      position: fixed;
+      position: relative;
       top: 12px;
       width: 20%;
       margin: 0 2.5%;
       height: 40px;
-    }
-  
-    #Icon0{
-      left: 0;
-    }
-  
-    #Icon1{
-      left: 75%;
     }
   
     #Icon1-Wrapper{
@@ -282,6 +273,7 @@ header{
     .desktop p,
     .nav-top,
     .nav-top :is(ul,li,a,span){
+      position: relative;
       visibility: hidden;
       z-index: -50;
       width: 0;
@@ -292,7 +284,7 @@ header{
   @media screen and (min-width: 451px) and (max-width: 916px) and (max-height: 450px){
   
     .hambackground{
-      background-color: black;
+      background-color: rgb(0 0 0 / 80%);
       position: fixed;
       border-radius: 6px;
       border: none;
@@ -300,10 +292,15 @@ header{
       height: 33.2%;
       width: 106px;
       left: -53px;
+      z-index: 1;
+    }
+
+    .hambackground.active{
+      background: none;
     }
   
     #Mobile-Header{
-      background-color: black;
+      background-color: rgb(0 0 0 / 80%);
     }
 
     .mobile{
@@ -333,7 +330,6 @@ header{
     .projectslide,
     .moreslide{
       background-color: rgb(0 0 0 / 80%);
-      backdrop-filter: blur(5px);
       border-radius: 10px;
       width: 161px;
       height: 16.6%;
@@ -354,7 +350,7 @@ header{
     #Icon0{
       position: fixed;
       top: 0;
-      left: 100%;
+      left: 0;
     }
   
     #Icon1{
@@ -476,10 +472,6 @@ header{
     header.active{
       transform: translateX(53px);
     }
-
-    #Icon0.active{
-      transform: translateX(-160%);
-    }
   
     .moreslide.active,
     .projectslide.active{
@@ -523,10 +515,9 @@ header{
 
     #Desktop-Header{
       position: fixed;
-      width: 40%;
+      width: 40vw;
       height: 60px;
       background-color: rgb(0 0 0 / 80%);
-      backdrop-filter: blur(5px);
     }
   
     #Desktop-Header p{
@@ -543,10 +534,9 @@ header{
     #Mobile-Header{
       position: fixed;
       background-color: rgb(0 0 0 / 80%);
-      backdrop-filter: blur(5px);
       height: 60px;
-      width: 60%;
-      left: 40%;
+      width: 60vw;
+      left: 40vw;
       z-index: 2;
     }
   
@@ -642,15 +632,14 @@ header{
     
     #Desktop-Header{
       position: fixed;
-      width: 100%;
+      width: 100vw;
       height: 60px;
       background-color: rgb(0 0 0 / 80%);
-      backdrop-filter: blur(5px);
     }
   
     #Name-Banner{
       position: absolute;
-      width: 40%;
+      width: 40vw;
       font-size: 30px;
       margin: 0;
       padding: 12px 0;
@@ -662,10 +651,10 @@ header{
   
     #Desktop-Nav{
       position: absolute;
-      width: 60%;
+      width: 60vw;
       margin: 0;
       padding: 0;
-      left: 40%;
+      left: 40vw;
     }
    
     #Desktop-Nav-List{

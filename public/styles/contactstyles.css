@@ -1,135 +1,105 @@
 main{
     z-index: 0;
-    position: relative;
+    position: absolute;
     top: 60px;
+    width: 100vw;
+    height: calc(100vh - 60px);
 }
 
 :root{
-    --w: 100%;
-    --h: 73px;
-    --bs: 3px;
-    --iw: calc(100% - 6px);
-    --ih: 67px;
-    --bgs: 90vw;
-    --br: 35px;
-    --dds: 372px;
+    --contactformsize: 372px;
+    --nbh: calc(100vh - 60px - 10px);
+    --numstrips: 6;
+}
+
+.contact-drop-group{
+    transition: all 0.25s;
+}
+
+#Contact-Strip-List a:link,
+#Contact-Strip-List a:visited{
+    color: black;
+    text-decoration: none;
 }
 
 #Contact-Item,
 #Contact-Strip-List{
     position: relative;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
     padding-inline-start: 0;
 }
 
 #Contact-Item{
-    height: var(--h);
-    margin: 20px 0;
-}
-
-#Contact-Strip-List{
-    list-style: none;
-    display: grid;
-    row-gap: 20px;
-    margin: 0;
-    padding-bottom: 20px;
-}
-
-.Trim-Wrap{
-    position: relative;
-    width: var(--w);
-    height: var(--h);
-    border-radius: var(--br);
-    overflow: hidden;
-}
-
-.Contact-Background{
-    background: repeating-conic-gradient(darkorchid 0%,#37fff9 5%, darkorchid 10%);
-    height: var(--bgs);
-    width: var(--bgs);
-    animation: rotating-contact 10s linear infinite;
+    margin: 0 0 2px 0;
 }
 
 .list-item-format{
     position: relative;
-    top: var(--bs);
-    width: var(--iw);
-    height: var(--ih);
-    border-radius: var(--br);
-    background-color: black;
-    overflow: hidden;
-    animation: rotating-contact-rev 10s linear infinite;
+    height: calc(var(--nbh) / var(--numstrips));
+    background: var(--bgcontrast);
 }
 
 .strip-shape-format{
     position: absolute;
+    display: flex;
     width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#Contact-Arrow-Wrapper,
+.c-image-wrapper{
+    position: relative;
+    width: 10%;
+    margin: 0 7.5%;
+    z-index: 2;
 }
 
 .contact-icons{
-    position: absolute;
-    width: 35px;
-    padding: 15px 0 15px 10%;
+    width: 90%;
+    padding: 5%;
+}
+
+.c-text-wrapper{
+    width: 50%;
 }
 
 .strip-text{
     position: absolute;
-    font-size: 25px;
+    font-size: 30px;
     margin: 0;
-    width: 100%;
-    padding: 18px 0;
+    letter-spacing: 1px;
+    padding: 0;
     text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
-#Contact-Arrow-Wrapper{
-    position: relative;
-    width: 9%;
-    height: 30px;
-    margin: 18px 0 18px 83%;
-    z-index: 2;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 #Contact-Arrow-Icon{
-    width: 30px;
+    width: 100%;
     transform: rotate(-90deg);
 }
 
 #Form-Element{
     position: absolute;
     z-index: -1;
-    background-color: #515151;
-    height: var(--h);
-    width: 80%;
+    height: 0;
+    width: 90%;
     top: 0;
-    padding: 0 10%;
-    border-radius: var(--br);
+    padding: 0 5%;
     margin: 0;
 }
 
 .form-divs{
-    position: relative;
+    position: absolute;
     margin: 10px 0;
-}
-
-.name-div{
-    top: 0px;
-}
-
-.email-div{
-    top: -67px;
-}
-
-.message-div{
-    top: -120px;
+    top: 0;
 }
 
 .submission-labels{
     padding-left: 14px;
-    color: white;
+    color: black;
 }
 
 input,
@@ -142,7 +112,7 @@ textarea{
     margin-top: 5px;
     border: none;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--bgcontrast);
 }
 
 .big-box{
@@ -150,38 +120,43 @@ textarea{
 }
 
 .submit-button{
-    position: relative;
-    font-size: 16px;
+    position: absolute;
+    font-size: 20px;
+    letter-spacing: 1px;
     background-color: black;
     color: white;
     font-family: 'Lato', sans-serif;
     border-radius: 25px;
-    padding: 10px 0;
-    top: -170px;
+    padding: 8px 0;
     width: 50%;
+    margin: 0 0 10px 0;
     border: none;
-}
-
-.contact-drop-group{
-    transition: all 0.25s;
-}
-
-#Contact-Item.active,
-#Form-Element.active{
-    height: calc(var(--dds) + var(--h));
 }
 
 #Contact-Arrow-Icon.active{
     transform: rotate(90deg);
 }
 
+#Contact-Strip-List{
+    list-style: none;
+    display: grid;
+    row-gap: 2px;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
 .form-divs.active,
 .submit-button.active{
-    top: var(--h);
+    top: calc(var(--nbh) / var(--numstrips));
+    position: relative;
 }
 
 .big-box.active{
     height: 140px;
+}
+
+#Contact-Strip-List.active{
+    transform: translateY(var(--contactformsize));
 }
 
 /* Mobile Portrait */
@@ -192,21 +167,60 @@ textarea{
 
     main{
         top: 0;
+        height: 100vh;
     }
 
     :root{
-        --bgs: calc(90vw - 53px);
+        --contactformsize: 260px;
+        --nbh: calc(100vh - 6px);
+        --numstrips: 4;
     }
 
     #Contact-Item,
     #Contact-Strip-List{
-        width: calc(90% - 53px);
-        left: calc(53px + 5%);
+        left: 53px;
+        width: var(--moblandwidth);
         transform: none;
     }
 
     #Contact-Item{
-        margin-bottom: -20px;
+        margin: 0 0 -2px 0;
+    }
+
+    .contact-icons{
+        width: 80%;
+        padding: 10%;
+    }
+
+    #Form-Element.active{
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    .form-divs.active,
+    .submit-button.active{
+        width: 47.5%;
+    }
+
+    .message-div.active{
+        position: absolute;
+        left: 52.5%;
+        width: 45%;
+    }
+
+    .small-box.active{
+        height: 50px;
+        border-radius: 25px;
+    }
+
+    .big-box.active{
+        height: 215px;
+    }
+
+    .submit-button.active{
+        margin: 20px 0 0 0;
+        font-size: 25px;
+        height: 50px;
     }
 
     #Github-Item,
@@ -229,51 +243,8 @@ textarea{
 @media screen and (min-width: 451px) and (min-height: 451px){
 
     :root{
-        --h: 100px;
-        --ih: 94px;
-        --br: 50px;
-    }
-
-    .contact-icons{
-        width: 50px;
-        padding: 21px 0 21px 10%;
-    }
-
-    .strip-text{
-        font-size: 35px;
-        padding: 25px 0;
-    }
-
-    #Form-Element{
-        width: 100%;
-        padding: 0;
-    }
-
-    .form-divs{
-        width: 90%;
-        padding: 0 5%;
-    }
-
-    .submission-labels{
-        font-size: 24px;
-    }
-
-    input,
-    textarea{
-        border-radius: 28px;
-        font-size: 22px;
-        padding: 8px 22px;
-    }
-
-    .small-box{
-        height: 55px;
-    }
-
-    .submit-button{
-        width: 45%;
-        left: 5%;
-        font-size: 35px;
-        border-radius: 31px;
+        --nbh: calc(100vh - 60px - 8px);
+        --numstrips: 5;
     }
 
     #Github-Item,
@@ -291,45 +262,74 @@ textarea{
 
 /* Desktop Portrait */
 @media screen and (min-width: 451px) and (max-width: 916px) and (min-height: 451px){
+
+    :root{
+        --contactformsize: 259px;
+    }
     
-    main{
-        top: 60px;
+    #Contact-Strip-List,
+    #Contact-Strip-List.active{
+        transform: translateY(var(--contactformsize));
     }
 
-    #Contact-Item{
-        margin-bottom: 0;
+    #Form-Element{
+        position: relative;
+        width: 95%;
+        padding: 0 2.5%;
+        height: 0;
     }
 
-    #Contact-Arrow-Wrapper{
-        width: 50px;
+    .form-divs,
+    .submit-button,
+    .form-divs.active,
+    .submit-button.active{
+        position: relative;
+        top: 0;
+        width: 47.5%;
+    }
+
+    .message-div,
+    .message-div.active{
+        position: absolute;
+        left: 52.5%;
+        width: 45%;
+        margin: 0;
+    }
+
+    .small-box,
+    .small-box.active{
         height: 50px;
-        margin: 21px 0 21px 83%;
+        border-radius: 25px;
+    }
+
+    .big-box,
+    .big-box.active{
+        height: 215px;
+    }
+
+    .submit-button,
+    .submit-button.active{
+        margin: 20px 0 0 0;
+        font-size: 25px;
+        height: 50px;
     }
 
     #Contact-Arrow-Icon{
-        width: 50px;
+        width: 90%;
+        padding: 5%;
+        visibility: hidden;
     }
 
-    .email-div{
-        top: -100px;
+    .contact-icons,
+    #Contact-Arrow-Icon{
+        max-width: calc(var(--nbh) / (var(--numstrips) * 2));
     }
 
-    .message-div{
-        top: -196px;
+    .list-item-format{
+        height: calc((var(--nbh) - var(--contactformsize)) / var(--numstrips));
+        min-height: 55px;
     }
 
-    .big-box.active{
-        height: 200px;
-    }
-
-    .submit-button{
-        top: 0;
-    }
-
-    #Contact-Item.active,
-    #Form-Element.active{
-        height: 624px;
-    }
 }
 
 /* //////////////////////////////// */
@@ -337,94 +337,81 @@ textarea{
 /* //////////////////////////////// */
 @media screen and (min-width: 917px){
 
-    main{
-        top: 80px;
-        height: calc(100vh - 80px);
-    }
-
     :root{
-        --bgs: 45vw;
+
     }
 
     #Contact-Item,
     #Contact-Strip-List{
-        position: absolute;
-        width: 45%;
+        width: 50%;
         left: 0;
-        margin: 0 2.5%;
         transform: none;
     }
 
     #Contact-Strip-List{
-        left: 50%;
-        margin-top: -90px;
-        row-gap: 90px;
+        top: -2px;
     }
 
-    #Contact-Arrow-Wrapper{
-        visibility: hidden;
+    .strip-text{
+        font-size: 40px;
     }
 
-    .name-div,
-    .name-div.active{
-        top: 100px;
+    #Contact-Arrow-Icon,
+    #Contact-Arrow-Icon.active{
+        transform: rotate(180deg);
     }
 
-    .email-div,
-    .email-div.active{
-        top: 110px;
+    #Form-Element{
+        left: 100%;
+        height: calc(100vh - 60px);
+        min-height: 620px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
-    .message-div,
-    .message-div.active{
-        top: 120px;
+    .form-divs,
+    .form-divs.active{
+        position: relative;
+        top: 0;
+        margin: 5px 0;
+    }
+
+    .submission-labels{
+        font-size: 24px;
+    }
+
+    .small-box,
+    .small-box.active{
+        height: 75px;
+        border-radius: 47.5px;
+        margin-top: 10px;
+        font-size: 25px;
     }
 
     .big-box,
     .big-box.active{
-        height: 200px;
+        height: 230px;
+        border-radius: 47.5px;
+        margin-top: 10px;
+        font-size: 25px;
     }
 
     .submit-button,
     .submit-button.active{
-        top: 135px;
+        position: relative;
+        top: 0;
+        font-size: 30px;
+        border-radius: 47.5px;
+        height: 75px;
     }
 
-    #Contact-Item,
-    #Contact-Item.active,
-    #Form-Element,
-    #Form-Element.active{
-        height: 668px;
+    input,textarea{
+        padding: 20px;
     }
 
-}
-
-@keyframes rotating-contact{
-    from{
-        transform:
-        translateX(calc(-1 * (var(--bgs) - var(--w)) / 2))
-        translateY(calc(-1 * (var(--bgs) - var(--h)) / 2))
-        rotate(0deg);
-    }
-    to{
-        transform:
-        translateX(calc(-1 * (var(--bgs) - var(--w)) / 2))
-        translateY(calc(-1 * (var(--bgs) - var(--h)) / 2))
-        rotate(360deg);
-    }
-}
-
-@keyframes rotating-contact-rev{
-    from{
-        transform: 
-        translateX(calc((var(--bgs) - var(--w)) / 2))
-        translateY(calc((var(--bgs) - var(--h)) / 2))
-        rotate(0deg);
-    }
-    to{
-        transform:
-        translateX(calc((var(--bgs) - var(--w)) / 2))
-        translateY(calc((var(--bgs) - var(--h)) / 2))
-        rotate(-360deg);
+    #Contact-Strip-List.active{
+        transform: none;
     }
 }
