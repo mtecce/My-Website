@@ -27,7 +27,7 @@
     const newClick = () => {
         if(this.currently_solving){
             setTimeout(() => {
-                new_button.click();
+                new_maze_button.click();
             },50);
         }else{
             // animate_create_switch.checked
@@ -68,6 +68,7 @@
 
     //maze functions
     const newMaze = () => {
+        document.documentElement.style.setProperty('--numcells',size);
         nm.instantiateMaze(
             size,animate_create_switch.checked,parseInt(create_speed_input.value)
         );

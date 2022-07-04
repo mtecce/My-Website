@@ -1,0 +1,178 @@
+<script>
+
+    let loadedLoopPics = false;
+    let loadedARPics = false;
+
+    let loopImageDisplay = null;
+    let arImageDisplay = null;
+
+    const LooperImages = document.getElementById("Loop-Images-Trim");
+    const ARImages = document.getElementById("AR-Images-Trim");
+
+    //click elements
+    const LPB = document.getElementById('Loop-Img-Desc');
+    const LLCB = document.querySelector('.lcli');
+    const LRCB = document.querySelector('.rcli');
+    const LEI = document.querySelectorAll('.loopexit');
+
+    const APB = document.getElementById('AR-Img-Desc');
+    const ALCB = document.querySelector('.lcai');
+    const ARCB = document.querySelector('.rcai');
+    const AEI = document.querySelectorAll('.arexit');
+
+
+    LPB.addEventListener("click", ()=> getImages("looper"));
+    LLCB.addEventListener("click", () => leftCycleImages('looper'));
+    LRCB.addEventListener("click", () => rightCycleImages('looper'));
+    LEI.forEach(but => {
+        but.addEventListener("click", () => showHideImages('looper'));
+    });
+
+    APB.addEventListener("click", ()=> getImages("ar"));
+    ALCB.addEventListener("click", () => leftCycleImages('ar'));
+    ARCB.addEventListener("click", () => rightCycleImages('ar'));
+    AEI.forEach(but => {
+        but.addEventListener("click", () => showHideImages('ar'));
+    });
+
+    const showHideImages = (picset) => {
+
+        if(picset == 'looper'){
+            loopImageDisplay.forEach(elm => {
+                elm.classList.toggle("active");
+            });
+        }else if(picset == 'ar'){
+            arImageDisplay.forEach(elm => {
+                elm.classList.toggle("active");
+            });
+        }
+    };
+
+    const getImages = (picset) => {
+        if((picset == "looper" && loadedLoopPics)||(picset == "ar" && loadedARPics)){
+            showHideImages(picset);
+        }else{
+            let tempURL = '/pictures?id=' + picset;
+            $.ajax({url: tempURL,method: 'GET'})
+                .then((data) => {
+                    let loadedItems = new DOMParser().parseFromString(data,'text/html').body;
+                    if(picset == "looper"){
+                        loadedItems = loadedItems.querySelector('#Loop-Images-Wrapper');
+                        LooperImages.appendChild(loadedItems);
+                        loadedLoopPics = true;
+                        loopImageDisplay = document.querySelectorAll('.lpu');
+                    }else if(picset == "ar"){
+                        loadedItems = loadedItems.querySelector('#AR-Images-Wrapper');
+                        ARImages.appendChild(loadedItems);
+                        loadedARPics = true;
+                        arImageDisplay = document.querySelectorAll('.apu');
+                    }
+                    showHideImages(picset);
+            });
+        }
+    }
+
+    const leftCycleImages = (picset) => {
+        if(picset == "looper"){
+            LooperImages.scrollLeft -= LooperImages.clientWidth;
+        }else if(picset == 'ar'){
+            ARImages.scrollLeft -= ARImages.clientWidth;
+        }   
+    };
+
+    const rightCycleImages = (picset) => {
+        if(picset == "looper"){
+            LooperImages.scrollLeft += LooperImages.clientWidth;
+        }else if(picset == 'ar'){
+            ARImages.scrollLeft += ARImages.clientWidth;
+        }
+    };
+
+    const ARObjects = [
+        document.getElementById('AR-GH-Icon'),
+        document.getElementById('AR-Web-Icon'),
+        document.getElementById('AR-YT-Icon'),
+        document.getElementById('AR-Img-Pop-Icon')
+    ];
+
+    const LoopObjects = [
+        document.getElementById('Loop-GH-Icon'),
+        document.getElementById('Loop-YT-Icon'),
+        document.getElementById('Loop-Img-Pop-Icon')
+    ];
+
+    const ARLinks = document.querySelectorAll('.AR-Links');
+    const LoopLinks = document.querySelectorAll('.Loop-Links');
+
+    let arActiveOption = [true,false,false,false];
+    let loopActiveOption = [true,false,false];
+
+    let arDescriptionToggles = ['gh','ws','yt','im'];
+    let loopDescriptionToggles = ['gh','yt','im'];
+
+    ARObjects[0].addEventListener("click", () => arOptionToggle(0,1,2,3));
+    ARObjects[1].addEventListener("click", () => arOptionToggle(1,0,2,3));
+    ARObjects[2].addEventListener("click", () => arOptionToggle(2,0,1,3));
+    ARObjects[3].addEventListener("click", () => arOptionToggle(3,0,1,2));
+
+    LoopObjects[0].addEventListener("click", () => loopOptionToggle(0,1,2));
+    LoopObjects[1].addEventListener("click", () => loopOptionToggle(1,0,2));
+    LoopObjects[2].addEventListener("click", () => loopOptionToggle(2,0,1));
+
+
+    const arOptionToggle = (ind1,ind2,ind3,ind4) => {
+        if(!arActiveOption[ind1]){
+            if(arActiveOption[ind2]){
+                ARObjects[ind2].classList.toggle('active');
+                ARLinks.forEach(opt => {
+                    opt.classList.toggle(arDescriptionToggles[ind2])
+                });
+                arActiveOption[ind2] = false;
+            }
+            if(arActiveOption[ind3]){
+                ARObjects[ind3].classList.toggle('active');
+                ARLinks.forEach(opt => {
+                    opt.classList.toggle(arDescriptionToggles[ind3])
+                });
+                arActiveOption[ind3] = false;
+            }
+            if(arActiveOption[ind4]){
+                ARObjects[ind4].classList.toggle('active');
+                ARLinks.forEach(opt => {
+                    opt.classList.toggle(arDescriptionToggles[ind4])
+                });
+                arActiveOption[ind4] = false;
+            }
+            ARObjects[ind1].classList.toggle('active');
+            ARLinks.forEach(opt => {
+                    opt.classList.toggle(arDescriptionToggles[ind1])
+                });
+            arActiveOption[ind1] = true;
+        }
+    }
+
+    const loopOptionToggle = (ind1,ind2,ind3) => {
+        if(!loopActiveOption[ind1]){
+            if(loopActiveOption[ind2]){
+                LoopObjects[ind2].classList.toggle('active');
+                LoopLinks.forEach(opt => {
+                    opt.classList.toggle(loopDescriptionToggles[ind2])
+                });
+                loopActiveOption[ind2] = false;
+            }
+            if(loopActiveOption[ind3]){
+                LoopObjects[ind3].classList.toggle('active');
+                LoopLinks.forEach(opt => {
+                    opt.classList.toggle(loopDescriptionToggles[ind3])
+                });
+                loopActiveOption[ind3] = false;
+            }
+            LoopObjects[ind1].classList.toggle('active');
+            LoopLinks.forEach(opt => {
+                    opt.classList.toggle(loopDescriptionToggles[ind1])
+                });
+            loopActiveOption[ind1] = true;
+        }
+    }
+
+</script>

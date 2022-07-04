@@ -5,64 +5,53 @@
     </p>
 </div>
 
-<table id="Calc-Landscape-Buttons">
-    <tr>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> + </td>
-        <td class="calc-button big-b fun-b" onclick="functionClick(this);"> - </td>
-        <td class="calc-button big-b eq-b" onclick="equalsClick(this);"> = </td>
-        <td class="calc-button clear-b" onclick="clearClick(this);"> C </td>
-    </tr>
-    <tr>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> x </td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> / </td>
-        <td class="calc-button" onclick="negateClick(this);">+/-</td>
-        <td class="calc-button" onclick="fiveClick(this);"> 5 </td>
-        <td class="calc-button" onclick="sixClick(this);"> 6 </td>
-        <td class="calc-button" onclick="sevenClick(this);"> 7 </td>
-        <td class="calc-button" onclick="eightClick(this);"> 8 </td>
-        <td class="calc-button" onclick="nineClick(this);"> 9 </td>
-    </tr>
-    <tr>
-        <td class="calc-button fun-b" onclick="parenthesisClick(this);">( )</td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> % </td>
-        <td class="calc-button" onclick="decimalClick(this);"> . </td>
-        <td class="calc-button" onclick="zeroClick(this);"> 0 </td>
-        <td class="calc-button" onclick="oneClick(this);"> 1 </td>
-        <td class="calc-button" onclick="twoClick(this);"> 2 </td>
-        <td class="calc-button" onclick="threeClick(this);"> 3 </td>
-        <td class="calc-button" onclick="fourClick(this);"> 4 </td>
-    </tr>
-</table>
-
-<table id="Calc-Norm-Buttons">
-    <tr>
-        <td class="calc-button clear-b" onclick="clearClick(this);"> C </td>
-        <td class="calc-button fun-b" onclick="parenthesisClick(this);">( )</td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> % </td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> / </td>
-    </tr>
-    <tr>
-        <td class="calc-button" onclick="sevenClick(this);"> 7 </td>
-        <td class="calc-button" onclick="eightClick(this);"> 8 </td>
-        <td class="calc-button" onclick="nineClick(this);"> 9 </td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> x </td>
-    </tr>
-    <tr>
-        <td class="calc-button" onclick="fourClick(this);"> 4 </td>
-        <td class="calc-button" onclick="fiveClick(this);"> 5 </td>
-        <td class="calc-button" onclick="sixClick(this);"> 6 </td>
-        <td class="calc-button big-b fun-b" onclick="functionClick(this);"> - </td>
-    </tr>
-    <tr>
-        <td class="calc-button" onclick="oneClick(this);"> 1 </td>
-        <td class="calc-button" onclick="twoClick(this);"> 2 </td>
-        <td class="calc-button" onclick="threeClick(this);"> 3 </td>
-        <td class="calc-button fun-b" onclick="functionClick(this);"> + </td>
-    </tr>
-    <tr>
-        <td class="calc-button" onclick="negateClick(this);">+/-</td>
-        <td class="calc-button" onclick="zeroClick(this);"> 0 </td>
-        <td class="calc-button" onclick="decimalClick(this);"> . </td>
-        <td class="calc-button big-b eq-b" onclick="equalsClick(this);"> = </td>
-    </tr>
-</table>
+<div id="Calc-Buttons-Wrapper">
+    <div class="calc-button-cluster">
+        <div class="calc-button clear-b" onclick="clearClick(this);">
+            <p class="calc-button-text clear-t"> C </p></div>
+        <div class="calc-button" onclick="sevenClick(this);">
+            <p class="calc-button-text"> 7 </p></div>
+        <div class="calc-button" onclick="fourClick(this);">
+            <p class="calc-button-text"> 4 </p></div>
+        <div class="calc-button" onclick="oneClick(this);">
+            <p class="calc-button-text"> 1 </p></div>
+        <div class="calc-button" onclick="negateClick(this);">
+            <p class="calc-button-text">+/-</p></div>
+    </div>
+    <div class="calc-button-cluster">
+        <div class="calc-button fun-b" onclick="parenthesisClick(this);">
+            <p class="calc-button-text fun-t">( )</p></div>
+        <div class="calc-button" onclick="eightClick(this);">
+            <p class="calc-button-text"> 8 </p></div>
+        <div class="calc-button" onclick="fiveClick(this);">
+            <p class="calc-button-text"> 5 </p></div>
+        <div class="calc-button" onclick="twoClick(this);">
+            <p class="calc-button-text"> 2 </p></div>
+        <div class="calc-button" onclick="zeroClick(this);">
+            <p class="calc-button-text"> 0 </p></div>
+    </div>
+    <div class="calc-button-cluster">
+        <div class="calc-button fun-b" onclick="functionClick(this);">
+            <p class="calc-button-text fun-t"> % </p></div>
+        <div class="calc-button" onclick="nineClick(this);">
+            <p class="calc-button-text"> 9 </p></div>
+        <div class="calc-button" onclick="sixClick(this);">
+            <p class="calc-button-text"> 6 </p></div>
+        <div class="calc-button" onclick="threeClick(this);">
+            <p class="calc-button-text"> 3 </p></div>
+        <div class="calc-button" onclick="decimalClick(this);">
+            <p class="calc-button-text"> . </p></div>
+    </div>
+    <div class="calc-button-cluster">
+        <div class="calc-button fun-b" onclick="functionClick(this);">
+            <p class="calc-button-text fun-t"> / </p></div>
+        <div class="calc-button fun-b" onclick="functionClick(this);">
+            <p class="calc-button-text fun-t"> x </p></div>
+        <div class="calc-button fun-b" onclick="functionClick(this);">
+            <p class="calc-button-text big-b fun-t"> - </p></div>
+        <div class="calc-button fun-b" onclick="functionClick(this);">
+            <p class="calc-button-text fun-t"> + </p></div>
+        <div class="calc-button eq-b" onclick="equalsClick(this);">
+            <p class="calc-button-text big-b eq-t"> = </p></div>
+    </div>
+</div>

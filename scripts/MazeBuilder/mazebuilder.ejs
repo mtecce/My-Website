@@ -49,8 +49,6 @@
         
         constructMatricies(){
 
-            let p_size = this.mazeTable.clientWidth / this.sizeOfMaze;
-
             for(let i = 0; i < this.sizeOfMaze; i++){
 
                 this.mazeTable.insertRow();
@@ -61,8 +59,6 @@
 
                     setTimeout(()=>{
                         let newCell = this.mazeTable.children[0].children[i].insertCell();
-                        this.mazeTable.children[0].children[i].children[j].style.width = p_size + "px";
-                        this.mazeTable.children[0].children[i].children[j].style.height = p_size + "px";
                         this.coordinate_matrix[i].push(false);
                         
                         if((i%2==0)||(i==0)){

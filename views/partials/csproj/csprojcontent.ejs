@@ -26,165 +26,153 @@
         </div>
     </div>
     <div id="Project-Grid">
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="AR-Wrap" class="Main-Wrap">
-                    <div id="AR-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/jsicon.png" alt="JS-Icon2" id="JS-Icon" class="Title-Icons">
-                        <img src="/images/icons/aricon.png" alt="ARJS-Icon" id="AR-Icon" class="Title-Icons SMALL-IMGS">
-                        <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="Title-Icons SMALL-IMGS image-invert">
-                        <img src="/images/icons/threejsicon.png" alt="THREE-Icon" id="THREE-Icon" class="Title-Icons SMALL-IMGS image-invert">
-                        <span id="AR-Title" class="Title">AR App</span>
+        <div id="AR-Wrap" class="Main-Wrap">
+            <div id="AR-Title-Wrap" class="Title-Wrap">
+                <span id="AR-Title" class="Title">AR App</span>
+                <img src="/images/icons/jsicon.png" alt="JS-Icon2" id="JS-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/aricon.png" alt="ARJS-Icon" id="AR-Icon" class="Title-Icons">
+                <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/threejsicon.png" alt="THREE-Icon" id="THREE-Icon" class="image-invert Title-Icons">
+            </div>
+            <p id="AR-Description" class="Descriptions ">
+                This project is an augmented reality web application written in JavaScript made to emulate a classroom exercise 
+                designed by Dr. Rosa Abrahams to practice counterpoint music theory. The premise of the app is for the user to traverse through 
+                a AR music staff and place themselves in specific positions on the staff lines. The project incorporates numerous JavaScript libraries to 
+                implement position and color tracking, audio recording and playback, and 3D modeling of the music staff and miscellaneous 3D objects.
+            </p>
+            <div id="AR-Options-Icon-Wrapper" class="Options-Icon-Wrapper">
+                <img src="/images/icons/githubicon.png" alt="Code" id="AR-GH-Icon" class="image-invert link-icons active">
+                <img src="/images/icons/webicon.png" alt="Code" id="AR-Web-Icon" class="image-invert link-icons">
+                <img src="/images/icons/youtubeicon.png" alt="Code" id="AR-YT-Icon" class="image-invert link-icons">
+                <img src="/images/icons/imageicon.png" alt="Image"  id="AR-Img-Pop-Icon" class="image-invert link-icons">
+            </div>
+            <div id="AR-Links-Wrapper" class="Links-Wrapper">
+                <div id="AGHL" class="Links AR-Links">
+                    <a href=https://github.com/ctralie/CounterpointVR>
+                        <span id="AR-GH-Desc" class=" link-text gh">Link to GitHub Repo</span>
+                    </a>
+                </div>
+                <div id="AWAL" class="Links AR-Links">
+                    <a href=https://ctralie.github.io/CounterpointVR/>
+                        <span id="AR-Web-Desc" class=" link-text gh">Link to Web App</span>
+                    </a>
+                </div>
+                <div id="AYTL" class="Links AR-Links">
+                    <a href=https://youtu.be/QiJv8It9Uhc">
+                        <span id="AR-YT-Desc" class=" link-text gh">Link to Demo Video</span>
+                    </a>
+                </div>
+                <div id="ARIL" class="Links AR-Links">
+                    <span id="AR-Img-Desc" class=" link-text gh">View Photos</span>
+                </div>
+            </div>
+
+        </div>
+        <div id="Chat-Wrap" class="Main-Wrap">
+            <div id="Chat-Title-Wrap" class="Title-Wrap">
+                <span id="Chat-Title" class="Title">Chat App</span>
+                <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/ajaxicon.png" alt="AJAX Icon" id="AJAX-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/mongodbicon.png" alt="MongoDB Icon" id="MONGO-Icon" class="image-invert Title-Icons">
+                
+            </div>
+            <p id="Chat-Description" class="Descriptions ">
+                This is a minimalistic real time messaging web application built from scratch. 
+                The messages come in at real time and are saved to a NoSQL database. 
+                The project incorporates jQuery, AJAX, Express, Mongoose, MongoDB, and Javascript. 
+                There is no security incorporated into the chat, 
+                but the chat was not made to be a secure person-to-person chatting application but simply a display of front and backend skills.
+            </p>
+            <form action="/chat" id="Chat-Form" method="get" target="_self">
+                <input type="text" id="user-name-input" name="uName" placeholder="Enter Your Name">
+                <input type="submit" value="CHAT" id="submit-button">
+            </form>
+        </div>
+        <div id="Loop-Wrap" class="Main-Wrap">
+            <div id="Loop-Title-Wrap" class="Title-Wrap">
+                <span id="Loop-Title" class="Title">Loop Switcher</span>
+                <img src="/images/icons/arduinoicon.png" alt="Arduino Icon" id="Arduino-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/pcbicon.png" alt="PCB Icon" id="PCB-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/schematicicon.png" alt="Schematic Icon" id="Schematic-Icon" class="image-invert Title-Icons">
+            </div>
+            <p id="Loop-Description" class="Descriptions ">
+                This project is a 5 channel audio loop switching pedal. An Arduino controls a set of relays to 
+                switch different audio patch bays on and off. I designed the circuit, PCB, and layout of the 
+                hardware, as well as designing, developing, debugging, and implementing the code onto the hardware.
+                There are a few of these being used by musicians in the Greater Philadelphia area. These pedals
+                can be built on request, but are not actively market or produce them.
+            </p>
+
+            <div id="Loop-Options-Icon-Wrapper" class="Options-Icon-Wrapper">
+                <img src="/images/icons/githubicon.png" alt="Code" id="Loop-GH-Icon" class="image-invert link-icons active">
+                <img src="/images/icons/youtubeicon.png" alt="Code" id="Loop-YT-Icon" class="image-invert link-icons">
+                <img src="/images/icons/imageicon.png" alt="Image" id="Loop-Img-Pop-Icon" class="image-invert link-icons">
+            </div>
+
+            <div id="Loop-Links-Wrapper" class="Links-Wrapper">
+                <div id="LGHL" class="Links Loop-Links">
+                    <a href="https://github.com/mtecce/Loop-Switcher/blob/main/V2/5Bank3Modes.V2/5Bank3Modes.V2.ino">
+                        <span id="Loop-GH-Desc" class=" link-text gh">Link to GitHub Repo</span>
+                    </a>
+                </div>
+                <div id="LYTL" class="Links Loop-Links">
+                    <a href="https://youtu.be/HeI4aJejBMU">
+                        <span id="Loop-YT-Desc" class=" link-text gh">Link to Demo Video</span>
+                    </a>
+                </div>
+                <div id="LIPL" class="Links Loop-Links">
+                    <span id="Loop-Img-Desc" class=" link-text gh">View Photos</span>
+                </div>
+            </div>
+        </div>
+        <div id="Maze-Wrap" class="Main-Wrap">
+            <div id="Maze-Title-Wrap" class="Title-Wrap">
+                <span id="Maze-Title" class="Title maze-resize">Maze Creator/Solver</span>
+                <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="image-invert Title-Icons">
+                <img src="/images/icons/cppicon.png" alt="C++ Icon" id="Cpp-Icon" class="image-invert Title-Icons">
+                
+            </div>
+            <div id="Maze-Content-Landscape">
+                <div id="Maze-Table-Wrapper">
+                    <table id="Maze-Table" class="table-1 maze-resize" id="Table-1"></table>
+                </div>
+                <div id="Maze-Functions" class="maze-resize">
+                    <div id="MBW">
+                        <input type="text" name="maze_size" id="Maze-Size" placeholder="&lt 50" class="Maze-Button">
+                        <button id="New-Maze" class="Maze-Button">New</button>
+                        <button id="Solve-Maze" class="Maze-Button">Solve</button>
                     </div>
-                    <p id="AR-Description" class="Descriptions Outer-Text">
-                        This project is an augmented reality web application written in JavaScript made to emulate a classroom exercise 
-                        designed by Dr. Rosa Abrahams to practice counterpoint music theory. The premise of the app is for the user to traverse through 
-                        a AR music staff and place themselves in specific positions on the staff lines. The project incorporates numerous JavaScript libraries to 
-                        implement position and color tracking, audio recording and playback, and 3D modeling of the music staff and miscellaneous 3D objects.
-                    </p>
-                    <div id="AR-Link-Wrap" class="link-wrap">
-                        <div id="AR-Link-1-Wrap" class="link-item">
-                            <a href=https://github.com/ctralie/CounterpointVR>
-                                <img src="/images/icons/githubicon.png" alt="Code" id="AR-GH-Icon" class="link-icons">
-                                <p id="AR-GH-Desc" class="Outer-Text link-text">Link to GitHub Repo</p>
-                            </a>
+                    <div id="Maze-Inputs">
+                        <div id="Creation-Line" class="MCBW">
+                            <input type="checkbox" name="show-create" id="Show-Create-Check" checked="true" value="ShowCreate" class="maze-checkbox">
+                            <div class="check-label">Animate Creation Algorithm</div>
                         </div>
-                        <div id="AR-Link-2-Wrap" class="link-item">
-                            <a href=https://ctralie.github.io/CounterpointVR/>
-                                <img src="/images/icons/webicon.png" alt="Code" id="AR-Web-Icon" class="image-invert link-icons">
-                                <p id="AR-Web-Desc" class="Outer-Text link-text">Link to Web App</p>
-                            </a>
+                        <div id="Solving-Line" class="MCBW">
+                            <input type="checkbox" name="show-solve" id="Show-Solve-Check" checked="true" value="ShowSolve" class="maze-checkbox">
+                            <div class="check-label">Animate Solving Algorithm</div>
                         </div>
-                        <div id="AR-Link-3-Wrap" class="link-item link-rightside">
-                            <a href=https://youtu.be/QiJv8It9Uhc">
-                                <img src="/images/icons/youtubeicon.png" alt="Code" id="AR-YT-Icon" class="image-invert link-icons">
-                                <p id="AR-YT-Desc" class="Outer-Text link-text">Link to Demo Video</p>
-                            </a>
+                        <div class="Slider-Wrapper">
+                            <div class="speed-label">Create Speed</div>
+                            <input type="range" min="1" max="20" value="10" name="create-speed" class="range-slider" id="Create-Speed-Slider">
                         </div>
-                        <div id="AR-Link-4-Wrap" class="link-item link-rightside">
-                            <img src="/images/icons/imageicon.png" alt="Image"  id="AR-Img-Pop-Icon" class="link-icons image-icon">
-                            <p id="AR-Img-Desc" class="Outer-Text link-text">View Photos</p>
+                        <div class="Slider-Wrapper">
+                            <div class="speed-label">Solve Speed</div>
+                            <input type="range" min="20" max="100" value="35" name="solve-speed" class="range-slider" id="Solve-Speed-Slider">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="Chat-Wrap" class="Main-Wrap">
-                    <div id="Chat-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
-                        <img src="/images/icons/jqueryicon.png" alt="jQuery-Icon" id="jQ-Icon" class="Title-Icons SMALL-IMGS image-invert">
-                        <img src="/images/icons/ajaxicon.png" alt="AJAX Icon" id="AJAX-Icon" class="Title-Icons SMALL-IMGS">
-                        <img src="/images/icons/mongodbicon.png" alt="MongoDB Icon" id="MONGO-Icon" class="Title-Icons SMALL-IMGS">
-                        <span id="Chat-Title" class="Title">Chat App</span>
-                    </div>
-                    <p id="Chat-Description" class="Descriptions Outer-Text">
-                        This is a minimalistic real time messaging web application built from scratch. 
-                        The messages come in at real time and are saved to a NoSQL database. 
-                        The project incorporates jQuery, AJAX, Express, Mongoose, MongoDB, and Javascript. 
-                        There is no security incorporated into the chat, 
-                        but the chat was not made to be a secure person-to-person chatting application but simply a display of front and backend skills.
-                    </p>
-                    <div id="Chat-Form-Div">
-                        <form action="/chat" id="Chat-Form" method="get" target="_self">
-                            <input type="text" id="user-name-input" name="uName" placeholder="Enter Your Name">
-                            <input type="submit" value="CHAT" id="submit-button">
-                        </form>
-                    </div>
-                </div>
+        <div id="Calc-Wrap" class="Main-Wrap">
+            <div id="Calc-Title-Wrap" class="Title-Wrap">
+                <span id="Calc-Title" class="Title">Simple Calculator</span>
+                <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="image-invert Title-Icons">
+                
             </div>
-        </div>
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="Loop-Wrap" class="Main-Wrap">
-                    <div id="Loop-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/arduinoicon.png" alt="Arduino Icon" id="Arduino-Icon" class="Title-Icons">
-                        <img src="/images/icons/pcbicon.png" alt="PCB Icon" id="PCB-Icon" class="Title-Icons">
-                        <img src="/images/icons/schematicicon.png" alt="Schematic Icon" id="Schematic-Icon" class="Title-Icons">
-                        <span id="Loop-Title" class="Title">Loop Switcher</span>
-                    </div>
-                    <p id="Loop-Description" class="Descriptions Outer-Text">
-                        This project is a 5 channel audio loop switching pedal. An Arduino controls a set of relays to 
-                        switch different audio patch bays on and off. I designed the circuit, PCB, and layout of the 
-                        hardware, as well as designing, developing, debugging, and implementing the code onto the hardware.
-                        There are a few of these being used by musicians in the Greater Philadelphia area. These pedals
-                        can be built on request, but are not actively market or produce them.
-                    </p>
-                    <div id="Loop-Link-Wrap" class="link-wrap">
-                        <div id="Loop-Link-1-Wrap" class="link-item">
-                            <a href="https://github.com/mtecce/Loop-Switcher/blob/main/V2/5Bank3Modes.V2/5Bank3Modes.V2.ino">
-                                <img src="/images/icons/githubicon.png" alt="Code" id="Loop-GH-Icon" class="link-icons">
-                                <p id="Loop-GH-Desc" class="link-text Outer-Text">Link to GitHub Repo</p>
-                            </a>
-                        </div>
-                        <div id="Loop-Link-2-Wrap" class="link-item">
-                            <img src="/images/icons/imageicon.png" alt="Image" id="Loop-Img-Pop-Icon" class="link-icons image-icon">
-                            <p id="Img-Pop-Desc" class="link-text Outer-Text">View Photos</p>
-                        </div>
-                        <div id="Loop-Link-2-Wrap" class="link-item link-rightside">
-                            <a href="https://youtu.be/HeI4aJejBMU">
-                                <img src="/images/icons/youtubeicon.png" alt="Code" id="AR-YT-Icon" class="image-invert link-icons">
-                                <p id="Loop-YT-Desc" class="Outer-Text link-text">Link to Demo Video</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="Maze-Wrap" class="Main-Wrap">
-                    <div id="Maze-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
-                        <img src="/images/icons/cppicon.png" alt="C++ Icon" id="Cpp-Icon" class="Title-Icons">
-                        <span id="Maze-Title" class="Title maze-resize">Maze Creator/Solver</span>
-                    </div>
-                    <div id="Maze-Table-Wrapper">
-                        <table id="Maze-Table" class="table-1 maze-resize" id="Table-1"></table>
-                    </div>
-                    <div id="Maze-Functions" class="maze-resize">
-                        <div id="MBW">
-                            <input type="text" name="maze_size" id="Maze-Size" placeholder="&lt 50" class="Maze-Button">
-                            <button id="New-Maze" class="Maze-Button">New</button>
-                            <button id="Solve-Maze" class="Maze-Button">Solve</button>
-                        </div>
-                        <div id="Maze-Inputs">
-                            <div id="Creation-Line" class="MCBW">
-                                <input type="checkbox" name="show-create" id="Show-Create-Check" checked="true" value="ShowCreate" class="maze-checkbox">
-                                <div class="check-label">Animate Creation Algorithm</div>
-                            </div>
-                            <div id="Solving-Line" class="MCBW">
-                                <input type="checkbox" name="show-solve" id="Show-Solve-Check" checked="true" value="ShowSolve" class="maze-checkbox">
-                                <div class="check-label">Animate Solving Algorithm</div>
-                            </div>
-                            <div class="Slider-Wrapper">
-                                <div class="speed-label">Create Speed</div>
-                                <input type="range" min="1" max="20" value="10" name="create-speed" class="range-slider" id="Create-Speed-Slider">
-                            </div>
-                            <div class="Slider-Wrapper">
-                                <div class="speed-label">Solve Speed</div>
-                                <input type="range" min="20" max="100" value="35" name="solve-speed" class="range-slider" id="Solve-Speed-Slider">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Trim-Wrap">
-            <div class="Project-Background">
-                <div id="Calc-Wrap" class="Main-Wrap">
-                    <div id="Calc-Title-Wrap" class="Title-Wrap">
-                        <img src="/images/icons/jsicon.png" alt="JavaScript Icon" id="JS-Icon" class="Title-Icons">
-                        <span id="Calc-Title" class="Title">Simple Calculator</span>
-                    </div>
-                    <div id="Calc">
-                        <%- include('../../../scripts/Calculator/calculator.ejs')%>
-                    </div>
-                </div>
+            <div id="Calc">
+                <%- include('../../../scripts/Calculator/calculator.ejs')%>
             </div>
         </div>
     </div>
 </main>
-<!-- https://ctralie.github.io/CounterpointVR/ -->
-<!-- https://youtu.be/QiJv8It9Uhc -->
