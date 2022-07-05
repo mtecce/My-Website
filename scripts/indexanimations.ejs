@@ -3,7 +3,6 @@
     const options2 = document.querySelectorAll(".opt-2");
     const options3 = document.querySelectorAll(".opt-3");
 
-    const textMain = document.getElementById('Instruction-Text');
     const textAbout = document.getElementById('About-Text');
     const textUC = document.getElementById('Ursinus-Text');
     const textUA = document.getElementById('UArts-Text');
@@ -12,9 +11,8 @@
     const optionHeaders = document.querySelectorAll(".P-Wrapper");
     const optionTexts = document.querySelectorAll('.paragraph-wrapper');
 
-    let activeOption = [false,false,false];
+    let activeOption = [true,false,false];
     let descriptiontoggles = ["am","uc","ua"];
-    let choseOption = false;
 
     options1.forEach(opt => {
         opt.addEventListener("click", () => optionToggle(0,1,2));
@@ -29,10 +27,6 @@
     });
 
     const optionToggle = (ind1, ind2, ind3) => {
-        if(!choseOption){
-            textMain.classList.toggle('active');
-            choseOption = true;
-        }
         if(!activeOption[ind1]){
             if(activeOption[ind2]){
                 optionObjects[ind2].classList.toggle('active');

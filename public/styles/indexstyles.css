@@ -36,7 +36,6 @@ main{
     width: var(--optheight);
     height: var(--optheight);
     border: var(--bc);
-    border-radius: var(--bri);
     transition: var(--tt);
     opacity: 0;
 }
@@ -113,23 +112,6 @@ main{
     margin: 0 .5%;
 }
 
-#Instruction-Text{
-    position: absolute;
-    width: 90%;
-    padding: 0 2.5%;
-    margin: 0;
-    border-radius: var(--bri);
-    text-align: center;
-    font-size: 40px;
-    
-    transition: var(--tt);
-    visibility: hidden;
-}
-
-#Instruction-Text.active{
-    visibility: visible;
-}
-
 .paragraph-wrapper{
     position: absolute;
     margin: 0;
@@ -169,6 +151,7 @@ main{
 
     #Option-Border{
         position: absolute;
+        border-radius: var(--bri);
         width: calc(100% - (var(--bs) * 2));
     }
 
@@ -459,15 +442,6 @@ main{
         margin: 1.5vh 0;
         display: flex;
         justify-content: space-around;
-    }
-
-    #Instruction-Text,
-    #Instruction-Text.active{
-        width: 0;
-        height: 0;
-        padding: 0;
-        margin: 0;
-        visibility: hidden;
     }
 
     .paragraph-wrapper,
