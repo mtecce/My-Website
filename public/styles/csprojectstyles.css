@@ -23,7 +23,20 @@ main{
     --mch: calc((100vh - 60px - (var(--gridgap) * var(--numcolumns))) * .6);
 }
 
-#Project-Grid{
+.Project-Section-Header{
+    position: relative;
+    width: fit-content;
+    padding: 0 10px 10px 10px;
+    margin: 25px 0;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 3px solid rgb(182 55 255 / 50%);
+}
+
+#CS-Project-Grid{
     display: grid;
     gap: var(--gridgap);
     justify-items: center;
@@ -129,11 +142,14 @@ main{
 .link-text{
     position: absolute;
     width: fit-content;
+    padding: 5px 15px;
     left: 50%;
     top: 50%;
     font-size: 25px;
+    border-radius: 25px;
     transform: translateX(-50%) translateY(-50%);
-    color: #b637ff;
+    background-color: #b637ff;
+    color: white;
 }
 
 /* ///////////////////////////////////// */
@@ -401,6 +417,10 @@ td.dissapear{
         left: 0;
     }
 
+    .Project-Section-Header{
+        width: min-content;
+    }
+
 }
 
 /* Mobile Landscape */
@@ -421,7 +441,7 @@ td.dissapear{
         left: 0;
     }
 
-    #Project-Grid{
+    #CS-Project-Grid{
         width: 100%;
         row-gap: 2.5vh;
         grid-template-columns: none;
