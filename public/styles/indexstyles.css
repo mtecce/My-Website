@@ -455,7 +455,9 @@ main{
         opacity: 1;
         position: relative;
         width: 32vw;
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .Text-Style{
