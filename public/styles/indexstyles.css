@@ -354,7 +354,7 @@ main{
     }
 
     .Description-Header{
-        width: fit-content;
+        width: max-content;
         left: 50%;
         font-size: 41px;
     }
@@ -377,6 +377,12 @@ main{
         font-size: 30px;
     }
 
+}
+
+@media screen and (max-width: 365px){
+    .Description-Header{
+        font-size: 20px;
+    }
 }
 
 /* Desktop Portrait */

@@ -141,7 +141,7 @@ main{
 
 .link-text{
     position: absolute;
-    width: fit-content;
+    width: max-content;
     padding: 5px 15px;
     left: 50%;
     top: 50%;
@@ -295,14 +295,33 @@ td.dissapear{
     color: black;
 }
 
+
+
 .range-slider{
     position: relative;
+    -webkit-appearance: none;
     width: 58%;
+    height: 5px;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
     accent-color: #b637ff;
+    background-color: #b637ff;
+    border-radius: 5px;
 }
+
+.range-slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: white;
+    height: 17.5px;
+    width: 17.5px;
+    border: 1px solid rgb(0 0 0 / 25%);
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+
 
 
 
@@ -408,6 +427,13 @@ td.dissapear{
 
 .fun-b.fade-in{
     background-color: #37fff9;
+}
+
+@media screen and (max-width: 365px){
+    .check-label,
+    .speed-label{
+        font-size: 18px;
+    }
 }
 
 /* Mobile Portrait */
